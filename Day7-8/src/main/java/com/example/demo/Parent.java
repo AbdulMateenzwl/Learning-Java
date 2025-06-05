@@ -50,4 +50,6 @@ public class Parent {
     public void setChildren(List<Child> children) {
         this.children = children;
     }
+
+    
 }
