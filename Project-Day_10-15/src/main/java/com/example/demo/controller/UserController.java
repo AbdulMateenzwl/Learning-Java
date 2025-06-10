@@ -4,9 +4,6 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Stream;
 
-import com.example.demo.dto.ApiResponse;
-import com.example.demo.utils.ApiResponseUtil;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -22,14 +19,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.ENUM.UserRole;
-import com.example.demo.Entity.User;
-import com.example.demo.Mapper.UserMapper;
 import com.example.demo.config.PaginationConfig;
+import com.example.demo.dto.ApiResponse;
 import com.example.demo.dto.UserDTO;
 import com.example.demo.service.JwtService;
 import com.example.demo.service.UserService;
+import com.example.demo.utils.ApiResponseUtil;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestController
@@ -37,7 +35,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
-    private final UserMapper userMapper;
     private final JwtService jwtService;
     private final PaginationConfig paginationConfig;
 

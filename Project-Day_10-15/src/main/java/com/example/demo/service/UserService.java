@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -21,7 +20,6 @@ import com.example.demo.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 
-@Slf4j
 @Service
 @RequiredArgsConstructor
 public class UserService {
@@ -30,33 +28,29 @@ public class UserService {
 
     @Transactional
     public UserDTO createUser(UserDTO userDTO) {
-        log.info("Creating user with details: {}", userDTO);
         Optional<User> createdBy = userRepository.findByUuid(userDTO.getManagerUuid());
         User user = userMapper.toEntity(userDTO, createdBy);
         user.setRole(UserRole.ROLE_USER);
 
         userRepository.save(user);
-        log.debug("User created with UUID: {}", user.getUuid());
         return userMapper.toDTO(user);
     }
 
+    @Transactional
     public UserDTO createManager(UserDTO userDTO) {
-        log.info("Creating manager with details: {}", userDTO);
         User user = userMapper.toEntity(userDTO);
         user.setRole(UserRole.ROLE_MANAGER);
 
         userRepository.save(user);
-        log.debug("Manager created with UUID: {}", user.getUuid());
         return userMapper.toDTO(user);
     }
 
+    @Transactional
     public UserDTO createAdmin(UserDTO userDTO) {
-        log.info("Creating admin with details: {}", userDTO);
         User user = userMapper.toEntity(userDTO);
         user.setRole(UserRole.ROLE_ADMIN);
 
         userRepository.save(user);
-        log.debug("Admin created with UUID: {}", user.getUuid());
         return userMapper.toDTO(user);
     }
 
@@ -83,6 +77,7 @@ public class UserService {
         }
     }
 
+    @Transactional
     public UserDTO restrictUser(UUID uuid) {
         Optional<User> userOptional = findByUuid(uuid);
         if (userOptional.isEmpty()) {

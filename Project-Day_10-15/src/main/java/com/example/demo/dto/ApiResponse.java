@@ -1,10 +1,9 @@
 package com.example.demo.dto;
 
+import java.time.Instant;
+
 import lombok.Builder;
 import lombok.Data;
-
-import java.time.Instant;
-import java.util.List;
 
 @Data
 @Builder

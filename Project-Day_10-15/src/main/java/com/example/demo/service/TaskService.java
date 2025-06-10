@@ -20,6 +20,7 @@ import com.example.demo.exceptions.UserNotFoundException;
 import com.example.demo.repository.TaskRepository;
 import com.example.demo.repository.UserRepository;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -30,7 +31,7 @@ public class TaskService {
     private final TaskRepository taskRepository;
     private final TaskMapper taskMapper;
 
-
+    @Transactional
     public TaskDTO createTask(TaskDTO taskDTO, UUID userId) {
         taskDTO.setCreatedBy(userId);
         Optional<User> user = userRepository.findByUuid(userId);
@@ -41,7 +42,10 @@ public class TaskService {
 
     public Optional<TaskDTO> findByUuid(UUID uuid) {
         return Optional.ofNullable(taskMapper.toDTO(taskRepository.findByUuid(uuid).get()));
-    }    public TaskDTO assignTask(UUID taskId, UUID userID, UUID managerId) {
+    }
+
+    @Transactional
+    public TaskDTO assignTask(UUID taskId, UUID userID, UUID managerId) {
         Optional<Task> optionalTask = taskRepository.findByUuid(taskId);
         if (optionalTask.isEmpty()) {
             throw new TaskNotFoundException("Task not found");
@@ -65,7 +69,10 @@ public class TaskService {
         task.setAssignedTo(user.get());
         taskRepository.save(task);
         return taskMapper.toDTO(task);
-    }    public TaskDTO updateTask(TaskDTO taskDTO, UUID taskId, UUID managerId) {
+    }
+
+    @Transactional
+    public TaskDTO updateTask(TaskDTO taskDTO, UUID taskId, UUID managerId) {
         Optional<Task> optionalTask = taskRepository.findByUuid(taskId);
         if (optionalTask.isEmpty()) {
             throw new TaskNotFoundException("Task not found");
@@ -93,7 +100,7 @@ public class TaskService {
     }
 
     public Page<TaskDTO> getAllTasksByAssignedUser(UUID assignedToUuid, Pageable pageable) {
-        Page<Task> tasks =  taskRepository.findByAssignedToUuid(assignedToUuid, pageable);
+        Page<Task> tasks = taskRepository.findByAssignedToUuid(assignedToUuid, pageable);
         return tasks.map(taskMapper::toDTO);
     }
 
@@ -104,7 +111,9 @@ public class TaskService {
     public TaskDTO getTaskOfUser(UUID userUuid, UUID taskUuid) {
         Task task = this.getTaskOfUserEntity(userUuid, taskUuid);
         return taskMapper.toDTO(task);
-    }    private Task getTaskOfUserEntity(UUID userUuid, UUID taskUuid) {
+    }
+
+    private Task getTaskOfUserEntity(UUID userUuid, UUID taskUuid) {
         Optional<Task> optionalTask = taskRepository.findByUuid(taskUuid);
         if (optionalTask.isEmpty()) {
             throw new TaskNotFoundException("Task not found");
@@ -116,6 +125,7 @@ public class TaskService {
         return task;
     }
 
+    @Transactional
     public TaskDTO updateTaskOfUser(UUID userUuid, UUID taskUuid, TaskStatus status) {
         Task task = this.getTaskOfUserEntity(userUuid, taskUuid);
         if (task.getStatus() == status) {

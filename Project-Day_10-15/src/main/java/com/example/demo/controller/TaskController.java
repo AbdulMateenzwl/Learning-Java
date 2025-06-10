@@ -1,11 +1,7 @@
 package com.example.demo.controller;
 
-import java.util.List;
 import java.util.UUID;
 
-import com.example.demo.config.PaginationConfig;
-import com.example.demo.dto.ApiResponse;
-import com.example.demo.utils.ApiResponseUtil;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -23,9 +19,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.ENUM.TaskStatus;
+import com.example.demo.config.PaginationConfig;
+import com.example.demo.dto.ApiResponse;
 import com.example.demo.dto.TaskDTO;
 import com.example.demo.service.JwtService;
 import com.example.demo.service.TaskService;
+import com.example.demo.utils.ApiResponseUtil;
 
 import lombok.RequiredArgsConstructor;
 
