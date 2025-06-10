@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "58a7f6a2-5a82-4be3-a70f-623cddc17471",
+		"name": "Manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28754159"
+	},
+	"item": [
+		{
+			"name": "Get Assigned User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{ManagerJWT}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/api/manager/assigned_user",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"manager",
+						"assigned_user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get All Team tasks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{ManagerJWT}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/api/task/manager/all",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"task",
+						"manager",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{ManagerJWT}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"title\",\r\n    \"description\":\"test\",\r\n    \"status\":\"PENDING\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/task/create",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"task",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{ManagerJWT}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/api/task/assign?taskUuid=2a88ce76-9924-4b5e-8313-1c6676fcb2d0&userUuid=c5cd3909-bc27-4421-9e2b-a6e5cdb623d2",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"task",
+						"assign"
+					],
+					"query": [
+						{
+							"key": "taskUuid",
+							"value": "2a88ce76-9924-4b5e-8313-1c6676fcb2d0"
+						},
+						{
+							"key": "userUuid",
+							"value": "c5cd3909-bc27-4421-9e2b-a6e5cdb623d2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{ManagerJWT}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"ddddddd\",\r\n    \"description\":\"test\",\r\n    \"status\":\"PENDING\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/task/manager/update?taskUuid=054a2a81-241b-4336-af55-2db3497c12b4",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"task",
+						"manager",
+						"update"
+					],
+					"query": [
+						{
+							"key": "userUuid",
+							"value": "4afe7fc5-7c65-4ef7-a257-98dcf86c66e1",
+							"disabled": true
+						},
+						{
+							"key": "taskUuid",
+							"value": "054a2a81-241b-4336-af55-2db3497c12b4"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

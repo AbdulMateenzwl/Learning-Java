@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "56efbe7d-85b2-42a2-977e-5540c07f0007",
+		"name": "User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28754159"
+	},
+	"item": [
+		{
+			"name": "Get user Data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JWT}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/api/user",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All User Tasks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{UserJWT}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/api/task/all",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"task",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a User Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{UserJWT}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/api/task/eacd5b01-99e5-4b91-ad64-766e5c732ba9",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"task",
+						"eacd5b01-99e5-4b91-ad64-766e5c732ba9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{UserJWT}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/api/task/update?taskUuid=eacd5b01-99e5-4b91-ad64-766e5c732ba9&status=PENDING",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"task",
+						"update"
+					],
+					"query": [
+						{
+							"key": "taskUuid",
+							"value": "eacd5b01-99e5-4b91-ad64-766e5c732ba9"
+						},
+						{
+							"key": "status",
+							"value": "PENDING"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
