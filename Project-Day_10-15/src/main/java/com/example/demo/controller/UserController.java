@@ -4,10 +4,15 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Stream;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -51,9 +56,49 @@ public class UserController {
         return "Manager or Admin endpoint";
     }
 
-    @PostMapping("/admin/create/user")
+    @Operation(
+            summary = "Create a new user (Admin only)",
+            description = "Allows an administrator to create a new user account with specified details. Requires 'ROLE_ADMIN' authority.",
+            tags = {"User Management"}, // You can add specific tags here
+            security = @SecurityRequirement(name = "Bearer Authentication"), // References your security scheme defined in OpenAPI config
+            responses = {
+                    @io.swagger.v3.oas.annotations.responses.ApiResponse(
+                            responseCode = "201",
+                            description = "User created successfully",
+                            content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
+                                    schema = @Schema(implementation = ApiResponse.class, subTypes = {UserDTO.class}))
+                    ),
+                    @io.swagger.v3.oas.annotations.responses.ApiResponse(
+                            responseCode = "400",
+                            description = "Bad Request: Invalid user data provided",
+                            content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
+                                    schema = @Schema(implementation = ApiResponse.class)) // Assuming ApiResponse handles errors
+                    ),
+                    @io.swagger.v3.oas.annotations.responses.ApiResponse(
+                            responseCode = "401",
+                            description = "Unauthorized: Authentication required",
+                            content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
+                                    schema = @Schema(implementation = ApiResponse.class))
+                    ),
+                    @io.swagger.v3.oas.annotations.responses.ApiResponse(
+                            responseCode = "403",
+                            description = "Forbidden: User does not have 'ROLE_ADMIN' authority",
+                            content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
+                                    schema = @Schema(implementation = ApiResponse.class))
+                    )
+            }
+    )
+    @PostMapping("/create/user")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public ResponseEntity<ApiResponse<UserDTO>> createUser(@RequestBody UserDTO userDTO) {
+    public ResponseEntity<ApiResponse<UserDTO>> createUser(
+            @io.swagger.v3.oas.annotations.parameters.RequestBody(
+                    description = "User details for the new account",
+                    required = true,
+                    content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
+                            schema = @Schema(implementation = UserDTO.class))
+            )
+            @RequestBody UserDTO userDTO
+    ) {
         log.info("Received Request: Creating user with details: {}", userDTO);
         UserDTO createdUser = userService.createUser(userDTO);
         return ApiResponseUtil.created(createdUser, "User created successfully");
