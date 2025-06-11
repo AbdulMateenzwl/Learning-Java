@@ -36,6 +36,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestController
+//add users in endpoint
 @RequestMapping("/api/")
 @RequiredArgsConstructor
 public class UserController {
@@ -88,6 +89,8 @@ public class UserController {
                     )
             }
     )
+    //no need to add /create/user
+    //the endpoint should be: POST /api/users
     @PostMapping("/create/user")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<ApiResponse<UserDTO>> createUser(
@@ -104,7 +107,9 @@ public class UserController {
         return ApiResponseUtil.created(createdUser, "User created successfully");
     }
 
-    @PostMapping("/admin/create/manager")
+    //the endpoint should be: POST /api/users
+    //and if there are multiple impementations then create strategy pattern
+        @PostMapping("/admin/create/manager")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<ApiResponse<UserDTO>> createManager(@RequestBody UserDTO userDTO) {
         log.info("Received Request: Creating manager with details: {}", userDTO);
@@ -113,6 +118,7 @@ public class UserController {
 
     }
 
+    //POST /api/users
     @PostMapping("/admin/create/admin")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<ApiResponse<UserDTO>> createAdmin(@RequestBody UserDTO userDTO) {
@@ -121,6 +127,7 @@ public class UserController {
         return ApiResponseUtil.created(createdUser, "Admin created successfully");
     }
 
+    //PATCH  /api/users
     @PostMapping("/admin/restrict_user")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<ApiResponse<UserDTO>> restrictUser(@RequestParam UUID uuid) {
@@ -129,6 +136,7 @@ public class UserController {
         return ApiResponseUtil.success(userDto, "User restricted successfully");
     }
 
+    //GET /api/users
     @GetMapping("/admin/user/all")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<ApiResponse<Page<UserDTO>>> getAllUsersAndManagers(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "5") int size, @RequestParam(defaultValue = "createdAt,asc") String[] sort) {
@@ -141,6 +149,7 @@ public class UserController {
         return ApiResponseUtil.success(userService.findAllUsersAndManagers(pageable), "Users and Managers retrieved successfully");
     }
 
+    // GET /api/users/roles
     @GetMapping("/admin/user/roles")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<ApiResponse<List<String>>> getAllRoles() {
@@ -148,6 +157,8 @@ public class UserController {
         return ApiResponseUtil.success(Stream.of(UserRole.values()).map(Enum::name).collect(java.util.stream.Collectors.toList()), "Roles retrieved successfully");
     }
 
+    // GET /api/users
+    //remove /user
     @GetMapping("/user")
     @PreAuthorize("hasRole('ROLE_USER')")
     public ResponseEntity<ApiResponse<UserDTO>> getCurrentUser(@RequestHeader("Authorization") String token) {
@@ -156,7 +167,9 @@ public class UserController {
         return ApiResponseUtil.success(userService.findUserByUuid(UUID.fromString(uuid)).get(), "Current user retrieved successfully");
     }
 
-
+    
+    //GET /api/users/
+    //add strategy pattern if same endpoint is used by multiple roles
     @GetMapping("/manager/assigned_user")
     @PreAuthorize("hasRole('ROLE_MANAGER')")
     public ResponseEntity<ApiResponse<Page<UserDTO>>> getAssignedUsers(@RequestHeader("Authorization") String token, @RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "5") int size, @RequestParam(defaultValue = "createdAt,asc") String[] sort) {
