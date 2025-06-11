@@ -29,13 +29,15 @@ import com.example.demo.utils.ApiResponseUtil;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/api/task")
+@RequestMapping("/api/task") //user Plural Nouns
 @RequiredArgsConstructor
 public class TaskController {
     private final JwtService jwtService;
     private final TaskService taskService;
     private final PaginationConfig paginationConfig;
 
+    //there should be no verb in api path
+    //remove create
     @PostMapping("/create")
     @PreAuthorize("hasRole('ROLE_MANAGER')")
     public ResponseEntity<ApiResponse<TaskDTO>> createTask(@RequestBody TaskDTO taskDTO, @RequestHeader("Authorization") String token) {
@@ -43,6 +45,8 @@ public class TaskController {
         return ApiResponseUtil.created(taskService.createTask(taskDTO, uuid), "Task created successfully");
     }
 
+    //remove assign
+    //change PutMapping to PatchMapping as we are just changing the user for that task 
     @PutMapping("/assign")
     @PreAuthorize("hasRole('ROLE_MANAGER')")
     public ResponseEntity<ApiResponse<TaskDTO>> assignTask(@RequestParam UUID taskUuid, @RequestParam UUID userUuid, @RequestHeader("Authorization") String token) {
@@ -50,6 +54,10 @@ public class TaskController {
         return ApiResponseUtil.success(taskService.assignTask(taskUuid, userUuid, UUID.fromString(managerUuid)), "Task assigned successfully");
     }
 
+    //again, no need to add verb 'update'
+    //no need to add /manager
+    //by reading that endpoint, it seems like you are updating a manager not task
+    //to update a task, the endpoint should be PUT /api/tasks/{taskUuid}
     @PutMapping("/manager/update")
     @PreAuthorize("hasRole('ROLE_MANAGER')")
     public ResponseEntity<ApiResponse<TaskDTO>> updateTask(@RequestBody TaskDTO taskDTO, @RequestParam UUID taskUuid, @RequestHeader("Authorization") String token) {
@@ -57,6 +65,7 @@ public class TaskController {
         return ApiResponseUtil.success(taskService.updateTask(taskDTO, taskUuid, UUID.fromString(managerUuid)), "Task updated successfully");
     }
 
+    //the endpoint should be: GET /api/tasks (remove manager/all) 
     @GetMapping("/manager/all")
     @PreAuthorize("hasRole('ROLE_MANAGER')")
     public ResponseEntity<ApiResponse<Page<TaskDTO>>> getManagersAllTasks(@RequestHeader("Authorization") String token, @RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "5") int size, @RequestParam(defaultValue = "createdAt,asc") String[] sort) {
@@ -69,6 +78,13 @@ public class TaskController {
         return ApiResponseUtil.success(taskService.getManagersAllTasks(UUID.fromString(managerUuid), pageable), "Tasks retrieved successfully");
     }
 
+    //the endpoint should be: GET /api/tasks (remove admin/all)
+    //you may implement a strategy pattern 
+    //where TaskService interface can have multiple implementations like
+    //AdminTaskService
+    //ManagerTaskService
+    //UserTaskService
+    //they return the tasks as per required info
     @GetMapping("/admin/all")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<ApiResponse<Page<TaskDTO>>> getAllTasksAdmin(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "5") int size, @RequestParam(defaultValue = "createdAt,asc") String[] sort) {
@@ -79,6 +95,9 @@ public class TaskController {
         return ApiResponseUtil.success(taskService.getAllTasks(pageable), "Retrieved All Tasks successfully");
     }
 
+    //no need to add /all
+    //check above ^ 
+    //the endpoint should be: GET /api/tasks (remove all)
     @GetMapping("/all")
     @PreAuthorize("hasRole('ROLE_USER')")
     public ResponseEntity<ApiResponse<Page<TaskDTO>>> getUsersAllTasks(@RequestHeader("Authorization") String token, @RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "5") int size, @RequestParam(defaultValue = "createdAt,asc") String[] sort) {
@@ -98,6 +117,9 @@ public class TaskController {
         return ApiResponseUtil.success(taskService.getTaskOfUser(UUID.fromString(userUuid), uuid), "Task retrieved successfully");
     }
 
+    //remove update
+    //if there are multiple requirement as per roles
+    //PUT /api/tasks/{taskUuid}
     @PutMapping("/update")
     @PreAuthorize("hasRole('ROLE_USER')")
     public ResponseEntity<ApiResponse<TaskDTO>> updateUserTask(@RequestParam TaskStatus status, @RequestParam UUID taskUuid, @RequestHeader("Authorization") String token) {
