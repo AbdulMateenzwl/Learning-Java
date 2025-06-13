@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+import com.example.demo.config.UserContext;
+import com.example.demo.service.factory.GetUserServiceStrategyFactory;
+import com.example.demo.service.strategy.getuser.GetUserServiceStrategy;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -25,6 +28,8 @@ import lombok.RequiredArgsConstructor;
 public class UserService {
     private final UserRepository userRepository;
     private final UserMapper userMapper;
+    private final GetUserServiceStrategyFactory userServiceStrategyFactory;
+    private final UserContext userContext;
 
     @Transactional
     public UserDTO createUser(UserDTO userDTO) {
@@ -114,5 +119,10 @@ public class UserService {
             return user.get().getManagerUuid().equals(managerUuid);
         }
         return false;
+    }
+
+    public Page<UserDTO> getAllUsers(Pageable pageable) {
+        GetUserServiceStrategy strategy = userServiceStrategyFactory.createStrategy(userContext.getRole());
+        return strategy.getUsers(pageable);
     }
 }
