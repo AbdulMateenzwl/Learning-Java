@@ -4,9 +4,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-import com.example.demo.config.UserContext;
-import com.example.demo.service.factory.GetUserServiceStrategyFactory;
-import com.example.demo.service.strategy.getuser.GetUserServiceStrategy;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -14,11 +11,14 @@ import org.springframework.stereotype.Service;
 import com.example.demo.ENUM.UserRole;
 import com.example.demo.Entity.User;
 import com.example.demo.Mapper.UserMapper;
+import com.example.demo.config.UserContext;
 import com.example.demo.dto.UserDTO;
 import com.example.demo.exceptions.InvalidOperationException;
 import com.example.demo.exceptions.UnauthorizedOperationException;
 import com.example.demo.exceptions.UserNotFoundException;
 import com.example.demo.repository.UserRepository;
+import com.example.demo.service.factory.GetUserServiceStrategyFactory;
+import com.example.demo.service.strategy.getuser.GetUserServiceStrategy;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -33,8 +33,11 @@ public class UserService {
 
     @Transactional
     public UserDTO createUser(UserDTO userDTO) {
-        Optional<User> createdBy = userRepository.findByUuid(userDTO.getManagerUuid());
-        User user = userMapper.toEntity(userDTO, createdBy);
+        User user = userMapper.toEntity(userDTO);
+        if (user.getRole() == UserRole.ROLE_USER) {
+            Optional<User> manager = userRepository.findByUuid(userDTO.getManagerUuid());
+            manager.ifPresent(user::setManager);
+        }
         userRepository.save(user);
         return userMapper.toDTO(user);
     }

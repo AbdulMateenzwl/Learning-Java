@@ -33,26 +33,9 @@ public abstract class UserMapper {
     @Mapping(target = "restricted", source = "restricted")
     @Mapping(target = "createdAt", ignore = true)
     @Mapping(target = "updatedAt", ignore = true)
+    @Mapping(target = "password", expression = "java(passwordEncoder.encode(userDTO.getPassword()))")
     public abstract User toEntity(UserDTO userDTO);
 
-    @Mapping(target = "id", ignore = true)
-    @Mapping(target = "uuid", expression = "java(UUID.randomUUID())")
-    @Mapping(target = "manager", ignore = true)
-    @Mapping(target = "restricted", source = "restricted")
-    @Mapping(target = "createdAt", ignore = true)
-    @Mapping(target = "updatedAt", ignore = true)
-    public abstract User toEntityWithManager(UserDTO userDTO);
-
-    @AfterMapping
-    protected void encodePassword(UserDTO userDTO, @MappingTarget User user) {
-        user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
-    }
-
-    public User toEntity(UserDTO userDTO, Optional<User> managerOpt) {
-        User user = toEntityWithManager(userDTO);
-        managerOpt.ifPresent(user::setManager);
-        return user;
-    }
 
     public abstract List<UserDTO> toDTOs(List<User> users);
 }

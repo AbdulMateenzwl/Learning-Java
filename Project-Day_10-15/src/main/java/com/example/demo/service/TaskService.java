@@ -3,6 +3,7 @@ package com.example.demo.service;
 import java.util.Optional;
 import java.util.UUID;
 
+import com.example.demo.config.UserContext;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -27,12 +28,14 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class TaskService {
     private final UserService userService;
+    private final UserContext userContext;
     private final UserRepository userRepository;
     private final TaskRepository taskRepository;
     private final TaskMapper taskMapper;
 
     @Transactional
-    public TaskDTO createTask(TaskDTO taskDTO, UUID userId) {
+    public TaskDTO createTask(TaskDTO taskDTO) {
+        UUID userId = userContext.getUserId();
         taskDTO.setCreatedBy(userId);
         Optional<User> user = userRepository.findByUuid(userId);
         Task task = taskMapper.toEntity(taskDTO, user);
@@ -45,7 +48,8 @@ public class TaskService {
     }
 
     @Transactional
-    public TaskDTO assignTask(UUID taskId, UUID userID, UUID managerId) {
+    public TaskDTO assignTask(UUID taskId, UUID userID) {
+        UUID managerId = userContext.getUserId();
         Optional<Task> optionalTask = taskRepository.findByUuid(taskId);
         if (optionalTask.isEmpty()) {
             throw new TaskNotFoundException("Task not found");
@@ -72,7 +76,8 @@ public class TaskService {
     }
 
     @Transactional
-    public TaskDTO updateTask(TaskDTO taskDTO, UUID taskId, UUID managerId) {
+    public TaskDTO updateTask(TaskDTO taskDTO, UUID taskId ) {
+        UUID managerId = userContext.getUserId();
         Optional<Task> optionalTask = taskRepository.findByUuid(taskId);
         if (optionalTask.isEmpty()) {
             throw new TaskNotFoundException("Task not found");
@@ -108,7 +113,8 @@ public class TaskService {
         return Optional.ofNullable(taskMapper.toDTO(taskRepository.findByUuid(taskUuid).get()));
     }
 
-    public TaskDTO getTaskOfUser(UUID userUuid, UUID taskUuid) {
+    public TaskDTO getTaskOfUser(UUID taskUuid) {
+        UUID userUuid = userContext.getUserId();
         Task task = this.getTaskOfUserEntity(userUuid, taskUuid);
         return taskMapper.toDTO(task);
     }
@@ -126,7 +132,8 @@ public class TaskService {
     }
 
     @Transactional
-    public TaskDTO updateTaskOfUser(UUID userUuid, UUID taskUuid, TaskStatus status) {
+    public TaskDTO updateTaskOfUser( UUID taskUuid, TaskStatus status) {
+        UUID userUuid = userContext.getUserId();
         Task task = this.getTaskOfUserEntity(userUuid, taskUuid);
         if (task.getStatus() == status) {
             throw new InvalidOperationException("Task is already in the requested status");
