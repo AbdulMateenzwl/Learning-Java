@@ -35,26 +35,6 @@ public class UserService {
     public UserDTO createUser(UserDTO userDTO) {
         Optional<User> createdBy = userRepository.findByUuid(userDTO.getManagerUuid());
         User user = userMapper.toEntity(userDTO, createdBy);
-        user.setRole(UserRole.ROLE_USER);
-
-        userRepository.save(user);
-        return userMapper.toDTO(user);
-    }
-
-    @Transactional
-    public UserDTO createManager(UserDTO userDTO) {
-        User user = userMapper.toEntity(userDTO);
-        user.setRole(UserRole.ROLE_MANAGER);
-
-        userRepository.save(user);
-        return userMapper.toDTO(user);
-    }
-
-    @Transactional
-    public UserDTO createAdmin(UserDTO userDTO) {
-        User user = userMapper.toEntity(userDTO);
-        user.setRole(UserRole.ROLE_ADMIN);
-
         userRepository.save(user);
         return userMapper.toDTO(user);
     }
@@ -124,5 +104,11 @@ public class UserService {
     public Page<UserDTO> getAllUsers(Pageable pageable) {
         GetUserServiceStrategy strategy = userServiceStrategyFactory.createStrategy(userContext.getRole());
         return strategy.getUsers(pageable);
+    }
+
+    public UserDTO getCurrentUser() {
+        UUID userId = userContext.getUserId();
+        return findUserByUuid(userId)
+                .orElseThrow(() -> new UserNotFoundException("Current user not found"));
     }
 }
