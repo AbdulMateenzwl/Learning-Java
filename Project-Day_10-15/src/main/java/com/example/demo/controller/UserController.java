@@ -9,12 +9,11 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.demo.ENUM.UserRole;
+import com.example.demo.enums.UserRole;
 import com.example.demo.config.PaginationConfig;
 import com.example.demo.dto.ApiResponse;
 import com.example.demo.dto.UserDTO;
@@ -22,10 +21,6 @@ import com.example.demo.service.JwtService;
 import com.example.demo.service.UserService;
 import com.example.demo.utils.ApiResponseUtil;
 
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -57,7 +52,6 @@ public class UserController {
     @GetMapping("/roles")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<ApiResponse<List<String>>> getAllRoles() {
-        log.info("Received Request: Retrieving all user roles");
         return ApiResponseUtil.success(Stream.of(UserRole.values()).map(Enum::name).collect(java.util.stream.Collectors.toList()), "Roles retrieved successfully");
     }
 

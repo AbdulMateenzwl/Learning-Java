@@ -2,9 +2,9 @@ package com.example.demo.service.factory;
 
 import org.springframework.stereotype.Component;
 
-import com.example.demo.ENUM.UserRole;
+import com.example.demo.enums.UserRole;
 import com.example.demo.service.strategy.getuser.AdminGetUserServiceStrategy;
-import com.example.demo.service.strategy.getuser.ManagerUserServiceStrategy;
+import com.example.demo.service.strategy.getuser.ManagerGetUserServiceStrategy;
 import com.example.demo.service.strategy.getuser.GetUserServiceStrategy;
 
 import lombok.RequiredArgsConstructor;
@@ -13,7 +13,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class GetUserServiceStrategyFactory {
     private final AdminGetUserServiceStrategy adminUserServiceStrategy;
-    private final ManagerUserServiceStrategy managerUserServiceStrategy;
+    private final ManagerGetUserServiceStrategy managerUserServiceStrategy;
 
     public GetUserServiceStrategy createStrategy(UserRole role) {
         return switch (role) {

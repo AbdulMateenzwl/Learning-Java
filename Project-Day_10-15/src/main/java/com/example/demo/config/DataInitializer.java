@@ -1,7 +1,7 @@
 package com.example.demo.config;
 
-import com.example.demo.ENUM.UserRole;
-import com.example.demo.Entity.User;
+import com.example.demo.enums.UserRole;
+import com.example.demo.entity.User;
 import com.example.demo.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;

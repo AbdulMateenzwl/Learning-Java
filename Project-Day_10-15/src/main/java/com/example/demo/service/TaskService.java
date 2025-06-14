@@ -8,16 +8,16 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.ENUM.TaskStatus;
-import com.example.demo.Entity.Task;
-import com.example.demo.Entity.User;
-import com.example.demo.Mapper.TaskMapper;
+import com.example.demo.enums.TaskStatus;
 import com.example.demo.dto.TaskDTO;
+import com.example.demo.entity.Task;
+import com.example.demo.entity.User;
 import com.example.demo.exceptions.InvalidOperationException;
 import com.example.demo.exceptions.TaskAlreadyAssignedException;
 import com.example.demo.exceptions.TaskNotFoundException;
 import com.example.demo.exceptions.UnauthorizedOperationException;
 import com.example.demo.exceptions.UserNotFoundException;
+import com.example.demo.mapper.TaskMapper;
 import com.example.demo.repository.TaskRepository;
 import com.example.demo.repository.UserRepository;
 

@@ -1,18 +1,18 @@
 package com.example.demo.service.strategy.getuser;
 
-import com.example.demo.ENUM.UserRole;
-import com.example.demo.Entity.User;
-import com.example.demo.Mapper.UserMapper;
-import com.example.demo.repository.UserRepository;
+import java.util.List;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
+import com.example.demo.enums.UserRole;
 import com.example.demo.dto.UserDTO;
+import com.example.demo.entity.User;
+import com.example.demo.mapper.UserMapper;
+import com.example.demo.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
-
-import java.util.List;
 
 @Component
 @RequiredArgsConstructor

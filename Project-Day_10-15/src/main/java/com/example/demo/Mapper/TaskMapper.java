@@ -1,4 +1,4 @@
-package com.example.demo.Mapper;
+package com.example.demo.mapper;
 
 import java.util.List;
 import java.util.Optional;
@@ -9,9 +9,9 @@ import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.NullValuePropertyMappingStrategy;
 
-import com.example.demo.Entity.Task;
-import com.example.demo.Entity.User;
 import com.example.demo.dto.TaskDTO;
+import com.example.demo.entity.Task;
+import com.example.demo.entity.User;
 
 @Mapper(componentModel = "spring")
 public abstract class TaskMapper {

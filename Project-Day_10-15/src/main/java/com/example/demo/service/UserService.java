@@ -8,14 +8,14 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.ENUM.UserRole;
-import com.example.demo.Entity.User;
-import com.example.demo.Mapper.UserMapper;
+import com.example.demo.enums.UserRole;
 import com.example.demo.config.UserContext;
 import com.example.demo.dto.UserDTO;
+import com.example.demo.entity.User;
 import com.example.demo.exceptions.InvalidOperationException;
 import com.example.demo.exceptions.UnauthorizedOperationException;
 import com.example.demo.exceptions.UserNotFoundException;
+import com.example.demo.mapper.UserMapper;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.factory.GetUserServiceStrategyFactory;
 import com.example.demo.service.strategy.getuser.GetUserServiceStrategy;

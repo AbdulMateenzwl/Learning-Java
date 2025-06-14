@@ -1,4 +1,4 @@
-package com.example.demo.Entity;
+package com.example.demo.entity;
 
 import java.time.Instant;
 import java.util.Collection;
@@ -12,7 +12,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.example.demo.ENUM.UserRole;
+import com.example.demo.enums.UserRole;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

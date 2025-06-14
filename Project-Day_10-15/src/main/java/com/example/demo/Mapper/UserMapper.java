@@ -1,4 +1,4 @@
-package com.example.demo.Mapper;
+package com.example.demo.mapper;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,8 +10,8 @@ import org.mapstruct.MappingTarget;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.example.demo.Entity.User;
 import com.example.demo.dto.UserDTO;
+import com.example.demo.entity.User;
 
 @Mapper(componentModel = "spring")
 public abstract class UserMapper {

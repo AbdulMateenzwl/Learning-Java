@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.demo.ENUM.TaskStatus;
+import com.example.demo.enums.TaskStatus;
 import com.example.demo.config.PaginationConfig;
 import com.example.demo.dto.ApiResponse;
 import com.example.demo.dto.TaskDTO;

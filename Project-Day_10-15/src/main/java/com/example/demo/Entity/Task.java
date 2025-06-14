@@ -1,6 +1,6 @@
-package com.example.demo.Entity;
+package com.example.demo.entity;
 
-import com.example.demo.ENUM.TaskStatus;
+import com.example.demo.enums.TaskStatus;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDateTime;

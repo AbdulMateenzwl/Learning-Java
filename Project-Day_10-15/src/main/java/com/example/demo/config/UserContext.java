@@ -1,8 +1,8 @@
 package com.example.demo.config;
 
-import com.example.demo.ENUM.UserRole;
-import com.example.demo.Entity.User;
-import io.jsonwebtoken.Claims;
+import com.example.demo.enums.UserRole;
+import com.example.demo.entity.User;
+
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 

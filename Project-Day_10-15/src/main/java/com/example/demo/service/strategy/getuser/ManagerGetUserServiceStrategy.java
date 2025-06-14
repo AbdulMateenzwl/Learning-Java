@@ -2,21 +2,21 @@ package com.example.demo.service.strategy.getuser;
 
 import java.util.UUID;
 
-import com.example.demo.Entity.User;
-import com.example.demo.Mapper.UserMapper;
-import com.example.demo.config.UserContext;
-import com.example.demo.repository.UserRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
+import com.example.demo.config.UserContext;
 import com.example.demo.dto.UserDTO;
+import com.example.demo.entity.User;
+import com.example.demo.mapper.UserMapper;
+import com.example.demo.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 
 @Component
 @RequiredArgsConstructor
-public class ManagerUserServiceStrategy implements GetUserServiceStrategy {
+public class ManagerGetUserServiceStrategy implements GetUserServiceStrategy {
 
     private final UserRepository userRepository;
     private final UserMapper userMapper;
