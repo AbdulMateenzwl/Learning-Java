@@ -4914,3 +4914,745 @@ Caused by: org.postgresql.util.PSQLException: ERROR: relation "tasks" already ex
         (?, ?, ?, ?, ?, ?, ?, ?)
 2025-06-14 11:43:39,912 [http-nio-8080-exec-2] [trace=8c833804-326d-4654-a7d9-3484925048d3] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: TaskService.createTask [duration: 15ms, correlationId: 8c833804-326d-4654-a7d9-3484925048d3]
 2025-06-14 11:43:39,921 [http-nio-8080-exec-2] [trace=8c833804-326d-4654-a7d9-3484925048d3] INFO  c.e.d.i.RequestLoggingInterceptor - Request processed: POST /api/tasks [status: 200, duration: 28ms]
+2025-06-14 12:16:17,718 [main] [trace=] INFO  com.example.demo.DemoApplication - Starting DemoApplication using Java 23.0.1 with PID 4952 (F:\Projects\Learning Java\Project-Day_10-15\target\classes started by Mateen in F:\Projects\Learning Java\Project-Day_10-15)
+2025-06-14 12:16:17,724 [main] [trace=] DEBUG com.example.demo.DemoApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-06-14 12:16:17,727 [main] [trace=] INFO  com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-14 12:16:20,156 [main] [trace=] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-14 12:16:20,262 [main] [trace=] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 92 ms. Found 2 JPA repository interfaces.
+2025-06-14 12:16:22,075 [main] [trace=] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-14 12:16:22,111 [main] [trace=] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-06-14 12:16:22,116 [main] [trace=] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-14 12:16:22,116 [main] [trace=] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-06-14 12:16:22,244 [main] [trace=] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-14 12:16:22,245 [main] [trace=] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4378 ms
+2025-06-14 12:16:22,617 [main] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-14 12:16:23,084 [main] [trace=] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@60b616c8
+2025-06-14 12:16:23,090 [main] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-14 12:16:23,629 [main] [trace=] INFO  liquibase.database - Set default schema name to public
+2025-06-14 12:16:24,658 [main] [trace=] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-06-14 12:16:24,856 [main] [trace=] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-06-14 12:16:24,866 [main] [trace=] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-06-14 12:16:24,887 [main] [trace=] INFO  liquibase.util - UPDATE SUMMARY
+2025-06-14 12:16:24,888 [main] [trace=] INFO  liquibase.util - Run:                          0
+2025-06-14 12:16:24,888 [main] [trace=] INFO  liquibase.util - Previously run:               2
+2025-06-14 12:16:24,889 [main] [trace=] INFO  liquibase.util - Filtered out:                 0
+2025-06-14 12:16:24,889 [main] [trace=] INFO  liquibase.util - -------------------------------
+2025-06-14 12:16:24,889 [main] [trace=] INFO  liquibase.util - Total change sets:            2
+2025-06-14 12:16:24,891 [main] [trace=] INFO  liquibase.util - Update summary generated
+2025-06-14 12:16:24,892 [main] [trace=] INFO  liquibase.command - Command execution complete
+2025-06-14 12:16:25,201 [main] [trace=] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-14 12:16:25,301 [main] [trace=] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-06-14 12:16:25,336 [main] [trace=] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-14 12:16:25,749 [main] [trace=] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-14 12:16:25,875 [main] [trace=] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.13
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-14 12:16:27,023 [main] [trace=] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-14 12:16:27,026 [main] [trace=] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14 12:16:27,663 [main] [trace=] DEBUG c.e.d.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-06-14 12:16:27,759 [main] [trace=] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-14 12:16:27,760 [main] [trace=] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-14 12:16:28,025 [main] [trace=] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-14 12:16:28,644 [main] [trace=] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-06-14 12:16:29,163 [main] [trace=] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-06-14 12:16:29,198 [main] [trace=] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-06-14 12:16:29,211 [main] [trace=] INFO  com.example.demo.DemoApplication - Started DemoApplication in 13.018 seconds (process running for 14.281)
+2025-06-14 12:16:29,433 [main] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-14 12:16:29,487 [main] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-14 12:16:33,690 [http-nio-8080-exec-2] [trace=] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-14 12:16:33,691 [http-nio-8080-exec-2] [trace=] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-14 12:16:33,693 [http-nio-8080-exec-2] [trace=] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-06-14 12:16:33,754 [http-nio-8080-exec-2] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-14 12:16:33,911 [http-nio-8080-exec-2] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 156ms, correlationId: null]
+2025-06-14 12:16:33,917 [http-nio-8080-exec-2] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-14 12:16:33,946 [http-nio-8080-exec-2] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-14 12:16:33,958 [http-nio-8080-exec-2] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 11ms, correlationId: null]
+2025-06-14 12:16:33,976 [http-nio-8080-exec-2] [trace=2e226606-2215-44de-8d91-c5231f977515] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: PATCH /api/users/8048387c-f6e8-4bca-9caa-1ac11fe372ac [correlationId: 2e226606-2215-44de-8d91-c5231f977515]
+2025-06-14 12:16:34,042 [http-nio-8080-exec-2] [trace=2e226606-2215-44de-8d91-c5231f977515] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: UserService.restrictUser [correlationId: 2e226606-2215-44de-8d91-c5231f977515]
+2025-06-14 12:16:34,046 [http-nio-8080-exec-2] [trace=2e226606-2215-44de-8d91-c5231f977515] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.uuid=?
+2025-06-14 12:16:34,051 [http-nio-8080-exec-2] [trace=2e226606-2215-44de-8d91-c5231f977515] ERROR c.e.demo.aspect.ServiceLoggingAspect - Error in service method: UserService.restrictUser [error: User not found, correlationId: 2e226606-2215-44de-8d91-c5231f977515]
+2025-06-14 12:23:22,750 [SpringApplicationShutdownHook] [trace=] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-14 12:23:22,766 [tomcat-shutdown] [trace=] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-14 12:23:22,775 [SpringApplicationShutdownHook] [trace=] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14 12:23:22,782 [SpringApplicationShutdownHook] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-14 12:23:22,795 [SpringApplicationShutdownHook] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-14 12:25:26,690 [main] [trace=] INFO  com.example.demo.DemoApplication - Starting DemoApplication using Java 23.0.1 with PID 20348 (F:\Projects\Learning Java\Project-Day_10-15\target\classes started by Mateen in F:\Projects\Learning Java\Project-Day_10-15)
+2025-06-14 12:25:26,697 [main] [trace=] DEBUG com.example.demo.DemoApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-06-14 12:25:26,699 [main] [trace=] INFO  com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-14 12:25:28,782 [main] [trace=] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-14 12:25:28,858 [main] [trace=] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 58 ms. Found 2 JPA repository interfaces.
+2025-06-14 12:25:30,368 [main] [trace=] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-14 12:25:30,409 [main] [trace=] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-06-14 12:25:30,418 [main] [trace=] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-14 12:25:30,418 [main] [trace=] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-06-14 12:25:30,540 [main] [trace=] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-14 12:25:30,540 [main] [trace=] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3610 ms
+2025-06-14 12:25:30,930 [main] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-14 12:25:31,319 [main] [trace=] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@39f42d0e
+2025-06-14 12:25:31,324 [main] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-14 12:25:31,722 [main] [trace=] INFO  liquibase.database - Set default schema name to public
+2025-06-14 12:25:32,564 [main] [trace=] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-06-14 12:25:32,685 [main] [trace=] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-06-14 12:25:32,694 [main] [trace=] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-06-14 12:25:32,716 [main] [trace=] INFO  liquibase.util - UPDATE SUMMARY
+2025-06-14 12:25:32,716 [main] [trace=] INFO  liquibase.util - Run:                          0
+2025-06-14 12:25:32,717 [main] [trace=] INFO  liquibase.util - Previously run:               2
+2025-06-14 12:25:32,717 [main] [trace=] INFO  liquibase.util - Filtered out:                 0
+2025-06-14 12:25:32,717 [main] [trace=] INFO  liquibase.util - -------------------------------
+2025-06-14 12:25:32,717 [main] [trace=] INFO  liquibase.util - Total change sets:            2
+2025-06-14 12:25:32,723 [main] [trace=] INFO  liquibase.util - Update summary generated
+2025-06-14 12:25:32,725 [main] [trace=] INFO  liquibase.command - Command execution complete
+2025-06-14 12:25:33,031 [main] [trace=] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-14 12:25:33,109 [main] [trace=] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-06-14 12:25:33,169 [main] [trace=] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-14 12:25:33,562 [main] [trace=] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-14 12:25:33,646 [main] [trace=] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.13
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-14 12:25:34,651 [main] [trace=] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-14 12:25:34,653 [main] [trace=] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14 12:25:35,398 [main] [trace=] DEBUG c.e.d.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-06-14 12:25:35,512 [main] [trace=] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-14 12:25:35,513 [main] [trace=] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-14 12:25:35,813 [main] [trace=] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-14 12:25:36,541 [main] [trace=] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-06-14 12:25:36,998 [main] [trace=] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-06-14 12:25:37,019 [main] [trace=] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-06-14 12:25:37,031 [main] [trace=] INFO  com.example.demo.DemoApplication - Started DemoApplication in 11.624 seconds (process running for 12.372)
+2025-06-14 12:25:37,242 [main] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-14 12:25:37,326 [main] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-14 12:25:39,924 [http-nio-8080-exec-4] [trace=] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-14 12:25:39,926 [http-nio-8080-exec-4] [trace=] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-14 12:25:39,929 [http-nio-8080-exec-4] [trace=] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-06-14 12:25:39,989 [http-nio-8080-exec-4] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-14 12:25:40,142 [http-nio-8080-exec-4] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 151ms, correlationId: null]
+2025-06-14 12:25:40,147 [http-nio-8080-exec-4] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-14 12:25:40,168 [http-nio-8080-exec-4] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-14 12:25:40,181 [http-nio-8080-exec-4] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 12ms, correlationId: null]
+2025-06-14 12:25:40,232 [http-nio-8080-exec-4] [trace=7613e2b1-901c-4b10-a86e-1ee2d32c7e99] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: GET /api/tasks [correlationId: 7613e2b1-901c-4b10-a86e-1ee2d32c7e99]
+2025-06-14 12:25:40,327 [http-nio-8080-exec-4] [trace=7613e2b1-901c-4b10-a86e-1ee2d32c7e99] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: TaskService.getAllTasks [correlationId: 7613e2b1-901c-4b10-a86e-1ee2d32c7e99]
+2025-06-14 12:25:40,397 [http-nio-8080-exec-4] [trace=7613e2b1-901c-4b10-a86e-1ee2d32c7e99] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.assigned_to,
+        t1_0.created_at,
+        t1_0.created_by,
+        t1_0.description,
+        t1_0.status,
+        t1_0.title,
+        t1_0.updated_at,
+        t1_0.uuid 
+    from
+        tasks t1_0 
+    order by
+        t1_0.created_at 
+    offset
+        ? rows 
+    fetch
+        first ? rows only
+2025-06-14 12:25:40,425 [http-nio-8080-exec-4] [trace=7613e2b1-901c-4b10-a86e-1ee2d32c7e99] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.email,
+        m1_0.manager_id,
+        m1_0.password,
+        m1_0.is_restricted,
+        m1_0.role,
+        m1_0.updated_at,
+        m1_0.uuid,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    left join
+        users m1_0 
+            on m1_0.id=u1_0.manager_id 
+    where
+        u1_0.id=?
+2025-06-14 12:25:40,476 [http-nio-8080-exec-4] [trace=7613e2b1-901c-4b10-a86e-1ee2d32c7e99] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: TaskService.getAllTasks [duration: 148ms, correlationId: 7613e2b1-901c-4b10-a86e-1ee2d32c7e99]
+2025-06-14 12:25:40,596 [http-nio-8080-exec-4] [trace=7613e2b1-901c-4b10-a86e-1ee2d32c7e99] WARN  o.s.d.w.c.SpringDataJacksonConfiguration$PageModule$WarningLoggingModifier - Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2025-06-14 12:25:40,663 [http-nio-8080-exec-4] [trace=7613e2b1-901c-4b10-a86e-1ee2d32c7e99] INFO  c.e.d.i.RequestLoggingInterceptor - Request processed: GET /api/tasks [status: 200, duration: 430ms]
+2025-06-14 12:26:50,649 [SpringApplicationShutdownHook] [trace=] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-14 12:26:50,669 [tomcat-shutdown] [trace=] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-14 12:26:50,677 [SpringApplicationShutdownHook] [trace=] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14 12:26:50,680 [SpringApplicationShutdownHook] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-14 12:26:50,686 [SpringApplicationShutdownHook] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-14 12:26:58,453 [main] [trace=] INFO  com.example.demo.DemoApplication - Starting DemoApplication using Java 23.0.1 with PID 18684 (F:\Projects\Learning Java\Project-Day_10-15\target\classes started by Mateen in F:\Projects\Learning Java\Project-Day_10-15)
+2025-06-14 12:26:58,461 [main] [trace=] DEBUG com.example.demo.DemoApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-06-14 12:26:58,469 [main] [trace=] INFO  com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-14 12:27:00,410 [main] [trace=] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-14 12:27:00,528 [main] [trace=] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 97 ms. Found 2 JPA repository interfaces.
+2025-06-14 12:27:02,022 [main] [trace=] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-14 12:27:02,047 [main] [trace=] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-06-14 12:27:02,055 [main] [trace=] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-14 12:27:02,056 [main] [trace=] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-06-14 12:27:02,168 [main] [trace=] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-14 12:27:02,170 [main] [trace=] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3553 ms
+2025-06-14 12:27:02,557 [main] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-14 12:27:02,921 [main] [trace=] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@60b616c8
+2025-06-14 12:27:02,923 [main] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-14 12:27:03,232 [main] [trace=] INFO  liquibase.database - Set default schema name to public
+2025-06-14 12:27:04,101 [main] [trace=] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-06-14 12:27:04,215 [main] [trace=] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-06-14 12:27:04,220 [main] [trace=] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-06-14 12:27:04,238 [main] [trace=] INFO  liquibase.util - UPDATE SUMMARY
+2025-06-14 12:27:04,239 [main] [trace=] INFO  liquibase.util - Run:                          0
+2025-06-14 12:27:04,239 [main] [trace=] INFO  liquibase.util - Previously run:               2
+2025-06-14 12:27:04,239 [main] [trace=] INFO  liquibase.util - Filtered out:                 0
+2025-06-14 12:27:04,239 [main] [trace=] INFO  liquibase.util - -------------------------------
+2025-06-14 12:27:04,239 [main] [trace=] INFO  liquibase.util - Total change sets:            2
+2025-06-14 12:27:04,243 [main] [trace=] INFO  liquibase.util - Update summary generated
+2025-06-14 12:27:04,246 [main] [trace=] INFO  liquibase.command - Command execution complete
+2025-06-14 12:27:04,478 [main] [trace=] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-14 12:27:04,608 [main] [trace=] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-06-14 12:27:04,697 [main] [trace=] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-14 12:27:05,109 [main] [trace=] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-14 12:27:05,204 [main] [trace=] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.13
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-14 12:27:06,244 [main] [trace=] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-14 12:27:06,246 [main] [trace=] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14 12:27:07,065 [main] [trace=] DEBUG c.e.d.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-06-14 12:27:07,197 [main] [trace=] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-14 12:27:07,198 [main] [trace=] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-14 12:27:07,614 [main] [trace=] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-14 12:27:08,496 [main] [trace=] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-06-14 12:27:09,118 [main] [trace=] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-06-14 12:27:09,155 [main] [trace=] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-06-14 12:27:09,169 [main] [trace=] INFO  com.example.demo.DemoApplication - Started DemoApplication in 12.153 seconds (process running for 12.986)
+2025-06-14 12:27:09,630 [main] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-14 12:27:09,708 [main] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-14 12:30:25,300 [http-nio-8080-exec-2] [trace=] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-14 12:30:25,300 [http-nio-8080-exec-2] [trace=] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-14 12:30:25,300 [http-nio-8080-exec-2] [trace=] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-06-14 12:30:25,341 [http-nio-8080-exec-2] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-14 12:30:25,448 [http-nio-8080-exec-2] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 107ms, correlationId: null]
+2025-06-14 12:30:25,456 [http-nio-8080-exec-2] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-14 12:30:25,463 [http-nio-8080-exec-2] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-14 12:30:25,469 [http-nio-8080-exec-2] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 6ms, correlationId: null]
+2025-06-14 12:30:25,480 [http-nio-8080-exec-2] [trace=4831079e-3387-4cd1-963e-39111991f0de] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: GET /api/users [correlationId: 4831079e-3387-4cd1-963e-39111991f0de]
+2025-06-14 12:30:25,546 [http-nio-8080-exec-2] [trace=4831079e-3387-4cd1-963e-39111991f0de] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: UserService.getAllUsers [correlationId: 4831079e-3387-4cd1-963e-39111991f0de]
+2025-06-14 12:30:25,562 [http-nio-8080-exec-2] [trace=4831079e-3387-4cd1-963e-39111991f0de] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.role in (?, ?) 
+    order by
+        u1_0.created_at 
+    fetch
+        first ? rows only
+2025-06-14 12:30:25,578 [http-nio-8080-exec-2] [trace=4831079e-3387-4cd1-963e-39111991f0de] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: UserService.getAllUsers [duration: 32ms, correlationId: 4831079e-3387-4cd1-963e-39111991f0de]
+2025-06-14 12:30:25,652 [http-nio-8080-exec-2] [trace=4831079e-3387-4cd1-963e-39111991f0de] WARN  o.s.d.w.c.SpringDataJacksonConfiguration$PageModule$WarningLoggingModifier - Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2025-06-14 12:30:25,677 [http-nio-8080-exec-2] [trace=4831079e-3387-4cd1-963e-39111991f0de] INFO  c.e.d.i.RequestLoggingInterceptor - Request processed: GET /api/users [status: 200, duration: 197ms]
+2025-06-14 12:30:38,815 [http-nio-8080-exec-3] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-14 12:30:38,815 [http-nio-8080-exec-3] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 0ms, correlationId: null]
+2025-06-14 12:30:38,815 [http-nio-8080-exec-3] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-14 12:30:38,828 [http-nio-8080-exec-3] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-14 12:30:38,832 [http-nio-8080-exec-3] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 4ms, correlationId: null]
+2025-06-14 12:30:38,833 [http-nio-8080-exec-3] [trace=891c6336-8b97-4a2b-892e-f431fde77b5a] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: GET /api/users [correlationId: 891c6336-8b97-4a2b-892e-f431fde77b5a]
+2025-06-14 12:30:38,836 [http-nio-8080-exec-3] [trace=891c6336-8b97-4a2b-892e-f431fde77b5a] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: UserService.getAllUsers [correlationId: 891c6336-8b97-4a2b-892e-f431fde77b5a]
+2025-06-14 12:30:38,840 [http-nio-8080-exec-3] [trace=891c6336-8b97-4a2b-892e-f431fde77b5a] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.role in (?, ?) 
+    order by
+        u1_0.created_at 
+    offset
+        ? rows 
+    fetch
+        first ? rows only
+2025-06-14 12:30:38,848 [http-nio-8080-exec-3] [trace=891c6336-8b97-4a2b-892e-f431fde77b5a] DEBUG org.hibernate.SQL - 
+    select
+        count(u1_0.id) 
+    from
+        users u1_0 
+    where
+        u1_0.role in (?, ?)
+2025-06-14 12:30:38,853 [http-nio-8080-exec-3] [trace=891c6336-8b97-4a2b-892e-f431fde77b5a] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: UserService.getAllUsers [duration: 16ms, correlationId: 891c6336-8b97-4a2b-892e-f431fde77b5a]
+2025-06-14 12:30:38,857 [http-nio-8080-exec-3] [trace=891c6336-8b97-4a2b-892e-f431fde77b5a] INFO  c.e.d.i.RequestLoggingInterceptor - Request processed: GET /api/users [status: 200, duration: 23ms]
+2025-06-14 12:38:38,847 [SpringApplicationShutdownHook] [trace=] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-14 12:38:38,860 [tomcat-shutdown] [trace=] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-14 12:38:38,866 [SpringApplicationShutdownHook] [trace=] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14 12:38:38,871 [SpringApplicationShutdownHook] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-14 12:38:38,879 [SpringApplicationShutdownHook] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-14 12:40:29,855 [main] [trace=] INFO  com.example.demo.DemoApplication - Starting DemoApplication using Java 23.0.1 with PID 14536 (F:\Projects\Learning Java\Project-Day_10-15\target\classes started by Mateen in F:\Projects\Learning Java\Project-Day_10-15)
+2025-06-14 12:40:29,862 [main] [trace=] DEBUG com.example.demo.DemoApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-06-14 12:40:29,864 [main] [trace=] INFO  com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-14 12:40:33,026 [main] [trace=] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-14 12:40:33,100 [main] [trace=] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 58 ms. Found 2 JPA repository interfaces.
+2025-06-14 12:40:34,810 [main] [trace=] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-14 12:40:34,832 [main] [trace=] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-06-14 12:40:34,840 [main] [trace=] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-14 12:40:34,840 [main] [trace=] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-06-14 12:40:34,955 [main] [trace=] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-14 12:40:34,957 [main] [trace=] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4928 ms
+2025-06-14 12:40:35,325 [main] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-14 12:40:35,699 [main] [trace=] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@852ef8d
+2025-06-14 12:40:35,702 [main] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-14 12:40:36,031 [main] [trace=] INFO  liquibase.database - Set default schema name to public
+2025-06-14 12:40:36,844 [main] [trace=] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-06-14 12:40:36,969 [main] [trace=] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-06-14 12:40:36,972 [main] [trace=] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-06-14 12:40:36,986 [main] [trace=] INFO  liquibase.util - UPDATE SUMMARY
+2025-06-14 12:40:36,986 [main] [trace=] INFO  liquibase.util - Run:                          0
+2025-06-14 12:40:36,987 [main] [trace=] INFO  liquibase.util - Previously run:               2
+2025-06-14 12:40:36,988 [main] [trace=] INFO  liquibase.util - Filtered out:                 0
+2025-06-14 12:40:36,989 [main] [trace=] INFO  liquibase.util - -------------------------------
+2025-06-14 12:40:36,989 [main] [trace=] INFO  liquibase.util - Total change sets:            2
+2025-06-14 12:40:36,992 [main] [trace=] INFO  liquibase.util - Update summary generated
+2025-06-14 12:40:36,993 [main] [trace=] INFO  liquibase.command - Command execution complete
+2025-06-14 12:40:37,276 [main] [trace=] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-14 12:40:37,394 [main] [trace=] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-06-14 12:40:37,524 [main] [trace=] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-14 12:40:38,171 [main] [trace=] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-14 12:40:38,302 [main] [trace=] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.13
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-14 12:40:39,348 [main] [trace=] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-14 12:40:39,351 [main] [trace=] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14 12:40:40,021 [main] [trace=] DEBUG c.e.d.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-06-14 12:40:40,133 [main] [trace=] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-14 12:40:40,133 [main] [trace=] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-14 12:40:40,435 [main] [trace=] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-14 12:40:41,138 [main] [trace=] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-06-14 12:40:41,594 [main] [trace=] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-06-14 12:40:41,635 [main] [trace=] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-06-14 12:40:41,651 [main] [trace=] INFO  com.example.demo.DemoApplication - Started DemoApplication in 13.985 seconds (process running for 15.88)
+2025-06-14 12:40:41,949 [main] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-14 12:40:42,022 [main] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-14 12:47:06,096 [SpringApplicationShutdownHook] [trace=] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-14 12:47:06,123 [tomcat-shutdown] [trace=] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-14 12:47:06,131 [SpringApplicationShutdownHook] [trace=] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14 12:47:06,137 [SpringApplicationShutdownHook] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-14 12:47:49,607 [main] [trace=] INFO  com.example.demo.DemoApplication - Starting DemoApplication using Java 23.0.1 with PID 6108 (F:\Projects\Learning Java\Project-Day_10-15\target\classes started by Mateen in F:\Projects\Learning Java\Project-Day_10-15)
+2025-06-14 12:47:49,640 [main] [trace=] DEBUG com.example.demo.DemoApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-06-14 12:47:49,648 [main] [trace=] INFO  com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-14 12:47:51,131 [main] [trace=] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalArgumentException: Docker Compose file '.\docker-compose.yml' does not exist
+	at org.springframework.util.Assert.isTrue(Assert.java:135)
+	at org.springframework.boot.docker.compose.core.DockerComposeFile.of(DockerComposeFile.java:148)
+	at org.springframework.boot.docker.compose.lifecycle.DockerComposeLifecycleManager.getComposeFile(DockerComposeLifecycleManager.java:152)
+	at org.springframework.boot.docker.compose.lifecycle.DockerComposeLifecycleManager.start(DockerComposeLifecycleManager.java:111)
+	at org.springframework.boot.docker.compose.lifecycle.DockerComposeListener.onApplicationEvent(DockerComposeListener.java:53)
+	at org.springframework.boot.docker.compose.lifecycle.DockerComposeListener.onApplicationEvent(DockerComposeListener.java:35)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:185)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:178)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:156)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:138)
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
+	at org.springframework.boot.context.event.EventPublishingRunListener.contextLoaded(EventPublishingRunListener.java:98)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$contextLoaded$4(SpringApplicationRunListeners.java:72)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
+	at org.springframework.boot.SpringApplicationRunListeners.contextLoaded(SpringApplicationRunListeners.java:72)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:416)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:317)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351)
+	at com.example.demo.DemoApplication.main(DemoApplication.java:10)
+2025-06-14 12:48:34,727 [main] [trace=] INFO  com.example.demo.DemoApplication - Starting DemoApplication using Java 23.0.1 with PID 23440 (F:\Projects\Learning Java\Project-Day_10-15\target\classes started by Mateen in F:\Projects\Learning Java\Project-Day_10-15)
+2025-06-14 12:48:34,733 [main] [trace=] DEBUG com.example.demo.DemoApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-06-14 12:48:34,737 [main] [trace=] INFO  com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-14 12:48:35,014 [main] [trace=] INFO  o.s.b.d.c.l.DockerComposeLifecycleManager - Using Docker Compose file F:\Projects\Learning Java\Project-Day_10-15\docker-compose.yaml
+2025-06-14 12:48:37,765 [main] [trace=] INFO  o.s.b.d.c.l.DockerComposeLifecycleManager - There are already Docker Compose services running, skipping startup
+2025-06-14 12:48:40,625 [main] [trace=] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-14 12:48:40,729 [main] [trace=] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 88 ms. Found 2 JPA repository interfaces.
+2025-06-14 12:48:44,508 [main] [trace=] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-14 12:48:44,528 [main] [trace=] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-06-14 12:48:44,533 [main] [trace=] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-14 12:48:44,534 [main] [trace=] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-06-14 12:48:44,699 [main] [trace=] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-14 12:48:44,700 [main] [trace=] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6699 ms
+2025-06-14 12:48:45,893 [main] [trace=] INFO  liquibase.database - Set default schema name to public
+2025-06-14 12:48:46,784 [main] [trace=] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-06-14 12:48:46,934 [main] [trace=] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-06-14 12:48:46,939 [main] [trace=] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-06-14 12:48:46,964 [main] [trace=] INFO  liquibase.util - UPDATE SUMMARY
+2025-06-14 12:48:46,964 [main] [trace=] INFO  liquibase.util - Run:                          0
+2025-06-14 12:48:46,966 [main] [trace=] INFO  liquibase.util - Previously run:               2
+2025-06-14 12:48:46,966 [main] [trace=] INFO  liquibase.util - Filtered out:                 0
+2025-06-14 12:48:46,968 [main] [trace=] INFO  liquibase.util - -------------------------------
+2025-06-14 12:48:46,969 [main] [trace=] INFO  liquibase.util - Total change sets:            2
+2025-06-14 12:48:46,973 [main] [trace=] INFO  liquibase.util - Update summary generated
+2025-06-14 12:48:46,978 [main] [trace=] INFO  liquibase.command - Command execution complete
+2025-06-14 12:48:47,742 [main] [trace=] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-14 12:48:47,847 [main] [trace=] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-06-14 12:48:47,902 [main] [trace=] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-14 12:48:48,452 [main] [trace=] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-14 12:48:48,485 [main] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-14 12:48:48,573 [main] [trace=] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7320750c
+2025-06-14 12:48:48,577 [main] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-14 12:48:48,998 [main] [trace=] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.13
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-14 12:48:50,724 [main] [trace=] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-14 12:48:50,729 [main] [trace=] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14 12:48:51,742 [main] [trace=] DEBUG c.e.d.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-06-14 12:48:51,878 [main] [trace=] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-14 12:48:51,879 [main] [trace=] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-14 12:48:52,350 [main] [trace=] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-14 12:48:53,319 [main] [trace=] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-06-14 12:48:54,538 [main] [trace=] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-06-14 12:48:54,680 [main] [trace=] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-06-14 12:48:54,747 [main] [trace=] INFO  com.example.demo.DemoApplication - Started DemoApplication in 21.199 seconds (process running for 22.406)
+2025-06-14 12:48:56,506 [main] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-14 12:48:56,694 [main] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-14 12:50:03,181 [SpringApplicationShutdownHook] [trace=] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-14 12:50:03,194 [tomcat-shutdown] [trace=] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-14 12:50:03,200 [SpringApplicationShutdownHook] [trace=] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14 12:50:03,204 [SpringApplicationShutdownHook] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-14 12:50:03,210 [SpringApplicationShutdownHook] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-14 12:50:09,574 [main] [trace=] INFO  com.example.demo.DemoApplication - Starting DemoApplication using Java 23.0.1 with PID 10448 (F:\Projects\Learning Java\Project-Day_10-15\target\classes started by Mateen in F:\Projects\Learning Java\Project-Day_10-15)
+2025-06-14 12:50:09,603 [main] [trace=] DEBUG com.example.demo.DemoApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-06-14 12:50:09,611 [main] [trace=] INFO  com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-14 12:50:10,559 [main] [trace=] INFO  o.s.b.d.c.l.DockerComposeLifecycleManager - Using Docker Compose file F:\Projects\Learning Java\Project-Day_10-15\docker-compose.yaml
+2025-06-14 12:50:13,060 [OutputReader-stderr] [trace=] INFO  o.s.b.docker.compose.core.DockerCli -  Container task-db  Created
+2025-06-14 12:50:13,066 [OutputReader-stderr] [trace=] INFO  o.s.b.docker.compose.core.DockerCli -  Container task-db  Starting
+2025-06-14 12:50:14,335 [OutputReader-stderr] [trace=] INFO  o.s.b.docker.compose.core.DockerCli -  Container task-db  Started
+2025-06-14 12:50:14,337 [OutputReader-stderr] [trace=] INFO  o.s.b.docker.compose.core.DockerCli -  Container task-db  Waiting
+2025-06-14 12:50:14,860 [OutputReader-stderr] [trace=] INFO  o.s.b.docker.compose.core.DockerCli -  Container task-db  Healthy
+2025-06-14 12:50:20,218 [main] [trace=] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-14 12:50:20,518 [main] [trace=] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 233 ms. Found 2 JPA repository interfaces.
+2025-06-14 12:50:23,881 [main] [trace=] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-14 12:50:23,934 [main] [trace=] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-06-14 12:50:23,938 [main] [trace=] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-14 12:50:23,938 [main] [trace=] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-06-14 12:50:24,194 [main] [trace=] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-14 12:50:24,194 [main] [trace=] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 8260 ms
+2025-06-14 12:50:26,315 [main] [trace=] INFO  liquibase.database - Set default schema name to public
+2025-06-14 12:50:28,511 [main] [trace=] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-06-14 12:50:28,761 [main] [trace=] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-06-14 12:50:28,772 [main] [trace=] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-06-14 12:50:28,795 [main] [trace=] INFO  liquibase.util - UPDATE SUMMARY
+2025-06-14 12:50:28,795 [main] [trace=] INFO  liquibase.util - Run:                          0
+2025-06-14 12:50:28,795 [main] [trace=] INFO  liquibase.util - Previously run:               2
+2025-06-14 12:50:28,795 [main] [trace=] INFO  liquibase.util - Filtered out:                 0
+2025-06-14 12:50:28,795 [main] [trace=] INFO  liquibase.util - -------------------------------
+2025-06-14 12:50:28,801 [main] [trace=] INFO  liquibase.util - Total change sets:            2
+2025-06-14 12:50:28,802 [main] [trace=] INFO  liquibase.util - Update summary generated
+2025-06-14 12:50:28,807 [main] [trace=] INFO  liquibase.command - Command execution complete
+2025-06-14 12:50:29,426 [main] [trace=] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-14 12:50:29,694 [main] [trace=] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-06-14 12:50:29,954 [main] [trace=] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-14 12:50:31,275 [main] [trace=] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-14 12:50:31,373 [main] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-14 12:50:31,491 [main] [trace=] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2570851e
+2025-06-14 12:50:31,494 [main] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-14 12:50:31,755 [main] [trace=] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.13
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-14 12:50:33,859 [main] [trace=] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-14 12:50:33,867 [main] [trace=] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-14 12:50:34,918 [main] [trace=] DEBUG c.e.d.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-06-14 12:50:35,171 [main] [trace=] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-14 12:50:35,173 [main] [trace=] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-14 12:50:35,732 [main] [trace=] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-14 12:50:36,712 [main] [trace=] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-06-14 12:50:37,424 [main] [trace=] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-06-14 12:50:37,464 [main] [trace=] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-06-14 12:50:37,486 [main] [trace=] INFO  com.example.demo.DemoApplication - Started DemoApplication in 29.471 seconds (process running for 30.487)
+2025-06-14 12:50:38,010 [main] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-14 12:50:38,083 [main] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?

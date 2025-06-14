@@ -8,6 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -59,12 +60,10 @@ public class UserController {
 
     @GetMapping
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')")
-    public ResponseEntity<ApiResponse<Page<UserDTO>>> getUsers(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "5") int size, @RequestParam(defaultValue = "createdAt,asc") String[] sort) {
-        Sort sortOrder = Sort.by(Sort.Direction.fromString(sort[1]), sort[0]);
-
-        int validatedSize = Math.min(size, paginationConfig.getMaxPageSize());
-
-        Pageable pageable = PageRequest.of(page, validatedSize, sortOrder);
+    public ResponseEntity<ApiResponse<Page<UserDTO>>> getUsers(@PageableDefault(size = 5, sort = "createdAt", direction = Sort.Direction.ASC) Pageable pageable) {
+        pageable = PageRequest.of(pageable.getPageNumber(),
+                Math.min(pageable.getPageSize(), paginationConfig.getMaxPageSize()),
+                pageable.getSort());
 
         return ApiResponseUtil.success(userService.getAllUsers(pageable), "Assigned users retrieved successfully");
     }
