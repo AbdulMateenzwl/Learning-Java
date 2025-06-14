@@ -45,39 +45,21 @@ public class TaskController {
 //    public ResponseEntity<ApiResponse<TaskDTO>> updateTask(@RequestBody TaskDTO taskDTO, @PathVariable UUID taskUuid) {
 //        return ApiResponseUtil.success(taskService.updateTask(taskDTO, taskUuid), "Task updated successfully");
 //    }
-//
-//    @GetMapping("/manager/all")
-//    @PreAuthorize("hasRole('ROLE_MANAGER')")
-//    public ResponseEntity<ApiResponse<Page<TaskDTO>>> getManagersAllTasks(@RequestHeader("Authorization") String token, @RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "5") int size, @RequestParam(defaultValue = "createdAt,asc") String[] sort) {
-//        Sort sortOrder = Sort.by(Sort.Direction.fromString(sort[1]), sort[0]);
-//        int validatedSize = Math.min(size, paginationConfig.getMaxPageSize());
-//        Pageable pageable = PageRequest.of(page, validatedSize, sortOrder);
-//
-//        String managerUuid = jwtService.extractUserUUID(token.substring(7));
-//
-//        return ApiResponseUtil.success(taskService.getManagersAllTasks(UUID.fromString(managerUuid), pageable), "Tasks retrieved successfully");
-//    }
-//
-//    @GetMapping("/admin/all")
-//    @PreAuthorize("hasRole('ROLE_ADMIN')")
-//    public ResponseEntity<ApiResponse<Page<TaskDTO>>> getAllTasksAdmin(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "5") int size, @RequestParam(defaultValue = "createdAt,asc") String[] sort) {
-//        Sort sortOrder = Sort.by(Sort.Direction.fromString(sort[1]), sort[0]);
-//        int validatedSize = Math.min(size, paginationConfig.getMaxPageSize());
-//        Pageable pageable = PageRequest.of(page, validatedSize, sortOrder);
-//
-//        return ApiResponseUtil.success(taskService.getAllTasks(pageable), "Retrieved All Tasks successfully");
-//    }
+
+    @PutMapping("/{taskUuid}")
+    @PreAuthorize("hasRole('ROLE_USER')")
+    public ResponseEntity<ApiResponse<TaskDTO>> updateUserTask(@RequestParam TaskStatus status, @PathVariable UUID taskUuid) {
+        return ApiResponseUtil.success(taskService.updateTaskOfUser(taskUuid, status), "Task updated successfully");
+    }
 
     @GetMapping
-    @PreAuthorize("hasRole('ROLE_USER')")
-    public ResponseEntity<ApiResponse<Page<TaskDTO>>> getUsersAllTasks(@RequestHeader("Authorization") String token, @RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "5") int size, @RequestParam(defaultValue = "createdAt,asc") String[] sort) {
+    @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_MANAGER', 'ROLE_ADMIN')")
+    public ResponseEntity<ApiResponse<Page<TaskDTO>>> getUsersAllTasks(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "5") int size, @RequestParam(defaultValue = "createdAt,asc") String[] sort) {
         Sort sortOrder = Sort.by(Sort.Direction.fromString(sort[1]), sort[0]);
         int validatedSize = Math.min(size, paginationConfig.getMaxPageSize());
         Pageable pageable = PageRequest.of(page, validatedSize, sortOrder);
 
-        String userUuid = jwtService.extractUserUUID(token.substring(7));
-
-        return ApiResponseUtil.success(taskService.getAllTasksByAssignedUser(UUID.fromString(userUuid), pageable), "Tasks retrieved successfully");
+        return ApiResponseUtil.success(taskService.getAllTasks(pageable), "Tasks retrieved successfully");
     }
 
     @GetMapping("/{taskUuid}")
@@ -86,9 +68,4 @@ public class TaskController {
         return ApiResponseUtil.success(taskService.getTaskOfUser(taskUuid), "Task retrieved successfully");
     }
 
-    @PutMapping("/{taskUuid}")
-    @PreAuthorize("hasRole('ROLE_USER')")
-    public ResponseEntity<ApiResponse<TaskDTO>> updateUserTask(@RequestParam TaskStatus status, @PathVariable UUID taskUuid) {
-        return ApiResponseUtil.success(taskService.updateTaskOfUser(taskUuid, status), "Task updated successfully");
-    }
 }

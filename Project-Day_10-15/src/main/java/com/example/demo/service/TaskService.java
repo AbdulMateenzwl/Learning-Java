@@ -4,6 +4,10 @@ import java.util.Optional;
 import java.util.UUID;
 
 import com.example.demo.config.UserContext;
+import com.example.demo.enums.UserRole;
+import com.example.demo.service.factory.GetTasksServiceStrategyFactory;
+import com.example.demo.service.strategy.gettasks.GetTasksServiceStrategy;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -32,6 +36,7 @@ public class TaskService {
     private final UserRepository userRepository;
     private final TaskRepository taskRepository;
     private final TaskMapper taskMapper;
+    private final GetTasksServiceStrategyFactory getTasksServiceStrategyFactory;
 
     @Transactional
     public TaskDTO createTask(TaskDTO taskDTO) {
@@ -76,7 +81,7 @@ public class TaskService {
     }
 
     @Transactional
-    public TaskDTO updateTask(TaskDTO taskDTO, UUID taskId ) {
+    public TaskDTO updateTask(TaskDTO taskDTO, UUID taskId) {
         UUID managerId = userContext.getUserId();
         Optional<Task> optionalTask = taskRepository.findByUuid(taskId);
         if (optionalTask.isEmpty()) {
@@ -99,14 +104,14 @@ public class TaskService {
         return tasks.map(taskMapper::toDTO);
     }
 
-    public Page<TaskDTO> getAllTasks(Pageable pageable) {
-        Page<Task> tasks = (taskRepository.findAll(pageable));
-        return tasks.map(taskMapper::toDTO);
-    }
-
     public Page<TaskDTO> getAllTasksByAssignedUser(UUID assignedToUuid, Pageable pageable) {
         Page<Task> tasks = taskRepository.findByAssignedToUuid(assignedToUuid, pageable);
         return tasks.map(taskMapper::toDTO);
+    }
+
+    public Page<TaskDTO> getAllTasks(Pageable pageable) {
+        GetTasksServiceStrategy strategy = getTasksServiceStrategyFactory.createStrategy(userContext.getRole());
+        return strategy.getTasks(pageable);
     }
 
     public Optional<TaskDTO> getTaskById(UUID taskUuid) {
@@ -132,7 +137,7 @@ public class TaskService {
     }
 
     @Transactional
-    public TaskDTO updateTaskOfUser( UUID taskUuid, TaskStatus status) {
+    public TaskDTO updateTaskOfUser(UUID taskUuid, TaskStatus status) {
         UUID userUuid = userContext.getUserId();
         Task task = this.getTaskOfUserEntity(userUuid, taskUuid);
         if (task.getStatus() == status) {

@@ -28,7 +28,7 @@ import lombok.RequiredArgsConstructor;
 public class UserService {
     private final UserRepository userRepository;
     private final UserMapper userMapper;
-    private final GetUserServiceStrategyFactory userServiceStrategyFactory;
+    private final GetUserServiceStrategyFactory getUserServiceStrategyFactory;
     private final UserContext userContext;
 
     @Transactional
@@ -105,7 +105,7 @@ public class UserService {
     }
 
     public Page<UserDTO> getAllUsers(Pageable pageable) {
-        GetUserServiceStrategy strategy = userServiceStrategyFactory.createStrategy(userContext.getRole());
+        GetUserServiceStrategy strategy = getUserServiceStrategyFactory.createStrategy(userContext.getRole());
         return strategy.getUsers(pageable);
     }
 
