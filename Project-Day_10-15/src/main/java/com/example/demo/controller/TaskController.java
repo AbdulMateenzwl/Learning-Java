@@ -14,7 +14,6 @@ import com.example.demo.enums.TaskStatus;
 import com.example.demo.config.PaginationConfig;
 import com.example.demo.dto.ApiResponse;
 import com.example.demo.dto.TaskDTO;
-import com.example.demo.service.JwtService;
 import com.example.demo.service.TaskService;
 import com.example.demo.utils.ApiResponseUtil;
 
@@ -24,7 +23,6 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/api/tasks")
 @RequiredArgsConstructor
 public class TaskController {
-    private final JwtService jwtService;
     private final TaskService taskService;
     private final PaginationConfig paginationConfig;
 
@@ -40,16 +38,12 @@ public class TaskController {
         return ApiResponseUtil.success(taskService.assignTask(taskUuid, userUuid), "Task assigned successfully");
     }
 
-//    @PutMapping("/{taskUuid}")
-//    @PreAuthorize("hasRole('ROLE_MANAGER')")
-//    public ResponseEntity<ApiResponse<TaskDTO>> updateTask(@RequestBody TaskDTO taskDTO, @PathVariable UUID taskUuid) {
-//        return ApiResponseUtil.success(taskService.updateTask(taskDTO, taskUuid), "Task updated successfully");
-//    }
-
     @PutMapping("/{taskUuid}")
-    @PreAuthorize("hasRole('ROLE_USER')")
-    public ResponseEntity<ApiResponse<TaskDTO>> updateUserTask(@RequestParam TaskStatus status, @PathVariable UUID taskUuid) {
-        return ApiResponseUtil.success(taskService.updateTaskOfUser(taskUuid, status), "Task updated successfully");
+    @PreAuthorize("hasAnyRole('ROLE_USER','ROLE_MANAGER')")
+    public ResponseEntity<ApiResponse<TaskDTO>> updateUserTask(@RequestBody(required = false) TaskDTO taskDTO,
+                                                               @RequestParam(required = false) TaskStatus status,
+                                                               @PathVariable UUID taskUuid) {
+        return ApiResponseUtil.success(taskService.updateTask(taskUuid, taskDTO, status), "Task updated successfully");
     }
 
     @GetMapping

@@ -48,10 +48,6 @@ public class TaskService {
         return taskMapper.toDTO(task);
     }
 
-    public Optional<TaskDTO> findByUuid(UUID uuid) {
-        return Optional.ofNullable(taskMapper.toDTO(taskRepository.findByUuid(uuid).get()));
-    }
-
     @Transactional
     public TaskDTO assignTask(UUID taskId, UUID userID) {
         UUID managerId = userContext.getUserId();
@@ -81,7 +77,7 @@ public class TaskService {
     }
 
     @Transactional
-    public TaskDTO updateTask(TaskDTO taskDTO, UUID taskId) {
+    protected TaskDTO updateTask(TaskDTO taskDTO, UUID taskId) {
         UUID managerId = userContext.getUserId();
         Optional<Task> optionalTask = taskRepository.findByUuid(taskId);
         if (optionalTask.isEmpty()) {
@@ -96,26 +92,43 @@ public class TaskService {
 
         taskRepository.save(task);
         return taskMapper.toDTO(task);
-
     }
 
-    public Page<TaskDTO> getManagersAllTasks(UUID creatorUuid, Pageable pageable) {
-        Page<Task> tasks = taskRepository.findByCreatedByUuid(creatorUuid, pageable);
-        return tasks.map(taskMapper::toDTO);
+    @Transactional
+    protected TaskDTO updateTask(UUID taskUuid, TaskStatus status) {
+        UUID userUuid = userContext.getUserId();
+        Task task = this.getTaskOfUserEntity(userUuid, taskUuid);
+        if (task.getStatus() == status) {
+            throw new InvalidOperationException("Task is already in the requested status");
+        }
+        task.setStatus(status);
+        taskRepository.save(task);
+        return taskMapper.toDTO(task);
     }
 
-    public Page<TaskDTO> getAllTasksByAssignedUser(UUID assignedToUuid, Pageable pageable) {
-        Page<Task> tasks = taskRepository.findByAssignedToUuid(assignedToUuid, pageable);
-        return tasks.map(taskMapper::toDTO);
+    @Transactional
+    public TaskDTO updateTask(UUID taskUuid, TaskDTO taskDTO, TaskStatus status) {
+
+        UserRole role = userContext.getRole();
+
+        switch (role) {
+            case ROLE_MANAGER -> {
+                if (taskDTO != null) {
+                    return updateTask(taskDTO, taskUuid);
+                }
+            }
+            case ROLE_USER -> {
+                if (status != null) {
+                    return updateTask(taskUuid, status);
+                }
+            }
+        }
+        throw new UnauthorizedOperationException("Only Manager and User can update the Task");
     }
 
     public Page<TaskDTO> getAllTasks(Pageable pageable) {
         GetTasksServiceStrategy strategy = getTasksServiceStrategyFactory.createStrategy(userContext.getRole());
         return strategy.getTasks(pageable);
-    }
-
-    public Optional<TaskDTO> getTaskById(UUID taskUuid) {
-        return Optional.ofNullable(taskMapper.toDTO(taskRepository.findByUuid(taskUuid).get()));
     }
 
     public TaskDTO getTaskOfUser(UUID taskUuid) {
@@ -134,17 +147,5 @@ public class TaskService {
             throw new UnauthorizedOperationException("Task is not assigned to the user");
         }
         return task;
-    }
-
-    @Transactional
-    public TaskDTO updateTaskOfUser(UUID taskUuid, TaskStatus status) {
-        UUID userUuid = userContext.getUserId();
-        Task task = this.getTaskOfUserEntity(userUuid, taskUuid);
-        if (task.getStatus() == status) {
-            throw new InvalidOperationException("Task is already in the requested status");
-        }
-        task.setStatus(status);
-        taskRepository.save(task);
-        return taskMapper.toDTO(task);
     }
 }

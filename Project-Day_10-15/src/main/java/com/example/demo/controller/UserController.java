@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Stream;
 
-import com.example.demo.config.UserContext;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -17,7 +16,6 @@ import com.example.demo.enums.UserRole;
 import com.example.demo.config.PaginationConfig;
 import com.example.demo.dto.ApiResponse;
 import com.example.demo.dto.UserDTO;
-import com.example.demo.service.JwtService;
 import com.example.demo.service.UserService;
 import com.example.demo.utils.ApiResponseUtil;
 
@@ -30,8 +28,6 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
-    private final JwtService jwtService;
-    private final UserContext userContext;
     private final PaginationConfig paginationConfig;
 
     @PostMapping

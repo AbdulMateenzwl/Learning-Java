@@ -55,16 +55,6 @@ public class UserService {
         }
     }
 
-
-    public Optional<UserDTO> findManagerByUuid(UUID uuid) {
-        Optional<User> user = findByUuid(uuid);
-        if (user.isPresent() && user.get().getRole() == UserRole.ROLE_MANAGER) {
-            return Optional.of(userMapper.toDTO(user.get()));
-        } else {
-            return Optional.empty();
-        }
-    }
-
     @Transactional
     public UserDTO restrictUser(UUID uuid) {
         Optional<User> userOptional = findByUuid(uuid);
@@ -84,16 +74,6 @@ public class UserService {
         user.setRestricted(true);
         userRepository.save(user);
         return userMapper.toDTO(user);
-    }
-
-    public Page<UserDTO> findAllUsersAndManagers(Pageable pageable) {
-        Page<User> users = userRepository.findByRoleIn(List.of(UserRole.ROLE_USER, UserRole.ROLE_MANAGER), pageable);
-        return users.map(userMapper::toDTO);
-    }
-
-    public Page<UserDTO> findAllAssignedUsers(UUID managerUuid, Pageable pageable) {
-        Page<User> users = userRepository.findByManagerUuid(managerUuid, pageable);
-        return users.map(userMapper::toDTO);
     }
 
     public boolean isUserPartOfManager(UUID userUuid, UUID managerUuid) {

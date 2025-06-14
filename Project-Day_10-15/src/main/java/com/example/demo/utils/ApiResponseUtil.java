@@ -15,7 +15,6 @@ public class ApiResponseUtil {
                 .success(true)
                 .message(message)
                 .data(data)
-                .errors(null)
                 .build());
     }
     public static <T> ResponseEntity<ApiResponse<T>> created(T data, String message) {
@@ -25,7 +24,6 @@ public class ApiResponseUtil {
                 .success(true)
                 .message(message)
                 .data(data)
-                .errors(null)
                 .build());
     }
 
@@ -36,7 +34,6 @@ public class ApiResponseUtil {
                 .success(false)
                 .message(message)
                 .data(null)
-                .errors(null)
                 .build());
     }
 
