@@ -16,6 +16,8 @@ import lombok.RequiredArgsConstructor;
 
 @Component
 @RequiredArgsConstructor
+//no need of "Get", "Strategy" word in class name
+//the name should be "AdminService"
 public class AdminGetUserServiceStrategy implements GetUserServiceStrategy {
     private final UserRepository userRepository;
     private final UserMapper userMapper;

@@ -32,14 +32,25 @@ public class UserService {
 
     @Transactional
     public UserDTO createUser(UserDTO userDTO) {
+        //minimize the if/else in main flow
+        //use private helper methods 
+        
+        //assertEmailShouldBeUnique (method)
         if (userRepository.existsByEmail(userDTO.getEmail())) {
             throw new InvalidOperationException("User with this email already exists");
         }
         User user = userMapper.toEntity(userDTO);
+        //assignManagerIfApplicable
         if (user.getRole() == UserRole.ROLE_USER) {
-            Optional<User> manager = userRepository.findByUuid(userDTO.getManagerUuid());
-            if (manager.isPresent() && manager.get().getRole().equals(UserRole.ROLE_MANAGER)) {
-                user.setManager(manager.get());
+//            Optional<User> manager = userRepository.findByUuid(userDTO.getManagerUuid());
+            
+            //make sure use streams for better readability 
+            User manager = userRepository
+                    .findByUuid(userDTO.getManagerUuid())
+                    .orElseThrow(() -> new RuntimeException("Bad REq"));
+            
+            if (manager.getRole().equals(UserRole.ROLE_MANAGER)) {
+                user.setManager(manager);
             }
         }
         userRepository.save(user);
@@ -59,6 +70,7 @@ public class UserService {
         }
     }
 
+    //looks good to me
     @Transactional
     public UserDTO restrictUser(UUID uuid) {
         Optional<User> userOptional = findByUuid(uuid);
@@ -93,6 +105,7 @@ public class UserService {
         return strategy.getUsers(pageable);
     }
 
+    //looks good to me
     public UserDTO getCurrentUser() {
         UUID userId = userContext.getUserId();
         return findUserByUuid(userId)
