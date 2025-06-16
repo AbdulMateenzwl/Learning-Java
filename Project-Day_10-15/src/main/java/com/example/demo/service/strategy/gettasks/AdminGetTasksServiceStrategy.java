@@ -1,3 +1,5 @@
+//no verb in naming
+//it should be com.example.demo.service.strategy.tasks
 package com.example.demo.service.strategy.gettasks;
 
 import com.example.demo.dto.TaskDTO;
@@ -11,6 +13,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
+//rename to AdminTaskService
 public class AdminGetTasksServiceStrategy implements GetTasksServiceStrategy {
 
     private final TaskRepository taskRepository;

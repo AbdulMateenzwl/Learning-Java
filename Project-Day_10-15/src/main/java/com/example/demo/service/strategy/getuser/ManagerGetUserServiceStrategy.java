@@ -16,6 +16,7 @@ import lombok.RequiredArgsConstructor;
 
 @Component
 @RequiredArgsConstructor
+//name can be "ManagerService"
 public class ManagerGetUserServiceStrategy implements GetUserServiceStrategy {
 
     private final UserRepository userRepository;

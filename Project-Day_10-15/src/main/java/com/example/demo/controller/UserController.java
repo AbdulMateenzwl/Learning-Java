@@ -21,8 +21,11 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -46,6 +49,10 @@ public class UserController {
     })
     @PostMapping
     @PreAuthorize("hasRole('ROLE_ADMIN')")
+    //user ResponseEntity<UserDTO> and if you want to add extra information then add this information (apply all) 
+    //    MultiValueMap<String, String> headers = new HttpHeaders();
+    //    headers.set("x-custom-header", "its value");
+    //    ResponseEntity<?> resp = new ResponseEntity<>("body", headers, HttpStatus.CREATED);
     public ResponseEntity<ApiResponseDTO<UserDTO>> createUser(@RequestBody UserDTO userDTO) {
         UserDTO createdUser = userService.createUser(userDTO);
         return ApiResponseUtil.created(createdUser, "User created successfully");
@@ -77,6 +84,8 @@ public class UserController {
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<ApiResponseDTO<List<String>>> getAllRoles() {
         return ApiResponseUtil.success(
+                //controller is just a bridge, 
+                //do not calculate stuff in controller
                 Stream.of(UserRole.values()).map(Enum::name).collect(java.util.stream.Collectors.toList()),
                 "Roles retrieved successfully");
     }
@@ -111,6 +120,11 @@ public class UserController {
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')")
     public ResponseEntity<ApiResponseDTO<Page<UserDTO>>> getUsers(
             @PageableDefault(page = 0, size = 5, sort = "createdAt", direction = Sort.Direction.ASC) Pageable pageable) {
+
+        //when you are getting pageble from method argument
+        //why modifying here (again controller is bridge, do not do any processing in controller) 
+        //introduce intercepter for following thing 
+        //or move it to service layer
         pageable = PageRequest.of(pageable.getPageNumber(),
                 Math.min(pageable.getPageSize(), paginationConfig.getMaxPageSize()),
                 pageable.getSort());

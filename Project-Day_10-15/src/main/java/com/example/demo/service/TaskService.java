@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -38,6 +39,7 @@ public class TaskService {
     private final TaskMapper taskMapper;
     private final GetTasksServiceStrategyFactory getTasksServiceStrategyFactory;
 
+    //looks good to me
     @Transactional
     public TaskDTO createTask(TaskDTO taskDTO) {
         UUID userId = userContext.getUserId();
@@ -56,6 +58,8 @@ public class TaskService {
             throw new TaskNotFoundException("Task not found");
         }
         Task task = optionalTask.get();
+        //always use library method instead of low level instruct
+        //user Objects.nonNull(task.getAssignedTo) instead of !=
         if (task.getAssignedTo() != null) {
             throw new TaskAlreadyAssignedException("Task is already assigned");
         }
@@ -113,11 +117,15 @@ public class TaskService {
 
         switch (role) {
             case ROLE_MANAGER -> {
+//                Objects.nonNull()
                 if (taskDTO != null) {
+                    //compile time polymorphism looks good
+                    //but runtime polymorphism looks better
                     return updateTask(taskDTO, taskUuid);
                 }
             }
             case ROLE_USER -> {
+//                Objects.nonNull()
                 if (status != null) {
                     return updateTask(taskUuid, status);
                 }
