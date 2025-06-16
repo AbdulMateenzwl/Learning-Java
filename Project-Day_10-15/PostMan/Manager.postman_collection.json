@@ -22,14 +22,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{URL}}/api/manager/assigned_user",
+					"raw": "{{URL}}/api/users",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"api",
-						"manager",
-						"assigned_user"
+						"users"
 					]
 				}
 			},
@@ -51,15 +50,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{URL}}/api/task/manager/all",
+					"raw": "{{URL}}/api/tasks",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"api",
-						"task",
-						"manager",
-						"all"
+						"tasks"
 					]
 				}
 			},
@@ -90,14 +87,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{URL}}/api/task/create",
+					"raw": "{{URL}}/api/tasks",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"api",
-						"task",
-						"create"
+						"tasks"
 					]
 				}
 			},
@@ -116,26 +112,22 @@
 						}
 					]
 				},
-				"method": "PUT",
+				"method": "PATCH",
 				"header": [],
 				"url": {
-					"raw": "{{URL}}/api/task/assign?taskUuid=2a88ce76-9924-4b5e-8313-1c6676fcb2d0&userUuid=c5cd3909-bc27-4421-9e2b-a6e5cdb623d2",
+					"raw": "{{URL}}/api/tasks/fb290555-924a-4a0f-a0f4-f10d3d4402ca?userUuid=f219ead7-26d0-4767-b124-85dbce75c32b",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"api",
-						"task",
-						"assign"
+						"tasks",
+						"fb290555-924a-4a0f-a0f4-f10d3d4402ca"
 					],
 					"query": [
 						{
-							"key": "taskUuid",
-							"value": "2a88ce76-9924-4b5e-8313-1c6676fcb2d0"
-						},
-						{
 							"key": "userUuid",
-							"value": "c5cd3909-bc27-4421-9e2b-a6e5cdb623d2"
+							"value": "f219ead7-26d0-4767-b124-85dbce75c32b"
 						}
 					]
 				}
@@ -159,7 +151,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\":\"ddddddd\",\r\n    \"description\":\"test\",\r\n    \"status\":\"PENDING\"\r\n}",
+					"raw": "{\r\n    \"title\":\"dd\",\r\n    \"description\":\"test\",\r\n    \"status\":\"PENDING\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -167,25 +159,20 @@
 					}
 				},
 				"url": {
-					"raw": "{{URL}}/api/task/manager/update?taskUuid=054a2a81-241b-4336-af55-2db3497c12b4",
+					"raw": "{{URL}}/api/tasks/054a2a81-241b-4336-af55-2db3497c12b4",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"api",
-						"task",
-						"manager",
-						"update"
+						"tasks",
+						"054a2a81-241b-4336-af55-2db3497c12b4"
 					],
 					"query": [
 						{
 							"key": "userUuid",
 							"value": "4afe7fc5-7c65-4ef7-a257-98dcf86c66e1",
 							"disabled": true
-						},
-						{
-							"key": "taskUuid",
-							"value": "054a2a81-241b-4336-af55-2db3497c12b4"
 						}
 					]
 				}

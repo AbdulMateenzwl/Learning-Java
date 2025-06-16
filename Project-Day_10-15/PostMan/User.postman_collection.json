@@ -14,7 +14,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "{{JWT}}",
+							"value": "{{UserJWT}}",
 							"type": "string"
 						}
 					]
@@ -22,13 +22,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{URL}}/api/user",
+					"raw": "{{URL}}/api/users/info",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"api",
-						"user"
+						"users",
+						"info"
 					]
 				}
 			},
@@ -50,14 +51,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{URL}}/api/task/all",
+					"raw": "{{URL}}/api/tasks",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"api",
-						"task",
-						"all"
+						"tasks"
 					]
 				}
 			},
@@ -79,14 +79,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{URL}}/api/task/eacd5b01-99e5-4b91-ad64-766e5c732ba9",
+					"raw": "{{URL}}/api/tasks/fb290555-924a-4a0f-a0f4-f10d3d4402ca",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"api",
-						"task",
-						"eacd5b01-99e5-4b91-ad64-766e5c732ba9"
+						"tasks",
+						"fb290555-924a-4a0f-a0f4-f10d3d4402ca"
 					]
 				}
 			},
@@ -108,23 +108,19 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "{{URL}}/api/task/update?taskUuid=eacd5b01-99e5-4b91-ad64-766e5c732ba9&status=PENDING",
+					"raw": "{{URL}}/api/tasks/0629350e-1a03-40a1-9cd4-8881420f4b80?status=COMPLETED",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"api",
-						"task",
-						"update"
+						"tasks",
+						"0629350e-1a03-40a1-9cd4-8881420f4b80"
 					],
 					"query": [
 						{
-							"key": "taskUuid",
-							"value": "eacd5b01-99e5-4b91-ad64-766e5c732ba9"
-						},
-						{
 							"key": "status",
-							"value": "PENDING"
+							"value": "COMPLETED"
 						}
 					]
 				}

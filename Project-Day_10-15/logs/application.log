@@ -11800,3 +11800,99 @@ io.jsonwebtoken.ExpiredJwtException: JWT expired at 2025-06-14T11:16:05Z. Curren
         users u1_0 
     where
         u1_0.email=?
+2025-06-16 17:53:51,505 [http-nio-8080-exec-1] [trace=] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-16 17:53:51,506 [http-nio-8080-exec-1] [trace=] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-16 17:53:51,509 [http-nio-8080-exec-1] [trace=] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-06-16 17:53:51,530 [http-nio-8080-exec-1] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-16 17:53:51,560 [http-nio-8080-exec-1] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 29ms, correlationId: null]
+2025-06-16 17:53:51,564 [http-nio-8080-exec-1] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-16 17:53:51,570 [http-nio-8080-exec-1] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-16 17:53:51,574 [http-nio-8080-exec-1] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 3ms, correlationId: null]
+2025-06-16 17:53:51,586 [http-nio-8080-exec-1] [trace=63305e58-7017-4b1e-bff4-b61fe1f79c47] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: POST /api/users [correlationId: 63305e58-7017-4b1e-bff4-b61fe1f79c47]
+2025-06-16 17:53:51,643 [http-nio-8080-exec-1] [trace=63305e58-7017-4b1e-bff4-b61fe1f79c47] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: UserService.createUser [correlationId: 63305e58-7017-4b1e-bff4-b61fe1f79c47]
+2025-06-16 17:53:51,779 [http-nio-8080-exec-1] [trace=63305e58-7017-4b1e-bff4-b61fe1f79c47] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.uuid=?
+2025-06-16 17:53:51,847 [http-nio-8080-exec-1] [trace=63305e58-7017-4b1e-bff4-b61fe1f79c47] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (created_at, email, manager_id, password, is_restricted, role, updated_at, uuid) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-06-16 17:53:51,870 [http-nio-8080-exec-1] [trace=63305e58-7017-4b1e-bff4-b61fe1f79c47] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 23505
+2025-06-16 17:53:51,873 [http-nio-8080-exec-1] [trace=63305e58-7017-4b1e-bff4-b61fe1f79c47] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ERROR: duplicate key value violates unique constraint "users_email_key"
+  Detail: Key (email)=(user7f@taskapp.com) already exists.
+2025-06-16 17:53:51,880 [http-nio-8080-exec-1] [trace=63305e58-7017-4b1e-bff4-b61fe1f79c47] ERROR c.e.demo.aspect.ServiceLoggingAspect - Error in service method: UserService.createUser [error: could not execute statement [ERROR: duplicate key value violates unique constraint "users_email_key"
+  Detail: Key (email)=(user7f@taskapp.com) already exists.] [insert into users (created_at,email,manager_id,password,is_restricted,role,updated_at,uuid) values (?,?,?,?,?,?,?,?)]; SQL [insert into users (created_at,email,manager_id,password,is_restricted,role,updated_at,uuid) values (?,?,?,?,?,?,?,?)]; constraint [users_email_key], correlationId: 63305e58-7017-4b1e-bff4-b61fe1f79c47]
+2025-06-16 17:53:56,601 [http-nio-8080-exec-3] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-16 17:53:56,603 [http-nio-8080-exec-3] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 2ms, correlationId: null]
+2025-06-16 17:53:56,605 [http-nio-8080-exec-3] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-16 17:53:56,609 [http-nio-8080-exec-3] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-16 17:53:56,612 [http-nio-8080-exec-3] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 2ms, correlationId: null]
+2025-06-16 17:53:56,613 [http-nio-8080-exec-3] [trace=787d7d71-483c-4ebd-88f1-72ec1fcde94c] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: POST /api/users [correlationId: 787d7d71-483c-4ebd-88f1-72ec1fcde94c]
+2025-06-16 17:53:56,615 [http-nio-8080-exec-3] [trace=787d7d71-483c-4ebd-88f1-72ec1fcde94c] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: UserService.createUser [correlationId: 787d7d71-483c-4ebd-88f1-72ec1fcde94c]
+2025-06-16 17:53:56,695 [http-nio-8080-exec-3] [trace=787d7d71-483c-4ebd-88f1-72ec1fcde94c] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.uuid=?
+2025-06-16 17:53:56,699 [http-nio-8080-exec-3] [trace=787d7d71-483c-4ebd-88f1-72ec1fcde94c] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (created_at, email, manager_id, password, is_restricted, role, updated_at, uuid) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-06-16 17:53:56,714 [http-nio-8080-exec-3] [trace=787d7d71-483c-4ebd-88f1-72ec1fcde94c] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: UserService.createUser [duration: 98ms, correlationId: 787d7d71-483c-4ebd-88f1-72ec1fcde94c]
+2025-06-16 17:53:56,729 [http-nio-8080-exec-3] [trace=787d7d71-483c-4ebd-88f1-72ec1fcde94c] INFO  c.e.d.i.RequestLoggingInterceptor - Request processed: POST /api/users [status: 200, duration: 114ms]
