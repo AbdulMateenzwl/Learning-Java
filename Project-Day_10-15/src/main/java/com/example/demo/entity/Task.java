@@ -38,7 +38,7 @@ public class Task {
     private User createdBy;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "assigned_to", nullable = true)
+    @JoinColumn(name = "assignee", nullable = true)
     private User assignedTo;
 
     @Column(name = "created_at", nullable = false, updatable = false)

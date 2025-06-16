@@ -36,7 +36,9 @@ public class UserService {
         User user = userMapper.toEntity(userDTO);
         if (user.getRole() == UserRole.ROLE_USER) {
             Optional<User> manager = userRepository.findByUuid(userDTO.getManagerUuid());
-            manager.ifPresent(user::setManager);
+            if (manager.isPresent() && manager.get().getRole().equals(UserRole.ROLE_MANAGER)) {
+                user.setManager(manager.get());
+            }
         }
         userRepository.save(user);
         return userMapper.toDTO(user);

@@ -22,7 +22,7 @@ public class AuthenticationController {
 
     private final AuthenticationService authenticationService;
 
-    @Operation(description = "Endpoint for User Login")
+    @Operation(description = "Endpoint for User, Manager and Admin  Login")
     @PostMapping("/authenticate")
     public ResponseEntity<ApiResponseDTO<AuthenticationResponse>> authenticate(
             @RequestBody AuthenticationRequest request
