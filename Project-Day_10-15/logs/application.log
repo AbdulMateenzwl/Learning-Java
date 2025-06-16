@@ -11896,3 +11896,8 @@ io.jsonwebtoken.ExpiredJwtException: JWT expired at 2025-06-14T11:16:05Z. Curren
         (?, ?, ?, ?, ?, ?, ?, ?)
 2025-06-16 17:53:56,714 [http-nio-8080-exec-3] [trace=787d7d71-483c-4ebd-88f1-72ec1fcde94c] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: UserService.createUser [duration: 98ms, correlationId: 787d7d71-483c-4ebd-88f1-72ec1fcde94c]
 2025-06-16 17:53:56,729 [http-nio-8080-exec-3] [trace=787d7d71-483c-4ebd-88f1-72ec1fcde94c] INFO  c.e.d.i.RequestLoggingInterceptor - Request processed: POST /api/users [status: 200, duration: 114ms]
+2025-06-16 18:25:45,020 [SpringApplicationShutdownHook] [trace=] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-16 18:25:45,023 [tomcat-shutdown] [trace=] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-16 18:25:45,035 [SpringApplicationShutdownHook] [trace=] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-16 18:25:45,037 [SpringApplicationShutdownHook] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-16 18:25:45,041 [SpringApplicationShutdownHook] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

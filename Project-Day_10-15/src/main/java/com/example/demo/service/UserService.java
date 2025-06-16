@@ -1,6 +1,5 @@
 package com.example.demo.service;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -33,6 +32,9 @@ public class UserService {
 
     @Transactional
     public UserDTO createUser(UserDTO userDTO) {
+        if (userRepository.existsByEmail(userDTO.getEmail())) {
+            throw new InvalidOperationException("User with this email already exists");
+        }
         User user = userMapper.toEntity(userDTO);
         if (user.getRole() == UserRole.ROLE_USER) {
             Optional<User> manager = userRepository.findByUuid(userDTO.getManagerUuid());
