@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -42,7 +43,7 @@ public class JwtService {
             UserDetails userDetails
     ) {        Map<String, Object> claims = new HashMap<>(extraClaims);
         claims.put("roles", userDetails.getAuthorities().stream()
-                .map(authority -> authority.getAuthority())
+                .map(GrantedAuthority::getAuthority)
                 .toList());
         
         // Add UUID to claims

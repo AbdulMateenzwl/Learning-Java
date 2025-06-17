@@ -1,11 +1,9 @@
 package com.example.demo.controller;
 
-import com.example.demo.config.PaginationConfig;
 import com.example.demo.dto.ApiResponseDTO;
 import com.example.demo.dto.ApiResponseUserDTO;
 import com.example.demo.dto.ApiResponseUserPageDTO;
 import com.example.demo.dto.UserDTO;
-import com.example.demo.enums.UserRole;
 import com.example.demo.service.UserServiceImpl;
 import com.example.demo.utils.ApiResponseUtil;
 import io.swagger.v3.oas.annotations.Operation;
@@ -17,7 +15,6 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
@@ -27,7 +24,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.UUID;
-import java.util.stream.Stream;
 
 @Slf4j
 @RestController
@@ -36,7 +32,6 @@ import java.util.stream.Stream;
 @SecurityRequirement(name = "bearerAuth")
 public class UserController {
     private final UserServiceImpl userServiceImpl;
-    private final PaginationConfig paginationConfig;
 
     @Operation(summary = "Create a new user", description = "Creates a new user with the provided details. Only accessible by administrators.")
     @ApiResponses(value = {
@@ -76,9 +71,7 @@ public class UserController {
     @GetMapping("/roles")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<ApiResponseDTO<List<String>>> getAllRoles() {
-        return ApiResponseUtil.success(
-                Stream.of(UserRole.values()).map(Enum::name).collect(java.util.stream.Collectors.toList()),
-                "Roles retrieved successfully");
+        return ApiResponseUtil.success(userServiceImpl.getRoles(), "Roles retrieved successfully");
     }
 
     @Operation(
@@ -110,11 +103,7 @@ public class UserController {
     @GetMapping
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')")
     public ResponseEntity<ApiResponseDTO<Page<UserDTO>>> getUsers(
-            @PageableDefault(page = 0, size = 5, sort = "createdAt", direction = Sort.Direction.ASC) Pageable pageable) {
-        pageable = PageRequest.of(pageable.getPageNumber(),
-                Math.min(pageable.getPageSize(), paginationConfig.getMaxPageSize()),
-                pageable.getSort());
-
+            @PageableDefault(size = 5, sort = "createdAt", direction = Sort.Direction.ASC) Pageable pageable) {
         return ApiResponseUtil.success(userServiceImpl.getAllUsers(pageable), "Assigned users retrieved successfully");
     }
 

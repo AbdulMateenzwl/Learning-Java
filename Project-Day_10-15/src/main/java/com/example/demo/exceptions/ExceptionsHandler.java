@@ -91,17 +91,17 @@ public class ExceptionsHandler {
         if (cause instanceof ConstraintViolationException constraintViolationException) {
             return handleConstraintViolation(constraintViolationException);
         }
-        return ApiResponseUtil.internalServerError("Transaction error: " + ex.getMostSpecificCause().getMessage());
+        return ApiResponseUtil.internalServerError("Transaction error");
     }
 
     @ExceptionHandler(JpaSystemException.class)
     public ResponseEntity<ApiResponseDTO<String>> handleJpaSystemException(JpaSystemException ex) {
-        return ApiResponseUtil.internalServerError("Database operation error: " + ex.getMostSpecificCause().getMessage());
+        return ApiResponseUtil.internalServerError("Database operation error");
     }
 
     @ExceptionHandler(PersistenceException.class)
     public ResponseEntity<ApiResponseDTO<String>> handlePersistenceException(PersistenceException ex) {
-        return ApiResponseUtil.internalServerError("Database persistence error: " + ex.getMessage());
+        return ApiResponseUtil.internalServerError("Database persistence error");
     }
 
     @ExceptionHandler(AccessDeniedException.class)

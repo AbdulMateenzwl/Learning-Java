@@ -10,7 +10,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
@@ -26,7 +25,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.config.PaginationConfig;
 import com.example.demo.enums.TaskStatus;
 import com.example.demo.service.TaskServiceImpl;
 import com.example.demo.utils.ApiResponseUtil;
@@ -39,7 +37,6 @@ import lombok.RequiredArgsConstructor;
 @SecurityRequirement(name = "bearerAuth")
 public class TaskController {
     private final TaskServiceImpl taskServiceImpl;
-    private final PaginationConfig paginationConfig;
 
     @Operation(summary = "Create a new task", description = "Creates a new task with the provided details. Only accessible by manager.")
     @ApiResponses(value = {
@@ -97,9 +94,7 @@ public class TaskController {
     @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_MANAGER', 'ROLE_ADMIN')")
     public ResponseEntity<ApiResponseDTO<Page<TaskDTO>>> getUsersAllTasks(
             @PageableDefault(size = 5, sort = "createdAt", direction = Sort.Direction.ASC) Pageable pageable) {
-        pageable = PageRequest.of(pageable.getPageNumber(),
-                Math.min(pageable.getPageSize(), paginationConfig.getMaxPageSize()),
-                pageable.getSort());
+
 
         return ApiResponseUtil.success(taskServiceImpl.getAllTasks(pageable), "Tasks retrieved successfully");
     }

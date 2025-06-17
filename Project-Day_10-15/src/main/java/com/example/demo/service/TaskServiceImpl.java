@@ -1,13 +1,17 @@
 package com.example.demo.service;
 
-import java.util.Optional;
+import java.util.Objects;
 import java.util.UUID;
 
+import com.example.demo.config.PaginationConfig;
 import com.example.demo.config.UserContext;
 import com.example.demo.enums.UserRole;
 import com.example.demo.service.factory.TaskServiceFactory;
 import com.example.demo.service.strategy.tasks.TaskService;
+import com.example.demo.shared.assertion.TaskAssert;
+import com.example.demo.shared.assertion.UserAssert;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -15,8 +19,6 @@ import com.example.demo.enums.TaskStatus;
 import com.example.demo.dto.TaskDTO;
 import com.example.demo.entity.Task;
 import com.example.demo.entity.User;
-import com.example.demo.exceptions.InvalidOperationException;
-import com.example.demo.exceptions.TaskAlreadyAssignedException;
 import com.example.demo.exceptions.TaskNotFoundException;
 import com.example.demo.exceptions.UnauthorizedOperationException;
 import com.example.demo.exceptions.UserNotFoundException;
@@ -30,47 +32,37 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class TaskServiceImpl {
-    private final UserServiceImpl userServiceImpl;
     private final UserContext userContext;
     private final UserRepository userRepository;
     private final TaskRepository taskRepository;
     private final TaskMapper taskMapper;
     private final TaskServiceFactory taskServiceFactory;
+    private final TaskAssert taskAssert;
+    private final UserAssert userAssert;
+    private final PaginationConfig paginationConfig;
 
     @Transactional
     public TaskDTO createTask(TaskDTO taskDTO) {
         UUID userId = userContext.getUserId();
+
         taskDTO.setCreatedBy(userId);
-        Optional<User> user = userRepository.findByUuid(userId);
+        User user = userRepository.findByUuid(userId).orElseThrow(() -> new UserNotFoundException("User Not Found"));
         Task task = taskMapper.toEntity(taskDTO, user);
         taskRepository.save(task);
         return taskMapper.toDTO(task);
     }
 
     @Transactional
-    public TaskDTO assignTask(UUID taskId, UUID userID) {
+    public TaskDTO assignTask(UUID taskId, UUID userId) {
         UUID managerId = userContext.getUserId();
-        Optional<Task> optionalTask = taskRepository.findByUuid(taskId);
-        if (optionalTask.isEmpty()) {
-            throw new TaskNotFoundException("Task not found");
-        }
-        Task task = optionalTask.get();
-        if (task.getAssignedTo() != null) {
-            throw new TaskAlreadyAssignedException("Task is already assigned");
-        }
-        if (!task.getCreatedBy().getUuid().equals(managerId)) {
-            throw new UnauthorizedOperationException("Only the creator can assign the task");
-        }
-        Optional<User> user = userRepository.getReferenceByUuid(userID);
-        if (user.isEmpty()) {
-            throw new UserNotFoundException("User not found");
-        }
 
-        if (!userServiceImpl.isUserPartOfManager(user.get().getUuid(), managerId)) {
-            throw new UnauthorizedOperationException("User is not part of the manager's team");
-        }
+        Task task = taskRepository.findByUuid(taskId).orElseThrow(() -> new TaskNotFoundException("Task not found"));
+        taskAssert.assertTaskNotAssigned(task);
+        taskAssert.assertTaskIsCreatedByUser(task, managerId);
+        User user = userAssert.assertUserExists(userId);
+        userAssert.assertUserIsPartOfManager(user, managerId);
 
-        task.setAssignedTo(user.get());
+        task.setAssignedTo(user);
         taskRepository.save(task);
         return taskMapper.toDTO(task);
     }
@@ -78,14 +70,9 @@ public class TaskServiceImpl {
     @Transactional
     protected TaskDTO updateTask(TaskDTO taskDTO, UUID taskId) {
         UUID managerId = userContext.getUserId();
-        Optional<Task> optionalTask = taskRepository.findByUuid(taskId);
-        if (optionalTask.isEmpty()) {
-            throw new TaskNotFoundException("Task not found");
-        }
-        Task task = optionalTask.get();
-        if (!task.getCreatedBy().getUuid().equals(managerId)) {
-            throw new UnauthorizedOperationException("Only the creator can update the task");
-        }
+
+        Task task = taskRepository.findByUuid(taskId).orElseThrow(() -> new TaskNotFoundException("Task not found"));
+        taskAssert.assertTaskIsCreatedByUser(task, managerId);
 
         task = taskMapper.updateTask(task, taskDTO);
 
@@ -96,10 +83,11 @@ public class TaskServiceImpl {
     @Transactional
     protected TaskDTO updateTask(UUID taskUuid, TaskStatus status) {
         UUID userUuid = userContext.getUserId();
-        Task task = this.getTaskOfUserEntity(userUuid, taskUuid);
-        if (task.getStatus() == status) {
-            throw new InvalidOperationException("Task is already in the requested status");
-        }
+        Task task = taskRepository.findByUuid(taskUuid).orElseThrow(() -> new TaskNotFoundException("Task not found"));
+
+        taskAssert.assertTaskAssignedToUser(task, userUuid);
+        taskAssert.assertTaskStatusIsNotSame(task, status);
+
         task.setStatus(status);
         taskRepository.save(task);
         return taskMapper.toDTO(task);
@@ -112,12 +100,12 @@ public class TaskServiceImpl {
 
         switch (role) {
             case ROLE_MANAGER -> {
-                if (taskDTO != null) {
+                if (Objects.nonNull(taskDTO)) {
                     return updateTask(taskDTO, taskUuid);
                 }
             }
             case ROLE_USER -> {
-                if (status != null) {
+                if (Objects.nonNull(status)) {
                     return updateTask(taskUuid, status);
                 }
             }
@@ -126,25 +114,19 @@ public class TaskServiceImpl {
     }
 
     public Page<TaskDTO> getAllTasks(Pageable pageable) {
+        pageable = PageRequest.of(pageable.getPageNumber(),
+                Math.min(pageable.getPageSize(), paginationConfig.getMaxPageSize()),
+                pageable.getSort());
         TaskService strategy = taskServiceFactory.get(userContext.getRole());
         return strategy.getTasks(pageable);
     }
 
     public TaskDTO getTaskOfUser(UUID taskUuid) {
         UUID userUuid = userContext.getUserId();
-        Task task = this.getTaskOfUserEntity(userUuid, taskUuid);
-        return taskMapper.toDTO(task);
-    }
 
-    private Task getTaskOfUserEntity(UUID userUuid, UUID taskUuid) {
-        Optional<Task> optionalTask = taskRepository.findByUuid(taskUuid);
-        if (optionalTask.isEmpty()) {
-            throw new TaskNotFoundException("Task not found");
-        }
-        Task task = optionalTask.get();
-        if (!task.getAssignedTo().getUuid().equals(userUuid)) {
-            throw new UnauthorizedOperationException("Task is not assigned to the user");
-        }
-        return task;
+        Task task = taskRepository.findByUuid(taskUuid).orElseThrow(() -> new TaskNotFoundException("Task not found"));
+        taskAssert.assertTaskAssignedToUser(task, userUuid);
+
+        return taskMapper.toDTO(task);
     }
 }

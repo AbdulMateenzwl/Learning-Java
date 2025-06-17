@@ -20,7 +20,6 @@ public class TaskServiceFactory {
             case ROLE_ADMIN -> adminGetTasksServiceStrategy;
             case ROLE_MANAGER -> managerGetTasksServiceStrategy;
             case ROLE_USER -> userGetTasksServiceStrategy;
-            default -> throw new IllegalArgumentException("Unsupported role: " + role);
         };
     }
 }

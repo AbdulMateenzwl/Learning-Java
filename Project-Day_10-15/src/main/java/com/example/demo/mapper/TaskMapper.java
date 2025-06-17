@@ -34,9 +34,9 @@ public abstract class TaskMapper {
     @Mapping(target = "updatedAt", ignore = true)
     public abstract Task toEntity(TaskDTO taskDTO);
 
-    public Task toEntity(TaskDTO taskDTO, Optional<User> createdBy) {
+    public Task toEntity(TaskDTO taskDTO, User createdBy) {
         Task task = toEntity(taskDTO);
-        task.setCreatedBy(createdBy.orElseThrow(() -> new IllegalArgumentException("Creator user not found")));
+        task.setCreatedBy(createdBy);
         return task;
     }
 
