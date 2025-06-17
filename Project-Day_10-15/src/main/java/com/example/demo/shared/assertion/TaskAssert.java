@@ -2,6 +2,7 @@ package com.example.demo.shared.assertion;
 
 import com.example.demo.entity.Task;
 import com.example.demo.enums.TaskStatus;
+import com.example.demo.exceptions.InvalidOperationException;
 import com.example.demo.exceptions.TaskAlreadyAssignedException;
 import com.example.demo.exceptions.UnauthorizedOperationException;
 import lombok.RequiredArgsConstructor;
@@ -24,19 +25,19 @@ public class TaskAssert {
 
     public void assertTaskIsCreatedByUser(Task task, UUID userId) {
         if (!task.getCreatedBy().getUuid().equals(userId)) {
-            throw new UnauthorizedOperationException("Only the creator can perform action on the task");
+            throw new InvalidOperationException("Only the creator can perform action on the task");
         }
     }
 
     public void assertTaskStatusIsNotSame(Task task, TaskStatus status){
         if(task.getStatus().equals(status)){
-            throw new UnauthorizedOperationException("Task is already in the requested status");
+            throw new InvalidOperationException("Task is already in the requested status");
         }
     }
 
     public void assertTaskAssignedToUser(Task task, UUID userId){
         if(Objects.isNull(task.getAssignedTo()) || !task.getAssignedTo().getUuid().equals(userId)){
-            throw new UnauthorizedOperationException("Task is not assigned to the user");
+            throw new InvalidOperationException("Task is not assigned to the user");
         }
     }
 

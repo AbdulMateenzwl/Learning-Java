@@ -1,9 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.dto.ApiResponseDTO;
-import com.example.demo.dto.ApiResponseUserDTO;
-import com.example.demo.dto.ApiResponseUserPageDTO;
 import com.example.demo.dto.UserDTO;
+import com.example.demo.dto.UserPageDTO;
 import com.example.demo.service.UserServiceImpl;
 import com.example.demo.utils.ApiResponseUtil;
 import io.swagger.v3.oas.annotations.Operation;
@@ -35,13 +33,13 @@ public class UserController {
 
     @Operation(summary = "Create a new user", description = "Creates a new user with the provided details. Only accessible by administrators.")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "User created successfully", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseUserDTO.class))),
-            @ApiResponse(responseCode = "400", description = "Invalid input data", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseDTO.class))),
-            @ApiResponse(responseCode = "403", description = "Not authorized", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseDTO.class)))
+            @ApiResponse(responseCode = "201", description = "User created successfully", content = @Content(mediaType = "application/json", schema = @Schema(implementation = UserDTO.class))),
+            @ApiResponse(responseCode = "400", description = "Invalid input data"),
+            @ApiResponse(responseCode = "403", description = "Not authorized")
     })
     @PostMapping
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public ResponseEntity<ApiResponseDTO<UserDTO>> createUser(@RequestBody UserDTO userDTO) {
+    public ResponseEntity<UserDTO> createUser(@RequestBody UserDTO userDTO) {
         UserDTO createdUser = userServiceImpl.createUser(userDTO);
         return ApiResponseUtil.created(createdUser, "User created successfully");
     }
@@ -50,13 +48,13 @@ public class UserController {
             summary = "Restrict a user",
             description = "Restricts a user or manager by UUID. Only accessible by administrators.")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "User restricted successfully", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseUserDTO.class))),
-            @ApiResponse(responseCode = "400", description = "Bad Request | User Already Restricted", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseDTO.class))),
-            @ApiResponse(responseCode = "403", description = "Not authorized", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseDTO.class)))
+            @ApiResponse(responseCode = "200", description = "User restricted successfully", content = @Content(mediaType = "application/json", schema = @Schema(implementation = UserDTO.class))),
+            @ApiResponse(responseCode = "400", description = "Bad Request | User Already Restricted"),
+            @ApiResponse(responseCode = "403", description = "Not authorized")
     })
     @PatchMapping("/{uuid}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public ResponseEntity<ApiResponseDTO<UserDTO>> restrictUser(@PathVariable UUID uuid) {
+    public ResponseEntity<UserDTO> restrictUser(@PathVariable UUID uuid) {
         UserDTO userDto = userServiceImpl.restrictUser(uuid);
         return ApiResponseUtil.success(userDto, "User restricted successfully");
     }
@@ -66,11 +64,11 @@ public class UserController {
             description = "Get List of User Roles in System - Only Admin can Access")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Roles Received", content = @Content(mediaType = "application/json", schema = @Schema(implementation = List.class))),
-            @ApiResponse(responseCode = "403", description = "Not authorized", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseDTO.class)))
+            @ApiResponse(responseCode = "403", description = "Not authorized")
     })
     @GetMapping("/roles")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public ResponseEntity<ApiResponseDTO<List<String>>> getAllRoles() {
+    public ResponseEntity<List<String>> getAllRoles() {
         return ApiResponseUtil.success(userServiceImpl.getRoles(), "Roles retrieved successfully");
     }
 
@@ -78,12 +76,12 @@ public class UserController {
             summary = "Get User info",
             description = "Get user Details of the current user. Accessible by any authenticated user.")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Roles Received", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseDTO.class))),
-            @ApiResponse(responseCode = "403", description = "Not authorized", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseDTO.class)))
+            @ApiResponse(responseCode = "200", description = "Current User Data Received", content = @Content(mediaType = "application/json", schema = @Schema(implementation = UserDTO.class))),
+            @ApiResponse(responseCode = "403", description = "Not authorized")
     })
     @GetMapping("/info")
     @PreAuthorize("hasRole('ROLE_USER')")
-    public ResponseEntity<ApiResponseDTO<UserDTO>> getCurrentUser() {
+    public ResponseEntity<UserDTO> getCurrentUser() {
         return ApiResponseUtil.success(userServiceImpl.getCurrentUser(), "Current user retrieved successfully");
     }
 
@@ -97,12 +95,12 @@ public class UserController {
                     """
     )
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Users retrieved successfully", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseUserPageDTO.class))),
-            @ApiResponse(responseCode = "403", description = "Not authorized to view users", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseDTO.class)))
+            @ApiResponse(responseCode = "200", description = "Users retrieved successfully", content = @Content(mediaType = "application/json", schema = @Schema(implementation = UserPageDTO.class))),
+            @ApiResponse(responseCode = "403", description = "Not authorized to view users")
     })
     @GetMapping
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')")
-    public ResponseEntity<ApiResponseDTO<Page<UserDTO>>> getUsers(
+    public ResponseEntity<Page<UserDTO>> getUsers(
             @PageableDefault(size = 5, sort = "createdAt", direction = Sort.Direction.ASC) Pageable pageable) {
         return ApiResponseUtil.success(userServiceImpl.getAllUsers(pageable), "Assigned users retrieved successfully");
     }

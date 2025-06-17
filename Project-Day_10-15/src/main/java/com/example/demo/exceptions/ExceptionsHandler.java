@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.client.HttpClientErrorException;
 
-import com.example.demo.dto.ApiResponseDTO;
 import com.example.demo.utils.ApiResponseUtil;
 
 import jakarta.persistence.EntityNotFoundException;
@@ -24,53 +23,53 @@ import jakarta.validation.ConstraintViolationException;
 public class ExceptionsHandler {
 
     @ExceptionHandler(UsernameNotFoundException.class)
-    public ResponseEntity<ApiResponseDTO<String>> handleUserNotFound(UsernameNotFoundException ex) {
+    public ResponseEntity<String> handleUserNotFound(UsernameNotFoundException ex) {
         return ApiResponseUtil.notFound(ex.getMessage());
     }
 
     @ExceptionHandler(UserNotFoundException.class)
-    public ResponseEntity<ApiResponseDTO<String>> handleUserNotFound(UserNotFoundException ex) {
+    public ResponseEntity<String> handleUserNotFound(UserNotFoundException ex) {
         return ApiResponseUtil.notFound(ex.getMessage());
     }
 
     @ExceptionHandler(TaskNotFoundException.class)
-    public ResponseEntity<ApiResponseDTO<String>> handleTaskNotFound(TaskNotFoundException ex) {
+    public ResponseEntity<String> handleTaskNotFound(TaskNotFoundException ex) {
         return ApiResponseUtil.notFound(ex.getMessage());
     }
 
     @ExceptionHandler(TaskAlreadyAssignedException.class)
-    public ResponseEntity<ApiResponseDTO<String>> handleTaskAlreadyAssigned(TaskAlreadyAssignedException ex) {
+    public ResponseEntity<String> handleTaskAlreadyAssigned(TaskAlreadyAssignedException ex) {
         return ApiResponseUtil.conflict(ex.getMessage());
     }
 
     @ExceptionHandler(UnauthorizedOperationException.class)
-    public ResponseEntity<ApiResponseDTO<String>> handleUnauthorizedOperation(UnauthorizedOperationException ex) {
+    public ResponseEntity<String> handleUnauthorizedOperation(UnauthorizedOperationException ex) {
         return ApiResponseUtil.unauthorized(ex.getMessage());
     }
 
     @ExceptionHandler(HttpClientErrorException.Unauthorized.class)
-    public ResponseEntity<ApiResponseDTO<String>> handleHttpClientUnauthorized(HttpClientErrorException.Unauthorized ex) {
+    public ResponseEntity<String> handleHttpClientUnauthorized(HttpClientErrorException.Unauthorized ex) {
         return ApiResponseUtil.unauthorized("Unauthorized access: " + ex.getMessage());
     }
 
     @ExceptionHandler(InvalidOperationException.class)
-    public ResponseEntity<ApiResponseDTO<String>> handleInvalidOperation(InvalidOperationException ex) {
+    public ResponseEntity<String> handleInvalidOperation(InvalidOperationException ex) {
         return ApiResponseUtil.badRequest(ex.getMessage());
     }
 
     @ExceptionHandler(DataIntegrityViolationException.class)
-    public ResponseEntity<ApiResponseDTO<String>> handleDataIntegrityViolation(DataIntegrityViolationException ex) {
+    public ResponseEntity<String> handleDataIntegrityViolation(DataIntegrityViolationException ex) {
         String message = "Database constraint violation: " + ex.getMostSpecificCause().getMessage();
         return ApiResponseUtil.conflict(message);
     }
 
     @ExceptionHandler(EntityNotFoundException.class)
-    public ResponseEntity<ApiResponseDTO<String>> handleEntityNotFound(EntityNotFoundException ex) {
+    public ResponseEntity<String> handleEntityNotFound(EntityNotFoundException ex) {
         return ApiResponseUtil.notFound(ex.getMessage());
     }
 
     @ExceptionHandler(ConstraintViolationException.class)
-    public ResponseEntity<ApiResponseDTO<String>> handleConstraintViolation(ConstraintViolationException ex) {
+    public ResponseEntity<String> handleConstraintViolation(ConstraintViolationException ex) {
         StringBuilder message = new StringBuilder("Validation failed: ");
         ex.getConstraintViolations().forEach(violation ->
                 message.append(violation.getPropertyPath())
@@ -81,12 +80,12 @@ public class ExceptionsHandler {
     }
 
     @ExceptionHandler(DataAccessException.class)
-    public ResponseEntity<ApiResponseDTO<String>> handleDataAccessException(DataAccessException ex) {
+    public ResponseEntity<String> handleDataAccessException(DataAccessException ex) {
         return ApiResponseUtil.internalServerError("Database error: " + ex.getMostSpecificCause().getMessage());
     }
 
     @ExceptionHandler(TransactionSystemException.class)
-    public ResponseEntity<ApiResponseDTO<String>> handleTransactionSystemException(TransactionSystemException ex) {
+    public ResponseEntity<String> handleTransactionSystemException(TransactionSystemException ex) {
         Throwable cause = ex.getMostSpecificCause();
         if (cause instanceof ConstraintViolationException constraintViolationException) {
             return handleConstraintViolation(constraintViolationException);
@@ -95,32 +94,32 @@ public class ExceptionsHandler {
     }
 
     @ExceptionHandler(JpaSystemException.class)
-    public ResponseEntity<ApiResponseDTO<String>> handleJpaSystemException(JpaSystemException ex) {
+    public ResponseEntity<String> handleJpaSystemException(JpaSystemException ex) {
         return ApiResponseUtil.internalServerError("Database operation error");
     }
 
     @ExceptionHandler(PersistenceException.class)
-    public ResponseEntity<ApiResponseDTO<String>> handlePersistenceException(PersistenceException ex) {
+    public ResponseEntity<String> handlePersistenceException(PersistenceException ex) {
         return ApiResponseUtil.internalServerError("Database persistence error");
     }
 
     @ExceptionHandler(AccessDeniedException.class)
-    public ResponseEntity<ApiResponseDTO<String>> handleAccessDenied(AccessDeniedException ex) {
+    public ResponseEntity<String> handleAccessDenied(AccessDeniedException ex) {
         return ApiResponseUtil.forbidden("Access denied: You don't have permission to perform this operation");
     }
 
     @ExceptionHandler(BadCredentialsException.class)
-    public ResponseEntity<ApiResponseDTO<String>> handleBadCredentials(BadCredentialsException ex) {
+    public ResponseEntity<String> handleBadCredentials(BadCredentialsException ex) {
         return ApiResponseUtil.unauthorized("Invalid credentials");
     }
 
     @ExceptionHandler(InsufficientAuthenticationException.class)
-    public ResponseEntity<ApiResponseDTO<String>> handleInsufficientAuthentication(InsufficientAuthenticationException ex) {
+    public ResponseEntity<String> handleInsufficientAuthentication(InsufficientAuthenticationException ex) {
         return ApiResponseUtil.unauthorized("Authentication required");
     }
 
     @ExceptionHandler(RuntimeException.class)
-    public ResponseEntity<ApiResponseDTO<String>> handleRuntimeException(RuntimeException ex) {
+    public ResponseEntity<String> handleRuntimeException(RuntimeException ex) {
         return ApiResponseUtil.internalServerError(ex.getMessage());
     }
 }

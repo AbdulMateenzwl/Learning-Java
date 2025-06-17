@@ -40,26 +40,26 @@ public class TaskController {
 
     @Operation(summary = "Create a new task", description = "Creates a new task with the provided details. Only accessible by manager.")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "Task created successfully", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseTaskDTO.class))),
-            @ApiResponse(responseCode = "400", description = "Invalid input data", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseDTO.class))),
-            @ApiResponse(responseCode = "403", description = "Not authorized", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseDTO.class)))
+            @ApiResponse(responseCode = "201", description = "Task created successfully", content = @Content(mediaType = "application/json", schema = @Schema(implementation = TaskDTO.class))),
+            @ApiResponse(responseCode = "400", description = "Invalid input data"),
+            @ApiResponse(responseCode = "403", description = "Not authorized")
     })
     @PostMapping
     @PreAuthorize("hasRole('ROLE_MANAGER')")
-    public ResponseEntity<ApiResponseDTO<TaskDTO>> createTask(@RequestBody TaskDTO taskDTO) {
+    public ResponseEntity<TaskDTO> createTask(@RequestBody TaskDTO taskDTO) {
         return ApiResponseUtil.created(taskServiceImpl.createTask(taskDTO), "Task created successfully");
     }
 
     @Operation(summary = "Assign task", description = "Assigned a Task to User by Uuid - Manager only")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Assigned Task to User successfully", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseTaskDTO.class))),
-            @ApiResponse(responseCode = "400", description = "Invalid input data", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseDTO.class))),
-            @ApiResponse(responseCode = "403", description = "Not authorized", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseDTO.class)))
+            @ApiResponse(responseCode = "200", description = "Assigned Task to User successfully", content = @Content(mediaType = "application/json", schema = @Schema(implementation = TaskDTO.class))),
+            @ApiResponse(responseCode = "400", description = "Invalid input data"),
+            @ApiResponse(responseCode = "403", description = "Not authorized")
     })
 
     @PatchMapping("/{taskUuid}")
     @PreAuthorize("hasRole('ROLE_MANAGER')")
-    public ResponseEntity<ApiResponseDTO<TaskDTO>> assignTask(@PathVariable UUID taskUuid, @RequestParam UUID userUuid) {
+    public ResponseEntity<TaskDTO> assignTask(@PathVariable UUID taskUuid, @RequestParam UUID userUuid) {
         return ApiResponseUtil.success(taskServiceImpl.assignTask(taskUuid, userUuid), "Task assigned successfully");
     }
 
@@ -68,15 +68,15 @@ public class TaskController {
             Update Task status - User
             """)
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Updated Task", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseTaskDTO.class))),
-            @ApiResponse(responseCode = "400", description = "Invalid input data", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseDTO.class))),
-            @ApiResponse(responseCode = "403", description = "Not authorized", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseDTO.class)))
+            @ApiResponse(responseCode = "200", description = "Updated Task", content = @Content(mediaType = "application/json", schema = @Schema(implementation = TaskDTO.class))),
+            @ApiResponse(responseCode = "400", description = "Invalid input data"),
+            @ApiResponse(responseCode = "403", description = "Not authorized")
     })
     @PutMapping("/{taskUuid}")
     @PreAuthorize("hasAnyRole('ROLE_USER','ROLE_MANAGER')")
-    public ResponseEntity<ApiResponseDTO<TaskDTO>> updateUserTask(@RequestBody(required = false) TaskDTO taskDTO,
-                                                                  @RequestParam(required = false) TaskStatus status,
-                                                                  @PathVariable UUID taskUuid) {
+    public ResponseEntity<TaskDTO> updateUserTask(@RequestBody(required = false) TaskDTO taskDTO,
+                                                  @RequestParam(required = false) TaskStatus status,
+                                                  @PathVariable UUID taskUuid) {
         return ApiResponseUtil.success(taskServiceImpl.updateTask(taskUuid, taskDTO, status), "Task updated successfully");
     }
 
@@ -86,13 +86,13 @@ public class TaskController {
             Admin - Get Page of All Tasks in System
             """)
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Task Retrieved", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseTaskPageDTO.class))),
-            @ApiResponse(responseCode = "400", description = "Invalid input data", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseDTO.class))),
-            @ApiResponse(responseCode = "403", description = "Not authorized", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseDTO.class)))
+            @ApiResponse(responseCode = "200", description = "Task Retrieved", content = @Content(mediaType = "application/json", schema = @Schema(implementation = TaskPageDTO.class))),
+            @ApiResponse(responseCode = "400", description = "Invalid input data"),
+            @ApiResponse(responseCode = "403", description = "Not authorized")
     })
     @GetMapping
     @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_MANAGER', 'ROLE_ADMIN')")
-    public ResponseEntity<ApiResponseDTO<Page<TaskDTO>>> getUsersAllTasks(
+    public ResponseEntity<Page<TaskDTO>> getUsersAllTasks(
             @PageableDefault(size = 5, sort = "createdAt", direction = Sort.Direction.ASC) Pageable pageable) {
 
 
@@ -101,13 +101,13 @@ public class TaskController {
 
     @Operation(summary = "Get a User Task", description = "Get a single Task assigned to user")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Updated Task", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseTaskDTO.class))),
-            @ApiResponse(responseCode = "400", description = "Invalid input data", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseDTO.class))),
-            @ApiResponse(responseCode = "403", description = "Not authorized", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseDTO.class)))
+            @ApiResponse(responseCode = "200", description = "Updated Task", content = @Content(mediaType = "application/json", schema = @Schema(implementation = TaskDTO.class))),
+            @ApiResponse(responseCode = "400", description = "Invalid input data"),
+            @ApiResponse(responseCode = "403", description = "Not authorized")
     })
     @GetMapping("/{taskUuid}")
     @PreAuthorize("hasRole('ROLE_USER')")
-    public ResponseEntity<ApiResponseDTO<TaskDTO>> getTaskById(@PathVariable UUID taskUuid) {
+    public ResponseEntity<TaskDTO> getTaskById(@PathVariable UUID taskUuid) {
         return ApiResponseUtil.success(taskServiceImpl.getTaskOfUser(taskUuid), "Task retrieved successfully");
     }
 

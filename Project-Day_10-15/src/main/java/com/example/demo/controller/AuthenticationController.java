@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-import com.example.demo.dto.ApiResponseDTO;
 import com.example.demo.utils.ApiResponseUtil;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +23,7 @@ public class AuthenticationController {
 
     @Operation(description = "Endpoint for User, Manager and Admin  Login")
     @PostMapping("/authenticate")
-    public ResponseEntity<ApiResponseDTO<AuthenticationResponse>> authenticate(
+    public ResponseEntity<AuthenticationResponse> authenticate(
             @RequestBody AuthenticationRequest request
     ) {
         return ApiResponseUtil.success(authenticationService.authenticate(request), "Authentication successful");

@@ -1639,3 +1639,2191 @@
 2025-06-17 10:07:45,252 [SpringApplicationShutdownHook] [trace=] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-06-17 10:07:45,254 [SpringApplicationShutdownHook] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2025-06-17 10:07:45,256 [SpringApplicationShutdownHook] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-17 10:20:26,242 [main] [trace=] INFO  com.example.demo.DemoApplication - Starting DemoApplication using Java 21.0.7 with PID 132222 (/home/abdulmateen/Desktop/Projects/Learning-Java/Project-Day_10-15/target/classes started by abdulmateen in /home/abdulmateen/Desktop/Projects/Learning-Java/Project-Day_10-15)
+2025-06-17 10:20:26,248 [main] [trace=] DEBUG com.example.demo.DemoApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-06-17 10:20:26,249 [main] [trace=] INFO  com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-17 10:20:26,413 [main] [trace=] INFO  o.s.b.d.c.l.DockerComposeLifecycleManager - Using Docker Compose file /home/abdulmateen/Desktop/Projects/Learning-Java/Project-Day_10-15/docker-compose.yaml
+2025-06-17 10:20:26,979 [main] [trace=] INFO  o.s.b.d.c.l.DockerComposeLifecycleManager - There are already Docker Compose services running, skipping startup
+2025-06-17 10:20:28,151 [main] [trace=] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-17 10:20:28,229 [main] [trace=] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 69 ms. Found 2 JPA repository interfaces.
+2025-06-17 10:20:29,032 [main] [trace=] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-17 10:20:29,042 [main] [trace=] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-06-17 10:20:29,044 [main] [trace=] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-17 10:20:29,045 [main] [trace=] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-06-17 10:20:29,096 [main] [trace=] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-17 10:20:29,097 [main] [trace=] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1906 ms
+2025-06-17 10:20:29,574 [main] [trace=] INFO  liquibase.database - Set default schema name to public
+2025-06-17 10:20:29,918 [main] [trace=] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-06-17 10:20:29,970 [main] [trace=] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-06-17 10:20:29,974 [main] [trace=] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-06-17 10:20:29,981 [main] [trace=] INFO  liquibase.util - UPDATE SUMMARY
+2025-06-17 10:20:29,982 [main] [trace=] INFO  liquibase.util - Run:                          0
+2025-06-17 10:20:29,982 [main] [trace=] INFO  liquibase.util - Previously run:               2
+2025-06-17 10:20:29,983 [main] [trace=] INFO  liquibase.util - Filtered out:                 0
+2025-06-17 10:20:29,983 [main] [trace=] INFO  liquibase.util - -------------------------------
+2025-06-17 10:20:29,983 [main] [trace=] INFO  liquibase.util - Total change sets:            2
+2025-06-17 10:20:29,984 [main] [trace=] INFO  liquibase.util - Update summary generated
+2025-06-17 10:20:29,985 [main] [trace=] INFO  liquibase.command - Command execution complete
+2025-06-17 10:20:30,100 [main] [trace=] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-17 10:20:30,157 [main] [trace=] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-06-17 10:20:30,207 [main] [trace=] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-17 10:20:30,464 [main] [trace=] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-17 10:20:30,489 [main] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-17 10:20:30,549 [main] [trace=] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6c25123e
+2025-06-17 10:20:30,551 [main] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-17 10:20:30,616 [main] [trace=] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.13
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-17 10:20:31,919 [main] [trace=] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-17 10:20:31,922 [main] [trace=] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-17 10:20:32,346 [main] [trace=] DEBUG c.e.d.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-06-17 10:20:32,421 [main] [trace=] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-17 10:20:32,423 [main] [trace=] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-17 10:20:32,658 [main] [trace=] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-17 10:20:33,131 [main] [trace=] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-06-17 10:20:33,490 [main] [trace=] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-06-17 10:20:33,503 [main] [trace=] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-06-17 10:20:33,513 [main] [trace=] INFO  com.example.demo.DemoApplication - Started DemoApplication in 8.259 seconds (process running for 8.948)
+2025-06-17 10:20:33,629 [main] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:20:33,668 [main] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:20:37,042 [http-nio-8080-exec-2] [trace=] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-17 10:20:37,043 [http-nio-8080-exec-2] [trace=] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-17 10:20:37,045 [http-nio-8080-exec-2] [trace=] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-06-17 10:20:37,065 [http-nio-8080-exec-2] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-17 10:20:37,093 [http-nio-8080-exec-2] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 28ms, correlationId: null]
+2025-06-17 10:20:37,095 [http-nio-8080-exec-2] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:20:37,109 [http-nio-8080-exec-2] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.email,
+        m1_0.manager_id,
+        m1_0.password,
+        m1_0.is_restricted,
+        m1_0.role,
+        m1_0.updated_at,
+        m1_0.uuid,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    left join
+        users m1_0 
+            on m1_0.id=u1_0.manager_id 
+    where
+        u1_0.id=?
+2025-06-17 10:20:37,113 [http-nio-8080-exec-2] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-17 10:20:37,117 [http-nio-8080-exec-2] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 3ms, correlationId: null]
+2025-06-17 10:20:37,124 [http-nio-8080-exec-2] [trace=71483d48-e312-4bd5-ae30-8b5dbc6278e2] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: GET /api/users/info [correlationId: 71483d48-e312-4bd5-ae30-8b5dbc6278e2]
+2025-06-17 10:20:37,142 [http-nio-8080-exec-2] [trace=71483d48-e312-4bd5-ae30-8b5dbc6278e2] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: UserServiceImpl.getCurrentUser [correlationId: 71483d48-e312-4bd5-ae30-8b5dbc6278e2]
+2025-06-17 10:20:37,144 [http-nio-8080-exec-2] [trace=71483d48-e312-4bd5-ae30-8b5dbc6278e2] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.uuid=?
+2025-06-17 10:20:37,147 [http-nio-8080-exec-2] [trace=71483d48-e312-4bd5-ae30-8b5dbc6278e2] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.email,
+        m1_0.manager_id,
+        m1_0.password,
+        m1_0.is_restricted,
+        m1_0.role,
+        m1_0.updated_at,
+        m1_0.uuid,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    left join
+        users m1_0 
+            on m1_0.id=u1_0.manager_id 
+    where
+        u1_0.id=?
+2025-06-17 10:20:37,152 [http-nio-8080-exec-2] [trace=71483d48-e312-4bd5-ae30-8b5dbc6278e2] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: UserServiceImpl.getCurrentUser [duration: 10ms, correlationId: 71483d48-e312-4bd5-ae30-8b5dbc6278e2]
+2025-06-17 10:20:37,194 [http-nio-8080-exec-2] [trace=71483d48-e312-4bd5-ae30-8b5dbc6278e2] INFO  c.e.d.i.RequestLoggingInterceptor - Request processed: GET /api/users/info [status: 200, duration: 70ms]
+2025-06-17 10:21:18,298 [http-nio-8080-exec-3] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-17 10:21:18,300 [http-nio-8080-exec-3] [trace=] ERROR c.e.demo.aspect.ServiceLoggingAspect - Error in service method: JwtService.extractUsername [error: JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted., correlationId: null]
+2025-06-17 10:21:18,301 [http-nio-8080-exec-3] [trace=] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+io.jsonwebtoken.security.SignatureException: JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:399)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:529)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:589)
+	at io.jsonwebtoken.impl.ImmutableJwtParser.parseClaimsJws(ImmutableJwtParser.java:173)
+	at com.example.demo.service.JwtService.extractAllClaims(JwtService.java:82)
+	at com.example.demo.service.JwtService.extractClaim(JwtService.java:31)
+	at com.example.demo.service.JwtService.extractUsername(JwtService.java:27)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.example.demo.aspect.ServiceLoggingAspect.logServiceMethods(ServiceLoggingAspect.java:31)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:642)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:632)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728)
+	at com.example.demo.service.JwtService$$SpringCGLIB$$0.extractUsername(<generated>)
+	at com.example.demo.config.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:43)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:243)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:238)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-06-17 10:21:40,261 [http-nio-8080-exec-5] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-17 10:21:40,264 [http-nio-8080-exec-5] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 2ms, correlationId: null]
+2025-06-17 10:21:40,266 [http-nio-8080-exec-5] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:21:40,270 [http-nio-8080-exec-5] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.email,
+        m1_0.manager_id,
+        m1_0.password,
+        m1_0.is_restricted,
+        m1_0.role,
+        m1_0.updated_at,
+        m1_0.uuid,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    left join
+        users m1_0 
+            on m1_0.id=u1_0.manager_id 
+    where
+        u1_0.id=?
+2025-06-17 10:21:40,275 [http-nio-8080-exec-5] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-17 10:21:40,278 [http-nio-8080-exec-5] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 3ms, correlationId: null]
+2025-06-17 10:21:40,279 [http-nio-8080-exec-5] [trace=574dcbcc-7b31-445d-8928-2b414054e656] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: GET /api/tasks/fc56cc83-711c-4969-a7c8-e071a5f24bf3 [correlationId: 574dcbcc-7b31-445d-8928-2b414054e656]
+2025-06-17 10:21:40,287 [http-nio-8080-exec-5] [trace=574dcbcc-7b31-445d-8928-2b414054e656] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: TaskServiceImpl.getTaskOfUser [correlationId: 574dcbcc-7b31-445d-8928-2b414054e656]
+2025-06-17 10:21:40,290 [http-nio-8080-exec-5] [trace=574dcbcc-7b31-445d-8928-2b414054e656] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.assignee,
+        t1_0.created_at,
+        t1_0.created_by,
+        t1_0.description,
+        t1_0.status,
+        t1_0.title,
+        t1_0.updated_at,
+        t1_0.uuid 
+    from
+        tasks t1_0 
+    where
+        t1_0.uuid=?
+2025-06-17 10:21:40,296 [http-nio-8080-exec-5] [trace=574dcbcc-7b31-445d-8928-2b414054e656] ERROR c.e.demo.aspect.ServiceLoggingAspect - Error in service method: TaskServiceImpl.getTaskOfUser [error: Task not found, correlationId: 574dcbcc-7b31-445d-8928-2b414054e656]
+2025-06-17 10:22:02,083 [SpringApplicationShutdownHook] [trace=] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-17 10:22:02,086 [tomcat-shutdown] [trace=] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-17 10:22:02,094 [SpringApplicationShutdownHook] [trace=] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-17 10:22:02,098 [SpringApplicationShutdownHook] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-17 10:22:02,107 [SpringApplicationShutdownHook] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-17 10:22:06,699 [main] [trace=] INFO  com.example.demo.DemoApplication - Starting DemoApplication using Java 21.0.7 with PID 132960 (/home/abdulmateen/Desktop/Projects/Learning-Java/Project-Day_10-15/target/classes started by abdulmateen in /home/abdulmateen/Desktop/Projects/Learning-Java/Project-Day_10-15)
+2025-06-17 10:22:06,700 [main] [trace=] DEBUG com.example.demo.DemoApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-06-17 10:22:06,701 [main] [trace=] INFO  com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-17 10:22:06,840 [main] [trace=] INFO  o.s.b.d.c.l.DockerComposeLifecycleManager - Using Docker Compose file /home/abdulmateen/Desktop/Projects/Learning-Java/Project-Day_10-15/docker-compose.yaml
+2025-06-17 10:22:07,427 [main] [trace=] INFO  o.s.b.d.c.l.DockerComposeLifecycleManager - There are already Docker Compose services running, skipping startup
+2025-06-17 10:22:08,564 [main] [trace=] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-17 10:22:08,629 [main] [trace=] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 56 ms. Found 2 JPA repository interfaces.
+2025-06-17 10:22:09,359 [main] [trace=] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-17 10:22:09,371 [main] [trace=] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-06-17 10:22:09,374 [main] [trace=] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-17 10:22:09,374 [main] [trace=] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-06-17 10:22:09,426 [main] [trace=] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-17 10:22:09,427 [main] [trace=] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1789 ms
+2025-06-17 10:22:09,926 [main] [trace=] INFO  liquibase.database - Set default schema name to public
+2025-06-17 10:22:10,270 [main] [trace=] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-06-17 10:22:10,324 [main] [trace=] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-06-17 10:22:10,327 [main] [trace=] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-06-17 10:22:10,339 [main] [trace=] INFO  liquibase.util - UPDATE SUMMARY
+2025-06-17 10:22:10,340 [main] [trace=] INFO  liquibase.util - Run:                          0
+2025-06-17 10:22:10,340 [main] [trace=] INFO  liquibase.util - Previously run:               2
+2025-06-17 10:22:10,341 [main] [trace=] INFO  liquibase.util - Filtered out:                 0
+2025-06-17 10:22:10,341 [main] [trace=] INFO  liquibase.util - -------------------------------
+2025-06-17 10:22:10,342 [main] [trace=] INFO  liquibase.util - Total change sets:            2
+2025-06-17 10:22:10,343 [main] [trace=] INFO  liquibase.util - Update summary generated
+2025-06-17 10:22:10,344 [main] [trace=] INFO  liquibase.command - Command execution complete
+2025-06-17 10:22:10,455 [main] [trace=] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-17 10:22:10,502 [main] [trace=] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-06-17 10:22:10,542 [main] [trace=] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-17 10:22:10,779 [main] [trace=] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-17 10:22:10,803 [main] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-17 10:22:10,850 [main] [trace=] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2a9565d7
+2025-06-17 10:22:10,851 [main] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-17 10:22:10,905 [main] [trace=] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.13
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-17 10:22:11,743 [main] [trace=] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-17 10:22:11,746 [main] [trace=] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-17 10:22:12,140 [main] [trace=] DEBUG c.e.d.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-06-17 10:22:12,210 [main] [trace=] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-17 10:22:12,212 [main] [trace=] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-17 10:22:12,451 [main] [trace=] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-17 10:22:12,921 [main] [trace=] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-06-17 10:22:13,258 [main] [trace=] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-06-17 10:22:13,278 [main] [trace=] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-06-17 10:22:13,288 [main] [trace=] INFO  com.example.demo.DemoApplication - Started DemoApplication in 7.297 seconds (process running for 7.822)
+2025-06-17 10:22:13,399 [main] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:22:13,430 [main] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:22:15,975 [http-nio-8080-exec-2] [trace=] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-17 10:22:15,976 [http-nio-8080-exec-2] [trace=] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-17 10:22:15,980 [http-nio-8080-exec-2] [trace=] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-06-17 10:22:16,021 [http-nio-8080-exec-2] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-17 10:22:16,047 [http-nio-8080-exec-2] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 26ms, correlationId: null]
+2025-06-17 10:22:16,049 [http-nio-8080-exec-2] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:22:16,055 [http-nio-8080-exec-2] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.email,
+        m1_0.manager_id,
+        m1_0.password,
+        m1_0.is_restricted,
+        m1_0.role,
+        m1_0.updated_at,
+        m1_0.uuid,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    left join
+        users m1_0 
+            on m1_0.id=u1_0.manager_id 
+    where
+        u1_0.id=?
+2025-06-17 10:22:16,059 [http-nio-8080-exec-2] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-17 10:22:16,063 [http-nio-8080-exec-2] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 4ms, correlationId: null]
+2025-06-17 10:22:16,069 [http-nio-8080-exec-2] [trace=e85baa84-6ff8-4ae0-8cf1-c35bc432660b] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: GET /api/tasks/fc56cc83-711c-4969-a7c8-e071a5f24bf3 [correlationId: e85baa84-6ff8-4ae0-8cf1-c35bc432660b]
+2025-06-17 10:22:16,100 [http-nio-8080-exec-2] [trace=e85baa84-6ff8-4ae0-8cf1-c35bc432660b] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: TaskServiceImpl.getTaskOfUser [correlationId: e85baa84-6ff8-4ae0-8cf1-c35bc432660b]
+2025-06-17 10:22:16,103 [http-nio-8080-exec-2] [trace=e85baa84-6ff8-4ae0-8cf1-c35bc432660b] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.assignee,
+        t1_0.created_at,
+        t1_0.created_by,
+        t1_0.description,
+        t1_0.status,
+        t1_0.title,
+        t1_0.updated_at,
+        t1_0.uuid 
+    from
+        tasks t1_0 
+    where
+        t1_0.uuid=?
+2025-06-17 10:22:16,108 [http-nio-8080-exec-2] [trace=e85baa84-6ff8-4ae0-8cf1-c35bc432660b] ERROR c.e.demo.aspect.ServiceLoggingAspect - Error in service method: TaskServiceImpl.getTaskOfUser [error: Task not found, correlationId: e85baa84-6ff8-4ae0-8cf1-c35bc432660b]
+2025-06-17 10:24:50,906 [SpringApplicationShutdownHook] [trace=] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-17 10:24:50,912 [tomcat-shutdown] [trace=] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-17 10:24:50,924 [SpringApplicationShutdownHook] [trace=] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-17 10:24:50,929 [SpringApplicationShutdownHook] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-17 10:24:50,937 [SpringApplicationShutdownHook] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-17 10:24:55,134 [main] [trace=] INFO  com.example.demo.DemoApplication - Starting DemoApplication using Java 21.0.7 with PID 133985 (/home/abdulmateen/Desktop/Projects/Learning-Java/Project-Day_10-15/target/classes started by abdulmateen in /home/abdulmateen/Desktop/Projects/Learning-Java/Project-Day_10-15)
+2025-06-17 10:24:55,137 [main] [trace=] DEBUG com.example.demo.DemoApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-06-17 10:24:55,138 [main] [trace=] INFO  com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-17 10:24:55,240 [main] [trace=] INFO  o.s.b.d.c.l.DockerComposeLifecycleManager - Using Docker Compose file /home/abdulmateen/Desktop/Projects/Learning-Java/Project-Day_10-15/docker-compose.yaml
+2025-06-17 10:24:55,984 [main] [trace=] INFO  o.s.b.d.c.l.DockerComposeLifecycleManager - There are already Docker Compose services running, skipping startup
+2025-06-17 10:24:57,064 [main] [trace=] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-17 10:24:57,127 [main] [trace=] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 52 ms. Found 2 JPA repository interfaces.
+2025-06-17 10:24:57,931 [main] [trace=] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-17 10:24:57,943 [main] [trace=] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-06-17 10:24:57,945 [main] [trace=] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-17 10:24:57,945 [main] [trace=] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-06-17 10:24:57,991 [main] [trace=] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-17 10:24:57,992 [main] [trace=] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1798 ms
+2025-06-17 10:24:58,543 [main] [trace=] INFO  liquibase.database - Set default schema name to public
+2025-06-17 10:24:58,915 [main] [trace=] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-06-17 10:24:58,968 [main] [trace=] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-06-17 10:24:58,972 [main] [trace=] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-06-17 10:24:58,981 [main] [trace=] INFO  liquibase.util - UPDATE SUMMARY
+2025-06-17 10:24:58,982 [main] [trace=] INFO  liquibase.util - Run:                          0
+2025-06-17 10:24:58,982 [main] [trace=] INFO  liquibase.util - Previously run:               2
+2025-06-17 10:24:58,983 [main] [trace=] INFO  liquibase.util - Filtered out:                 0
+2025-06-17 10:24:58,983 [main] [trace=] INFO  liquibase.util - -------------------------------
+2025-06-17 10:24:58,983 [main] [trace=] INFO  liquibase.util - Total change sets:            2
+2025-06-17 10:24:58,984 [main] [trace=] INFO  liquibase.util - Update summary generated
+2025-06-17 10:24:58,986 [main] [trace=] INFO  liquibase.command - Command execution complete
+2025-06-17 10:24:59,124 [main] [trace=] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-17 10:24:59,190 [main] [trace=] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-06-17 10:24:59,229 [main] [trace=] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-17 10:24:59,471 [main] [trace=] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-17 10:24:59,496 [main] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-17 10:24:59,563 [main] [trace=] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@33563147
+2025-06-17 10:24:59,564 [main] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-17 10:24:59,620 [main] [trace=] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.13
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-17 10:25:00,516 [main] [trace=] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-17 10:25:00,519 [main] [trace=] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-17 10:25:00,952 [main] [trace=] DEBUG c.e.d.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-06-17 10:25:01,047 [main] [trace=] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-17 10:25:01,048 [main] [trace=] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-17 10:25:01,423 [main] [trace=] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-17 10:25:01,949 [main] [trace=] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-06-17 10:25:02,343 [main] [trace=] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-06-17 10:25:02,357 [main] [trace=] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-06-17 10:25:02,368 [main] [trace=] INFO  com.example.demo.DemoApplication - Started DemoApplication in 7.976 seconds (process running for 8.46)
+2025-06-17 10:25:02,479 [main] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:25:02,517 [main] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:25:04,653 [http-nio-8080-exec-1] [trace=] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-17 10:25:04,654 [http-nio-8080-exec-1] [trace=] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-17 10:25:04,656 [http-nio-8080-exec-1] [trace=] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-06-17 10:25:04,683 [http-nio-8080-exec-1] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-17 10:25:04,721 [http-nio-8080-exec-1] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 37ms, correlationId: null]
+2025-06-17 10:25:04,724 [http-nio-8080-exec-1] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:25:04,733 [http-nio-8080-exec-1] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.email,
+        m1_0.manager_id,
+        m1_0.password,
+        m1_0.is_restricted,
+        m1_0.role,
+        m1_0.updated_at,
+        m1_0.uuid,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    left join
+        users m1_0 
+            on m1_0.id=u1_0.manager_id 
+    where
+        u1_0.id=?
+2025-06-17 10:25:04,740 [http-nio-8080-exec-1] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-17 10:25:04,746 [http-nio-8080-exec-1] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 5ms, correlationId: null]
+2025-06-17 10:25:04,758 [http-nio-8080-exec-1] [trace=8adb7416-3a3c-40cb-8413-77e4b317d800] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: GET /api/tasks/fc56cc83-711c-4969-a7c8-e071a5f24bf3 [correlationId: 8adb7416-3a3c-40cb-8413-77e4b317d800]
+2025-06-17 10:25:04,796 [http-nio-8080-exec-1] [trace=8adb7416-3a3c-40cb-8413-77e4b317d800] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: TaskServiceImpl.getTaskOfUser [correlationId: 8adb7416-3a3c-40cb-8413-77e4b317d800]
+2025-06-17 10:25:04,801 [http-nio-8080-exec-1] [trace=8adb7416-3a3c-40cb-8413-77e4b317d800] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.assignee,
+        t1_0.created_at,
+        t1_0.created_by,
+        t1_0.description,
+        t1_0.status,
+        t1_0.title,
+        t1_0.updated_at,
+        t1_0.uuid 
+    from
+        tasks t1_0 
+    where
+        t1_0.uuid=?
+2025-06-17 10:25:04,808 [http-nio-8080-exec-1] [trace=8adb7416-3a3c-40cb-8413-77e4b317d800] ERROR c.e.demo.aspect.ServiceLoggingAspect - Error in service method: TaskServiceImpl.getTaskOfUser [error: Task not found, correlationId: 8adb7416-3a3c-40cb-8413-77e4b317d800]
+2025-06-17 10:38:55,145 [SpringApplicationShutdownHook] [trace=] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-17 10:38:55,148 [tomcat-shutdown] [trace=] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-17 10:38:55,152 [SpringApplicationShutdownHook] [trace=] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-17 10:38:55,154 [SpringApplicationShutdownHook] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-17 10:38:55,157 [SpringApplicationShutdownHook] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-17 10:38:59,100 [main] [trace=] INFO  com.example.demo.DemoApplication - Starting DemoApplication using Java 21.0.7 with PID 139200 (/home/abdulmateen/Desktop/Projects/Learning-Java/Project-Day_10-15/target/classes started by abdulmateen in /home/abdulmateen/Desktop/Projects/Learning-Java/Project-Day_10-15)
+2025-06-17 10:38:59,101 [main] [trace=] DEBUG com.example.demo.DemoApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-06-17 10:38:59,103 [main] [trace=] INFO  com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-17 10:38:59,228 [main] [trace=] INFO  o.s.b.d.c.l.DockerComposeLifecycleManager - Using Docker Compose file /home/abdulmateen/Desktop/Projects/Learning-Java/Project-Day_10-15/docker-compose.yaml
+2025-06-17 10:38:59,838 [main] [trace=] INFO  o.s.b.d.c.l.DockerComposeLifecycleManager - There are already Docker Compose services running, skipping startup
+2025-06-17 10:39:00,856 [main] [trace=] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-17 10:39:00,914 [main] [trace=] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 50 ms. Found 2 JPA repository interfaces.
+2025-06-17 10:39:01,629 [main] [trace=] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-17 10:39:01,641 [main] [trace=] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-06-17 10:39:01,643 [main] [trace=] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-17 10:39:01,644 [main] [trace=] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-06-17 10:39:01,688 [main] [trace=] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-17 10:39:01,689 [main] [trace=] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1639 ms
+2025-06-17 10:39:02,153 [main] [trace=] INFO  liquibase.database - Set default schema name to public
+2025-06-17 10:39:02,484 [main] [trace=] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-06-17 10:39:02,540 [main] [trace=] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-06-17 10:39:02,543 [main] [trace=] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-06-17 10:39:02,572 [main] [trace=] INFO  liquibase.util - UPDATE SUMMARY
+2025-06-17 10:39:02,572 [main] [trace=] INFO  liquibase.util - Run:                          0
+2025-06-17 10:39:02,572 [main] [trace=] INFO  liquibase.util - Previously run:               2
+2025-06-17 10:39:02,572 [main] [trace=] INFO  liquibase.util - Filtered out:                 0
+2025-06-17 10:39:02,573 [main] [trace=] INFO  liquibase.util - -------------------------------
+2025-06-17 10:39:02,573 [main] [trace=] INFO  liquibase.util - Total change sets:            2
+2025-06-17 10:39:02,574 [main] [trace=] INFO  liquibase.util - Update summary generated
+2025-06-17 10:39:02,575 [main] [trace=] INFO  liquibase.command - Command execution complete
+2025-06-17 10:39:02,681 [main] [trace=] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-17 10:39:02,738 [main] [trace=] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-06-17 10:39:02,777 [main] [trace=] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-17 10:39:03,020 [main] [trace=] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-17 10:39:03,049 [main] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-17 10:39:03,108 [main] [trace=] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@72641613
+2025-06-17 10:39:03,110 [main] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-17 10:39:03,172 [main] [trace=] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.13
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-17 10:39:04,070 [main] [trace=] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-17 10:39:04,074 [main] [trace=] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-17 10:39:04,450 [main] [trace=] DEBUG c.e.d.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-06-17 10:39:04,532 [main] [trace=] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-17 10:39:04,533 [main] [trace=] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-17 10:39:04,765 [main] [trace=] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-17 10:39:05,245 [main] [trace=] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-06-17 10:39:05,621 [main] [trace=] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-06-17 10:39:05,650 [main] [trace=] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-06-17 10:39:05,668 [main] [trace=] INFO  com.example.demo.DemoApplication - Started DemoApplication in 7.706 seconds (process running for 8.459)
+2025-06-17 10:39:05,804 [main] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:39:05,845 [main] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:39:31,411 [http-nio-8080-exec-2] [trace=] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-17 10:39:31,411 [http-nio-8080-exec-2] [trace=] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-17 10:39:31,415 [http-nio-8080-exec-2] [trace=] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-06-17 10:39:31,450 [http-nio-8080-exec-2] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-17 10:39:31,483 [http-nio-8080-exec-2] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 33ms, correlationId: null]
+2025-06-17 10:39:31,486 [http-nio-8080-exec-2] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:39:31,495 [http-nio-8080-exec-2] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.email,
+        m1_0.manager_id,
+        m1_0.password,
+        m1_0.is_restricted,
+        m1_0.role,
+        m1_0.updated_at,
+        m1_0.uuid,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    left join
+        users m1_0 
+            on m1_0.id=u1_0.manager_id 
+    where
+        u1_0.id=?
+2025-06-17 10:39:31,500 [http-nio-8080-exec-2] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-17 10:39:31,504 [http-nio-8080-exec-2] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 3ms, correlationId: null]
+2025-06-17 10:39:31,513 [http-nio-8080-exec-2] [trace=0f56a3ea-6e7e-429f-b0c4-e805685664a8] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: GET /api/tasks/fc56cc83-711c-4969-a7c8-e071a5f24bf4 [correlationId: 0f56a3ea-6e7e-429f-b0c4-e805685664a8]
+2025-06-17 10:39:31,557 [http-nio-8080-exec-2] [trace=0f56a3ea-6e7e-429f-b0c4-e805685664a8] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: TaskServiceImpl.getTaskOfUser [correlationId: 0f56a3ea-6e7e-429f-b0c4-e805685664a8]
+2025-06-17 10:39:31,560 [http-nio-8080-exec-2] [trace=0f56a3ea-6e7e-429f-b0c4-e805685664a8] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.assignee,
+        t1_0.created_at,
+        t1_0.created_by,
+        t1_0.description,
+        t1_0.status,
+        t1_0.title,
+        t1_0.updated_at,
+        t1_0.uuid 
+    from
+        tasks t1_0 
+    where
+        t1_0.uuid=?
+2025-06-17 10:39:31,568 [http-nio-8080-exec-2] [trace=0f56a3ea-6e7e-429f-b0c4-e805685664a8] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.email,
+        m1_0.manager_id,
+        m1_0.password,
+        m1_0.is_restricted,
+        m1_0.role,
+        m1_0.updated_at,
+        m1_0.uuid,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    left join
+        users m1_0 
+            on m1_0.id=u1_0.manager_id 
+    where
+        u1_0.id=?
+2025-06-17 10:39:31,581 [http-nio-8080-exec-2] [trace=0f56a3ea-6e7e-429f-b0c4-e805685664a8] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: TaskServiceImpl.getTaskOfUser [duration: 23ms, correlationId: 0f56a3ea-6e7e-429f-b0c4-e805685664a8]
+2025-06-17 10:39:31,658 [http-nio-8080-exec-2] [trace=0f56a3ea-6e7e-429f-b0c4-e805685664a8] INFO  c.e.d.i.RequestLoggingInterceptor - Request processed: GET /api/tasks/fc56cc83-711c-4969-a7c8-e071a5f24bf4 [status: 200, duration: 144ms]
+2025-06-17 10:40:05,124 [http-nio-8080-exec-3] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-17 10:40:05,126 [http-nio-8080-exec-3] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 1ms, correlationId: null]
+2025-06-17 10:40:05,129 [http-nio-8080-exec-3] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:40:05,132 [http-nio-8080-exec-3] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-17 10:40:05,137 [http-nio-8080-exec-3] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 4ms, correlationId: null]
+2025-06-17 10:40:05,139 [http-nio-8080-exec-3] [trace=10ee9afb-b1cb-4121-9bdb-e23dc7d758cf] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: POST /api/users [correlationId: 10ee9afb-b1cb-4121-9bdb-e23dc7d758cf]
+2025-06-17 10:40:05,157 [http-nio-8080-exec-3] [trace=10ee9afb-b1cb-4121-9bdb-e23dc7d758cf] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: UserServiceImpl.createUser [correlationId: 10ee9afb-b1cb-4121-9bdb-e23dc7d758cf]
+2025-06-17 10:40:05,161 [http-nio-8080-exec-3] [trace=10ee9afb-b1cb-4121-9bdb-e23dc7d758cf] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:40:05,248 [http-nio-8080-exec-3] [trace=10ee9afb-b1cb-4121-9bdb-e23dc7d758cf] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.uuid=?
+2025-06-17 10:40:05,268 [http-nio-8080-exec-3] [trace=10ee9afb-b1cb-4121-9bdb-e23dc7d758cf] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (created_at, email, manager_id, password, is_restricted, role, updated_at, uuid) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-06-17 10:40:05,284 [http-nio-8080-exec-3] [trace=10ee9afb-b1cb-4121-9bdb-e23dc7d758cf] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: UserServiceImpl.createUser [duration: 126ms, correlationId: 10ee9afb-b1cb-4121-9bdb-e23dc7d758cf]
+2025-06-17 10:40:05,300 [http-nio-8080-exec-3] [trace=10ee9afb-b1cb-4121-9bdb-e23dc7d758cf] INFO  c.e.d.i.RequestLoggingInterceptor - Request processed: POST /api/users [status: 201, duration: 161ms]
+2025-06-17 10:40:12,639 [http-nio-8080-exec-4] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-17 10:40:12,641 [http-nio-8080-exec-4] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 1ms, correlationId: null]
+2025-06-17 10:40:12,644 [http-nio-8080-exec-4] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:40:12,648 [http-nio-8080-exec-4] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-17 10:40:12,651 [http-nio-8080-exec-4] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 2ms, correlationId: null]
+2025-06-17 10:40:12,652 [http-nio-8080-exec-4] [trace=ebfc0162-5de2-4092-9125-b00ede905f6a] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: POST /api/users [correlationId: ebfc0162-5de2-4092-9125-b00ede905f6a]
+2025-06-17 10:40:12,654 [http-nio-8080-exec-4] [trace=ebfc0162-5de2-4092-9125-b00ede905f6a] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: UserServiceImpl.createUser [correlationId: ebfc0162-5de2-4092-9125-b00ede905f6a]
+2025-06-17 10:40:12,656 [http-nio-8080-exec-4] [trace=ebfc0162-5de2-4092-9125-b00ede905f6a] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:40:12,658 [http-nio-8080-exec-4] [trace=ebfc0162-5de2-4092-9125-b00ede905f6a] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.email,
+        m1_0.manager_id,
+        m1_0.password,
+        m1_0.is_restricted,
+        m1_0.role,
+        m1_0.updated_at,
+        m1_0.uuid,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    left join
+        users m1_0 
+            on m1_0.id=u1_0.manager_id 
+    where
+        u1_0.id=?
+2025-06-17 10:40:12,662 [http-nio-8080-exec-4] [trace=ebfc0162-5de2-4092-9125-b00ede905f6a] ERROR c.e.demo.aspect.ServiceLoggingAspect - Error in service method: UserServiceImpl.createUser [error: User with this email already exists., correlationId: ebfc0162-5de2-4092-9125-b00ede905f6a]
+2025-06-17 10:41:57,794 [http-nio-8080-exec-5] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-17 10:41:57,798 [http-nio-8080-exec-5] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 3ms, correlationId: null]
+2025-06-17 10:41:57,801 [http-nio-8080-exec-5] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:41:57,805 [http-nio-8080-exec-5] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-17 10:41:57,807 [http-nio-8080-exec-5] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 2ms, correlationId: null]
+2025-06-17 10:41:57,808 [http-nio-8080-exec-5] [trace=ff09ac78-e092-4cf1-803b-aa73f73a3554] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: POST /api/users [correlationId: ff09ac78-e092-4cf1-803b-aa73f73a3554]
+2025-06-17 10:41:57,810 [http-nio-8080-exec-5] [trace=ff09ac78-e092-4cf1-803b-aa73f73a3554] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: UserServiceImpl.createUser [correlationId: ff09ac78-e092-4cf1-803b-aa73f73a3554]
+2025-06-17 10:41:57,812 [http-nio-8080-exec-5] [trace=ff09ac78-e092-4cf1-803b-aa73f73a3554] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:41:57,895 [http-nio-8080-exec-5] [trace=ff09ac78-e092-4cf1-803b-aa73f73a3554] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.uuid=?
+2025-06-17 10:41:57,898 [http-nio-8080-exec-5] [trace=ff09ac78-e092-4cf1-803b-aa73f73a3554] ERROR c.e.demo.aspect.ServiceLoggingAspect - Error in service method: UserServiceImpl.createUser [error: Manager not found, correlationId: ff09ac78-e092-4cf1-803b-aa73f73a3554]
+2025-06-17 10:42:20,258 [http-nio-8080-exec-8] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-17 10:42:20,260 [http-nio-8080-exec-8] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 1ms, correlationId: null]
+2025-06-17 10:42:20,262 [http-nio-8080-exec-8] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:42:20,268 [http-nio-8080-exec-8] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-17 10:42:20,271 [http-nio-8080-exec-8] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 2ms, correlationId: null]
+2025-06-17 10:42:20,272 [http-nio-8080-exec-8] [trace=f423ae42-5de0-43a0-80ac-a74c5d260631] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: POST /api/users [correlationId: f423ae42-5de0-43a0-80ac-a74c5d260631]
+2025-06-17 10:42:20,274 [http-nio-8080-exec-8] [trace=f423ae42-5de0-43a0-80ac-a74c5d260631] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: UserServiceImpl.createUser [correlationId: f423ae42-5de0-43a0-80ac-a74c5d260631]
+2025-06-17 10:42:20,277 [http-nio-8080-exec-8] [trace=f423ae42-5de0-43a0-80ac-a74c5d260631] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:42:20,357 [http-nio-8080-exec-8] [trace=f423ae42-5de0-43a0-80ac-a74c5d260631] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.uuid=?
+2025-06-17 10:42:20,360 [http-nio-8080-exec-8] [trace=f423ae42-5de0-43a0-80ac-a74c5d260631] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (created_at, email, manager_id, password, is_restricted, role, updated_at, uuid) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-06-17 10:42:20,362 [http-nio-8080-exec-8] [trace=f423ae42-5de0-43a0-80ac-a74c5d260631] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: UserServiceImpl.createUser [duration: 87ms, correlationId: f423ae42-5de0-43a0-80ac-a74c5d260631]
+2025-06-17 10:42:20,366 [http-nio-8080-exec-8] [trace=f423ae42-5de0-43a0-80ac-a74c5d260631] INFO  c.e.d.i.RequestLoggingInterceptor - Request processed: POST /api/users [status: 201, duration: 93ms]
+2025-06-17 10:42:31,732 [http-nio-8080-exec-7] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-17 10:42:31,733 [http-nio-8080-exec-7] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 1ms, correlationId: null]
+2025-06-17 10:42:31,735 [http-nio-8080-exec-7] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:42:31,740 [http-nio-8080-exec-7] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-17 10:42:31,744 [http-nio-8080-exec-7] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 3ms, correlationId: null]
+2025-06-17 10:42:31,745 [http-nio-8080-exec-7] [trace=804505b8-b92d-42a3-a527-1e50857fc6b6] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: GET /api/users [correlationId: 804505b8-b92d-42a3-a527-1e50857fc6b6]
+2025-06-17 10:42:31,752 [http-nio-8080-exec-7] [trace=804505b8-b92d-42a3-a527-1e50857fc6b6] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: UserServiceImpl.getAllUsers [correlationId: 804505b8-b92d-42a3-a527-1e50857fc6b6]
+2025-06-17 10:42:31,762 [http-nio-8080-exec-7] [trace=804505b8-b92d-42a3-a527-1e50857fc6b6] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.role in (?, ?) 
+    order by
+        u1_0.created_at 
+    fetch
+        first ? rows only
+2025-06-17 10:42:31,772 [http-nio-8080-exec-7] [trace=804505b8-b92d-42a3-a527-1e50857fc6b6] DEBUG org.hibernate.SQL - 
+    select
+        count(u1_0.id) 
+    from
+        users u1_0 
+    where
+        u1_0.role in (?, ?)
+2025-06-17 10:42:31,776 [http-nio-8080-exec-7] [trace=804505b8-b92d-42a3-a527-1e50857fc6b6] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: UserServiceImpl.getAllUsers [duration: 23ms, correlationId: 804505b8-b92d-42a3-a527-1e50857fc6b6]
+2025-06-17 10:42:31,800 [http-nio-8080-exec-7] [trace=804505b8-b92d-42a3-a527-1e50857fc6b6] WARN  o.s.d.w.c.SpringDataJacksonConfiguration$PageModule$WarningLoggingModifier - Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2025-06-17 10:42:31,816 [http-nio-8080-exec-7] [trace=804505b8-b92d-42a3-a527-1e50857fc6b6] INFO  c.e.d.i.RequestLoggingInterceptor - Request processed: GET /api/users [status: 200, duration: 71ms]
+2025-06-17 10:42:44,329 [http-nio-8080-exec-9] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-17 10:42:44,331 [http-nio-8080-exec-9] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 2ms, correlationId: null]
+2025-06-17 10:42:44,333 [http-nio-8080-exec-9] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:42:44,337 [http-nio-8080-exec-9] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-17 10:42:44,340 [http-nio-8080-exec-9] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 3ms, correlationId: null]
+2025-06-17 10:42:44,341 [http-nio-8080-exec-9] [trace=10bc1f52-eb9f-4ec2-8a5d-9290ea120827] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: GET /api/users/roles [correlationId: 10bc1f52-eb9f-4ec2-8a5d-9290ea120827]
+2025-06-17 10:42:44,343 [http-nio-8080-exec-9] [trace=10bc1f52-eb9f-4ec2-8a5d-9290ea120827] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: UserServiceImpl.getRoles [correlationId: 10bc1f52-eb9f-4ec2-8a5d-9290ea120827]
+2025-06-17 10:42:44,344 [http-nio-8080-exec-9] [trace=10bc1f52-eb9f-4ec2-8a5d-9290ea120827] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: UserServiceImpl.getRoles [duration: 1ms, correlationId: 10bc1f52-eb9f-4ec2-8a5d-9290ea120827]
+2025-06-17 10:42:44,350 [http-nio-8080-exec-9] [trace=10bc1f52-eb9f-4ec2-8a5d-9290ea120827] INFO  c.e.d.i.RequestLoggingInterceptor - Request processed: GET /api/users/roles [status: 200, duration: 8ms]
+2025-06-17 10:43:28,278 [http-nio-8080-exec-2] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-17 10:43:28,281 [http-nio-8080-exec-2] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 3ms, correlationId: null]
+2025-06-17 10:43:28,283 [http-nio-8080-exec-2] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:43:28,287 [http-nio-8080-exec-2] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-17 10:43:28,289 [http-nio-8080-exec-2] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 2ms, correlationId: null]
+2025-06-17 10:43:28,290 [http-nio-8080-exec-2] [trace=99a03475-bc8c-4568-a976-58d3c0be4aa0] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: GET /api/tasks [correlationId: 99a03475-bc8c-4568-a976-58d3c0be4aa0]
+2025-06-17 10:43:28,291 [http-nio-8080-exec-2] [trace=99a03475-bc8c-4568-a976-58d3c0be4aa0] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: TaskServiceImpl.getAllTasks [correlationId: 99a03475-bc8c-4568-a976-58d3c0be4aa0]
+2025-06-17 10:43:28,298 [http-nio-8080-exec-2] [trace=99a03475-bc8c-4568-a976-58d3c0be4aa0] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.assignee,
+        t1_0.created_at,
+        t1_0.created_by,
+        t1_0.description,
+        t1_0.status,
+        t1_0.title,
+        t1_0.updated_at,
+        t1_0.uuid 
+    from
+        tasks t1_0 
+    order by
+        t1_0.created_at 
+    offset
+        ? rows 
+    fetch
+        first ? rows only
+2025-06-17 10:43:28,301 [http-nio-8080-exec-2] [trace=99a03475-bc8c-4568-a976-58d3c0be4aa0] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.email,
+        m1_0.manager_id,
+        m1_0.password,
+        m1_0.is_restricted,
+        m1_0.role,
+        m1_0.updated_at,
+        m1_0.uuid,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    left join
+        users m1_0 
+            on m1_0.id=u1_0.manager_id 
+    where
+        u1_0.id=?
+2025-06-17 10:43:28,306 [http-nio-8080-exec-2] [trace=99a03475-bc8c-4568-a976-58d3c0be4aa0] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: TaskServiceImpl.getAllTasks [duration: 14ms, correlationId: 99a03475-bc8c-4568-a976-58d3c0be4aa0]
+2025-06-17 10:43:28,310 [http-nio-8080-exec-2] [trace=99a03475-bc8c-4568-a976-58d3c0be4aa0] INFO  c.e.d.i.RequestLoggingInterceptor - Request processed: GET /api/tasks [status: 200, duration: 20ms]
+2025-06-17 10:43:34,972 [http-nio-8080-exec-3] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-17 10:43:34,973 [http-nio-8080-exec-3] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 1ms, correlationId: null]
+2025-06-17 10:43:34,976 [http-nio-8080-exec-3] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:43:34,981 [http-nio-8080-exec-3] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-17 10:43:34,986 [http-nio-8080-exec-3] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 4ms, correlationId: null]
+2025-06-17 10:43:34,987 [http-nio-8080-exec-3] [trace=185dcda3-225f-4372-80e9-846e3a7d1660] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: GET /api/users [correlationId: 185dcda3-225f-4372-80e9-846e3a7d1660]
+2025-06-17 10:43:34,989 [http-nio-8080-exec-3] [trace=185dcda3-225f-4372-80e9-846e3a7d1660] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: UserServiceImpl.getAllUsers [correlationId: 185dcda3-225f-4372-80e9-846e3a7d1660]
+2025-06-17 10:43:34,999 [http-nio-8080-exec-3] [trace=185dcda3-225f-4372-80e9-846e3a7d1660] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    left join
+        users m1_0 
+            on m1_0.id=u1_0.manager_id 
+    where
+        m1_0.uuid=? 
+    order by
+        u1_0.created_at 
+    fetch
+        first ? rows only
+2025-06-17 10:43:35,005 [http-nio-8080-exec-3] [trace=185dcda3-225f-4372-80e9-846e3a7d1660] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.email,
+        m1_0.manager_id,
+        m1_0.password,
+        m1_0.is_restricted,
+        m1_0.role,
+        m1_0.updated_at,
+        m1_0.uuid,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    left join
+        users m1_0 
+            on m1_0.id=u1_0.manager_id 
+    where
+        u1_0.id=?
+2025-06-17 10:43:35,022 [http-nio-8080-exec-3] [trace=185dcda3-225f-4372-80e9-846e3a7d1660] DEBUG org.hibernate.SQL - 
+    select
+        count(u1_0.id) 
+    from
+        users u1_0 
+    left join
+        users m1_0 
+            on m1_0.id=u1_0.manager_id 
+    where
+        m1_0.uuid=?
+2025-06-17 10:43:35,025 [http-nio-8080-exec-3] [trace=185dcda3-225f-4372-80e9-846e3a7d1660] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: UserServiceImpl.getAllUsers [duration: 36ms, correlationId: 185dcda3-225f-4372-80e9-846e3a7d1660]
+2025-06-17 10:43:35,029 [http-nio-8080-exec-3] [trace=185dcda3-225f-4372-80e9-846e3a7d1660] INFO  c.e.d.i.RequestLoggingInterceptor - Request processed: GET /api/users [status: 200, duration: 41ms]
+2025-06-17 10:43:44,141 [http-nio-8080-exec-4] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-17 10:43:44,143 [http-nio-8080-exec-4] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 1ms, correlationId: null]
+2025-06-17 10:43:44,145 [http-nio-8080-exec-4] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:43:44,149 [http-nio-8080-exec-4] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-17 10:43:44,152 [http-nio-8080-exec-4] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 2ms, correlationId: null]
+2025-06-17 10:43:44,153 [http-nio-8080-exec-4] [trace=62f12f31-5a23-4943-bffa-88ca3f170c68] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: GET /api/tasks [correlationId: 62f12f31-5a23-4943-bffa-88ca3f170c68]
+2025-06-17 10:43:44,154 [http-nio-8080-exec-4] [trace=62f12f31-5a23-4943-bffa-88ca3f170c68] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: TaskServiceImpl.getAllTasks [correlationId: 62f12f31-5a23-4943-bffa-88ca3f170c68]
+2025-06-17 10:43:44,158 [http-nio-8080-exec-4] [trace=62f12f31-5a23-4943-bffa-88ca3f170c68] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.assignee,
+        t1_0.created_at,
+        t1_0.created_by,
+        t1_0.description,
+        t1_0.status,
+        t1_0.title,
+        t1_0.updated_at,
+        t1_0.uuid 
+    from
+        tasks t1_0 
+    left join
+        users cb1_0 
+            on cb1_0.id=t1_0.created_by 
+    where
+        cb1_0.uuid=? 
+    order by
+        t1_0.created_at 
+    fetch
+        first ? rows only
+2025-06-17 10:43:44,161 [http-nio-8080-exec-4] [trace=62f12f31-5a23-4943-bffa-88ca3f170c68] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.email,
+        m1_0.manager_id,
+        m1_0.password,
+        m1_0.is_restricted,
+        m1_0.role,
+        m1_0.updated_at,
+        m1_0.uuid,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    left join
+        users m1_0 
+            on m1_0.id=u1_0.manager_id 
+    where
+        u1_0.id=?
+2025-06-17 10:43:44,165 [http-nio-8080-exec-4] [trace=62f12f31-5a23-4943-bffa-88ca3f170c68] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: TaskServiceImpl.getAllTasks [duration: 10ms, correlationId: 62f12f31-5a23-4943-bffa-88ca3f170c68]
+2025-06-17 10:43:44,167 [http-nio-8080-exec-4] [trace=62f12f31-5a23-4943-bffa-88ca3f170c68] INFO  c.e.d.i.RequestLoggingInterceptor - Request processed: GET /api/tasks [status: 200, duration: 13ms]
+2025-06-17 10:43:49,159 [http-nio-8080-exec-6] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-17 10:43:49,161 [http-nio-8080-exec-6] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 2ms, correlationId: null]
+2025-06-17 10:43:49,164 [http-nio-8080-exec-6] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:43:49,169 [http-nio-8080-exec-6] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-17 10:43:49,172 [http-nio-8080-exec-6] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 3ms, correlationId: null]
+2025-06-17 10:43:49,173 [http-nio-8080-exec-6] [trace=133d1b0c-c4f6-43a4-8cb1-419651ddbe27] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: POST /api/tasks [correlationId: 133d1b0c-c4f6-43a4-8cb1-419651ddbe27]
+2025-06-17 10:43:49,179 [http-nio-8080-exec-6] [trace=133d1b0c-c4f6-43a4-8cb1-419651ddbe27] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: TaskServiceImpl.createTask [correlationId: 133d1b0c-c4f6-43a4-8cb1-419651ddbe27]
+2025-06-17 10:43:49,181 [http-nio-8080-exec-6] [trace=133d1b0c-c4f6-43a4-8cb1-419651ddbe27] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.uuid=?
+2025-06-17 10:43:49,188 [http-nio-8080-exec-6] [trace=133d1b0c-c4f6-43a4-8cb1-419651ddbe27] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        tasks
+        (assignee, created_at, created_by, description, status, title, updated_at, uuid) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-06-17 10:43:49,192 [http-nio-8080-exec-6] [trace=133d1b0c-c4f6-43a4-8cb1-419651ddbe27] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: TaskServiceImpl.createTask [duration: 12ms, correlationId: 133d1b0c-c4f6-43a4-8cb1-419651ddbe27]
+2025-06-17 10:43:49,197 [http-nio-8080-exec-6] [trace=133d1b0c-c4f6-43a4-8cb1-419651ddbe27] INFO  c.e.d.i.RequestLoggingInterceptor - Request processed: POST /api/tasks [status: 201, duration: 24ms]
+2025-06-17 10:44:04,264 [http-nio-8080-exec-5] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-17 10:44:04,266 [http-nio-8080-exec-5] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 1ms, correlationId: null]
+2025-06-17 10:44:04,268 [http-nio-8080-exec-5] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:44:04,272 [http-nio-8080-exec-5] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-17 10:44:04,275 [http-nio-8080-exec-5] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 2ms, correlationId: null]
+2025-06-17 10:44:04,276 [http-nio-8080-exec-5] [trace=a55b9938-8b01-45a1-ba7b-6112d8733dae] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: PATCH /api/tasks/df77c926-32be-4991-9ef3-c822236b3329 [correlationId: a55b9938-8b01-45a1-ba7b-6112d8733dae]
+2025-06-17 10:44:04,279 [http-nio-8080-exec-5] [trace=a55b9938-8b01-45a1-ba7b-6112d8733dae] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: TaskServiceImpl.assignTask [correlationId: a55b9938-8b01-45a1-ba7b-6112d8733dae]
+2025-06-17 10:44:04,282 [http-nio-8080-exec-5] [trace=a55b9938-8b01-45a1-ba7b-6112d8733dae] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.assignee,
+        t1_0.created_at,
+        t1_0.created_by,
+        t1_0.description,
+        t1_0.status,
+        t1_0.title,
+        t1_0.updated_at,
+        t1_0.uuid 
+    from
+        tasks t1_0 
+    where
+        t1_0.uuid=?
+2025-06-17 10:44:04,285 [http-nio-8080-exec-5] [trace=a55b9938-8b01-45a1-ba7b-6112d8733dae] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.email,
+        m1_0.manager_id,
+        m1_0.password,
+        m1_0.is_restricted,
+        m1_0.role,
+        m1_0.updated_at,
+        m1_0.uuid,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    left join
+        users m1_0 
+            on m1_0.id=u1_0.manager_id 
+    where
+        u1_0.id=?
+2025-06-17 10:44:04,291 [http-nio-8080-exec-5] [trace=a55b9938-8b01-45a1-ba7b-6112d8733dae] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.uuid=?
+2025-06-17 10:44:04,296 [http-nio-8080-exec-5] [trace=a55b9938-8b01-45a1-ba7b-6112d8733dae] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: TaskServiceImpl.assignTask [duration: 15ms, correlationId: a55b9938-8b01-45a1-ba7b-6112d8733dae]
+2025-06-17 10:44:04,302 [http-nio-8080-exec-5] [trace=a55b9938-8b01-45a1-ba7b-6112d8733dae] DEBUG org.hibernate.SQL - 
+    update
+        tasks 
+    set
+        assignee=?,
+        created_by=?,
+        description=?,
+        status=?,
+        title=?,
+        updated_at=? 
+    where
+        id=?
+2025-06-17 10:44:04,310 [http-nio-8080-exec-5] [trace=a55b9938-8b01-45a1-ba7b-6112d8733dae] INFO  c.e.d.i.RequestLoggingInterceptor - Request processed: PATCH /api/tasks/df77c926-32be-4991-9ef3-c822236b3329 [status: 200, duration: 33ms]
+2025-06-17 10:44:07,241 [http-nio-8080-exec-8] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-17 10:44:07,243 [http-nio-8080-exec-8] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 1ms, correlationId: null]
+2025-06-17 10:44:07,245 [http-nio-8080-exec-8] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:44:07,248 [http-nio-8080-exec-8] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-17 10:44:07,250 [http-nio-8080-exec-8] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 1ms, correlationId: null]
+2025-06-17 10:44:07,251 [http-nio-8080-exec-8] [trace=1ee4f509-c0ed-43a0-a81a-78383ea5168a] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: PATCH /api/tasks/df77c926-32be-4991-9ef3-c822236b3329 [correlationId: 1ee4f509-c0ed-43a0-a81a-78383ea5168a]
+2025-06-17 10:44:07,252 [http-nio-8080-exec-8] [trace=1ee4f509-c0ed-43a0-a81a-78383ea5168a] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: TaskServiceImpl.assignTask [correlationId: 1ee4f509-c0ed-43a0-a81a-78383ea5168a]
+2025-06-17 10:44:07,253 [http-nio-8080-exec-8] [trace=1ee4f509-c0ed-43a0-a81a-78383ea5168a] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.assignee,
+        t1_0.created_at,
+        t1_0.created_by,
+        t1_0.description,
+        t1_0.status,
+        t1_0.title,
+        t1_0.updated_at,
+        t1_0.uuid 
+    from
+        tasks t1_0 
+    where
+        t1_0.uuid=?
+2025-06-17 10:44:07,256 [http-nio-8080-exec-8] [trace=1ee4f509-c0ed-43a0-a81a-78383ea5168a] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.email,
+        m1_0.manager_id,
+        m1_0.password,
+        m1_0.is_restricted,
+        m1_0.role,
+        m1_0.updated_at,
+        m1_0.uuid,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    left join
+        users m1_0 
+            on m1_0.id=u1_0.manager_id 
+    where
+        u1_0.id=?
+2025-06-17 10:44:07,259 [http-nio-8080-exec-8] [trace=1ee4f509-c0ed-43a0-a81a-78383ea5168a] ERROR c.e.demo.aspect.ServiceLoggingAspect - Error in service method: TaskServiceImpl.assignTask [error: Task is already assigned, correlationId: 1ee4f509-c0ed-43a0-a81a-78383ea5168a]
+2025-06-17 10:44:17,596 [http-nio-8080-exec-7] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-17 10:44:17,597 [http-nio-8080-exec-7] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 1ms, correlationId: null]
+2025-06-17 10:44:17,599 [http-nio-8080-exec-7] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:44:17,602 [http-nio-8080-exec-7] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-17 10:44:17,604 [http-nio-8080-exec-7] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 2ms, correlationId: null]
+2025-06-17 10:44:17,605 [http-nio-8080-exec-7] [trace=628202a5-f6f8-44fb-b4bf-3b3ced54ba37] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: PUT /api/tasks/7cc6953c-1202-4f70-b260-f5f54826f278 [correlationId: 628202a5-f6f8-44fb-b4bf-3b3ced54ba37]
+2025-06-17 10:44:17,608 [http-nio-8080-exec-7] [trace=628202a5-f6f8-44fb-b4bf-3b3ced54ba37] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: TaskServiceImpl.updateTask [correlationId: 628202a5-f6f8-44fb-b4bf-3b3ced54ba37]
+2025-06-17 10:44:17,611 [http-nio-8080-exec-7] [trace=628202a5-f6f8-44fb-b4bf-3b3ced54ba37] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.assignee,
+        t1_0.created_at,
+        t1_0.created_by,
+        t1_0.description,
+        t1_0.status,
+        t1_0.title,
+        t1_0.updated_at,
+        t1_0.uuid 
+    from
+        tasks t1_0 
+    where
+        t1_0.uuid=?
+2025-06-17 10:44:17,616 [http-nio-8080-exec-7] [trace=628202a5-f6f8-44fb-b4bf-3b3ced54ba37] ERROR c.e.demo.aspect.ServiceLoggingAspect - Error in service method: TaskServiceImpl.updateTask [error: Task not found, correlationId: 628202a5-f6f8-44fb-b4bf-3b3ced54ba37]
+2025-06-17 10:44:29,260 [http-nio-8080-exec-9] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-17 10:44:29,263 [http-nio-8080-exec-9] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 3ms, correlationId: null]
+2025-06-17 10:44:29,265 [http-nio-8080-exec-9] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:44:29,268 [http-nio-8080-exec-9] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-17 10:44:29,270 [http-nio-8080-exec-9] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 2ms, correlationId: null]
+2025-06-17 10:44:29,271 [http-nio-8080-exec-9] [trace=acdff541-37fb-4b81-aee3-4eb3e316f6b8] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: PUT /api/tasks/df77c926-32be-4991-9ef3-c822236b3329 [correlationId: acdff541-37fb-4b81-aee3-4eb3e316f6b8]
+2025-06-17 10:44:29,273 [http-nio-8080-exec-9] [trace=acdff541-37fb-4b81-aee3-4eb3e316f6b8] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: TaskServiceImpl.updateTask [correlationId: acdff541-37fb-4b81-aee3-4eb3e316f6b8]
+2025-06-17 10:44:29,274 [http-nio-8080-exec-9] [trace=acdff541-37fb-4b81-aee3-4eb3e316f6b8] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.assignee,
+        t1_0.created_at,
+        t1_0.created_by,
+        t1_0.description,
+        t1_0.status,
+        t1_0.title,
+        t1_0.updated_at,
+        t1_0.uuid 
+    from
+        tasks t1_0 
+    where
+        t1_0.uuid=?
+2025-06-17 10:44:29,277 [http-nio-8080-exec-9] [trace=acdff541-37fb-4b81-aee3-4eb3e316f6b8] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.email,
+        m1_0.manager_id,
+        m1_0.password,
+        m1_0.is_restricted,
+        m1_0.role,
+        m1_0.updated_at,
+        m1_0.uuid,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    left join
+        users m1_0 
+            on m1_0.id=u1_0.manager_id 
+    where
+        u1_0.id=?
+2025-06-17 10:44:29,279 [http-nio-8080-exec-9] [trace=acdff541-37fb-4b81-aee3-4eb3e316f6b8] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: TaskServiceImpl.updateTask [duration: 6ms, correlationId: acdff541-37fb-4b81-aee3-4eb3e316f6b8]
+2025-06-17 10:44:29,280 [http-nio-8080-exec-9] [trace=acdff541-37fb-4b81-aee3-4eb3e316f6b8] DEBUG org.hibernate.SQL - 
+    update
+        tasks 
+    set
+        assignee=?,
+        created_by=?,
+        description=?,
+        status=?,
+        title=?,
+        updated_at=? 
+    where
+        id=?
+2025-06-17 10:44:29,285 [http-nio-8080-exec-9] [trace=acdff541-37fb-4b81-aee3-4eb3e316f6b8] INFO  c.e.d.i.RequestLoggingInterceptor - Request processed: PUT /api/tasks/df77c926-32be-4991-9ef3-c822236b3329 [status: 200, duration: 14ms]
+2025-06-17 10:45:26,092 [http-nio-8080-exec-10] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-17 10:45:26,093 [http-nio-8080-exec-10] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 1ms, correlationId: null]
+2025-06-17 10:45:26,095 [http-nio-8080-exec-10] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:45:26,098 [http-nio-8080-exec-10] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.email,
+        m1_0.manager_id,
+        m1_0.password,
+        m1_0.is_restricted,
+        m1_0.role,
+        m1_0.updated_at,
+        m1_0.uuid,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    left join
+        users m1_0 
+            on m1_0.id=u1_0.manager_id 
+    where
+        u1_0.id=?
+2025-06-17 10:45:26,100 [http-nio-8080-exec-10] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-17 10:45:26,104 [http-nio-8080-exec-10] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 3ms, correlationId: null]
+2025-06-17 10:45:26,105 [http-nio-8080-exec-10] [trace=7456e670-1c80-437c-90e4-6cd67c22904e] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: GET /api/users/info [correlationId: 7456e670-1c80-437c-90e4-6cd67c22904e]
+2025-06-17 10:45:26,106 [http-nio-8080-exec-10] [trace=7456e670-1c80-437c-90e4-6cd67c22904e] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: UserServiceImpl.getCurrentUser [correlationId: 7456e670-1c80-437c-90e4-6cd67c22904e]
+2025-06-17 10:45:26,108 [http-nio-8080-exec-10] [trace=7456e670-1c80-437c-90e4-6cd67c22904e] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.uuid=?
+2025-06-17 10:45:26,112 [http-nio-8080-exec-10] [trace=7456e670-1c80-437c-90e4-6cd67c22904e] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.email,
+        m1_0.manager_id,
+        m1_0.password,
+        m1_0.is_restricted,
+        m1_0.role,
+        m1_0.updated_at,
+        m1_0.uuid,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    left join
+        users m1_0 
+            on m1_0.id=u1_0.manager_id 
+    where
+        u1_0.id=?
+2025-06-17 10:45:26,116 [http-nio-8080-exec-10] [trace=7456e670-1c80-437c-90e4-6cd67c22904e] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: UserServiceImpl.getCurrentUser [duration: 9ms, correlationId: 7456e670-1c80-437c-90e4-6cd67c22904e]
+2025-06-17 10:45:26,119 [http-nio-8080-exec-10] [trace=7456e670-1c80-437c-90e4-6cd67c22904e] INFO  c.e.d.i.RequestLoggingInterceptor - Request processed: GET /api/users/info [status: 200, duration: 14ms]
+2025-06-17 10:45:29,550 [http-nio-8080-exec-1] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-17 10:45:29,551 [http-nio-8080-exec-1] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 1ms, correlationId: null]
+2025-06-17 10:45:29,553 [http-nio-8080-exec-1] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:45:29,556 [http-nio-8080-exec-1] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.email,
+        m1_0.manager_id,
+        m1_0.password,
+        m1_0.is_restricted,
+        m1_0.role,
+        m1_0.updated_at,
+        m1_0.uuid,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    left join
+        users m1_0 
+            on m1_0.id=u1_0.manager_id 
+    where
+        u1_0.id=?
+2025-06-17 10:45:29,559 [http-nio-8080-exec-1] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-17 10:45:29,562 [http-nio-8080-exec-1] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 2ms, correlationId: null]
+2025-06-17 10:45:29,563 [http-nio-8080-exec-1] [trace=e7a87afe-8cdb-4bc7-beb4-5b0639a5cd07] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: GET /api/tasks [correlationId: e7a87afe-8cdb-4bc7-beb4-5b0639a5cd07]
+2025-06-17 10:45:29,564 [http-nio-8080-exec-1] [trace=e7a87afe-8cdb-4bc7-beb4-5b0639a5cd07] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: TaskServiceImpl.getAllTasks [correlationId: e7a87afe-8cdb-4bc7-beb4-5b0639a5cd07]
+2025-06-17 10:45:29,567 [http-nio-8080-exec-1] [trace=e7a87afe-8cdb-4bc7-beb4-5b0639a5cd07] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.assignee,
+        t1_0.created_at,
+        t1_0.created_by,
+        t1_0.description,
+        t1_0.status,
+        t1_0.title,
+        t1_0.updated_at,
+        t1_0.uuid 
+    from
+        tasks t1_0 
+    left join
+        users at1_0 
+            on at1_0.id=t1_0.assignee 
+    where
+        at1_0.uuid=? 
+    order by
+        t1_0.created_at 
+    fetch
+        first ? rows only
+2025-06-17 10:45:29,570 [http-nio-8080-exec-1] [trace=e7a87afe-8cdb-4bc7-beb4-5b0639a5cd07] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.email,
+        m1_0.manager_id,
+        m1_0.password,
+        m1_0.is_restricted,
+        m1_0.role,
+        m1_0.updated_at,
+        m1_0.uuid,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    left join
+        users m1_0 
+            on m1_0.id=u1_0.manager_id 
+    where
+        u1_0.id=?
+2025-06-17 10:45:29,574 [http-nio-8080-exec-1] [trace=e7a87afe-8cdb-4bc7-beb4-5b0639a5cd07] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: TaskServiceImpl.getAllTasks [duration: 10ms, correlationId: e7a87afe-8cdb-4bc7-beb4-5b0639a5cd07]
+2025-06-17 10:45:29,576 [http-nio-8080-exec-1] [trace=e7a87afe-8cdb-4bc7-beb4-5b0639a5cd07] INFO  c.e.d.i.RequestLoggingInterceptor - Request processed: GET /api/tasks [status: 200, duration: 13ms]
+2025-06-17 10:45:33,799 [http-nio-8080-exec-2] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-17 10:45:33,800 [http-nio-8080-exec-2] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 1ms, correlationId: null]
+2025-06-17 10:45:33,802 [http-nio-8080-exec-2] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:45:33,805 [http-nio-8080-exec-2] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.email,
+        m1_0.manager_id,
+        m1_0.password,
+        m1_0.is_restricted,
+        m1_0.role,
+        m1_0.updated_at,
+        m1_0.uuid,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    left join
+        users m1_0 
+            on m1_0.id=u1_0.manager_id 
+    where
+        u1_0.id=?
+2025-06-17 10:45:33,808 [http-nio-8080-exec-2] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-17 10:45:33,810 [http-nio-8080-exec-2] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 2ms, correlationId: null]
+2025-06-17 10:45:33,811 [http-nio-8080-exec-2] [trace=1bdcb347-4ad0-4a11-a39d-a7fc411df12a] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: GET /api/tasks/fc56cc83-711c-4969-a7c8-e071a5f24bf4 [correlationId: 1bdcb347-4ad0-4a11-a39d-a7fc411df12a]
+2025-06-17 10:45:33,812 [http-nio-8080-exec-2] [trace=1bdcb347-4ad0-4a11-a39d-a7fc411df12a] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: TaskServiceImpl.getTaskOfUser [correlationId: 1bdcb347-4ad0-4a11-a39d-a7fc411df12a]
+2025-06-17 10:45:33,814 [http-nio-8080-exec-2] [trace=1bdcb347-4ad0-4a11-a39d-a7fc411df12a] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.assignee,
+        t1_0.created_at,
+        t1_0.created_by,
+        t1_0.description,
+        t1_0.status,
+        t1_0.title,
+        t1_0.updated_at,
+        t1_0.uuid 
+    from
+        tasks t1_0 
+    where
+        t1_0.uuid=?
+2025-06-17 10:45:33,816 [http-nio-8080-exec-2] [trace=1bdcb347-4ad0-4a11-a39d-a7fc411df12a] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.email,
+        m1_0.manager_id,
+        m1_0.password,
+        m1_0.is_restricted,
+        m1_0.role,
+        m1_0.updated_at,
+        m1_0.uuid,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    left join
+        users m1_0 
+            on m1_0.id=u1_0.manager_id 
+    where
+        u1_0.id=?
+2025-06-17 10:45:33,819 [http-nio-8080-exec-2] [trace=1bdcb347-4ad0-4a11-a39d-a7fc411df12a] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: TaskServiceImpl.getTaskOfUser [duration: 6ms, correlationId: 1bdcb347-4ad0-4a11-a39d-a7fc411df12a]
+2025-06-17 10:45:33,821 [http-nio-8080-exec-2] [trace=1bdcb347-4ad0-4a11-a39d-a7fc411df12a] INFO  c.e.d.i.RequestLoggingInterceptor - Request processed: GET /api/tasks/fc56cc83-711c-4969-a7c8-e071a5f24bf4 [status: 200, duration: 9ms]
+2025-06-17 10:45:38,861 [http-nio-8080-exec-3] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-17 10:45:38,862 [http-nio-8080-exec-3] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 1ms, correlationId: null]
+2025-06-17 10:45:38,865 [http-nio-8080-exec-3] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:45:38,867 [http-nio-8080-exec-3] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.email,
+        m1_0.manager_id,
+        m1_0.password,
+        m1_0.is_restricted,
+        m1_0.role,
+        m1_0.updated_at,
+        m1_0.uuid,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    left join
+        users m1_0 
+            on m1_0.id=u1_0.manager_id 
+    where
+        u1_0.id=?
+2025-06-17 10:45:38,870 [http-nio-8080-exec-3] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-17 10:45:38,873 [http-nio-8080-exec-3] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 3ms, correlationId: null]
+2025-06-17 10:45:38,875 [http-nio-8080-exec-3] [trace=51f9d66c-e1e3-4ee1-b3b6-523f12506144] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: PUT /api/tasks/fc56cc83-711c-4969-a7c8-e071a5f24bf4 [correlationId: 51f9d66c-e1e3-4ee1-b3b6-523f12506144]
+2025-06-17 10:45:38,879 [http-nio-8080-exec-3] [trace=51f9d66c-e1e3-4ee1-b3b6-523f12506144] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: TaskServiceImpl.updateTask [correlationId: 51f9d66c-e1e3-4ee1-b3b6-523f12506144]
+2025-06-17 10:45:38,880 [http-nio-8080-exec-3] [trace=51f9d66c-e1e3-4ee1-b3b6-523f12506144] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.assignee,
+        t1_0.created_at,
+        t1_0.created_by,
+        t1_0.description,
+        t1_0.status,
+        t1_0.title,
+        t1_0.updated_at,
+        t1_0.uuid 
+    from
+        tasks t1_0 
+    where
+        t1_0.uuid=?
+2025-06-17 10:45:38,883 [http-nio-8080-exec-3] [trace=51f9d66c-e1e3-4ee1-b3b6-523f12506144] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.email,
+        m1_0.manager_id,
+        m1_0.password,
+        m1_0.is_restricted,
+        m1_0.role,
+        m1_0.updated_at,
+        m1_0.uuid,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    left join
+        users m1_0 
+            on m1_0.id=u1_0.manager_id 
+    where
+        u1_0.id=?
+2025-06-17 10:45:38,887 [http-nio-8080-exec-3] [trace=51f9d66c-e1e3-4ee1-b3b6-523f12506144] ERROR c.e.demo.aspect.ServiceLoggingAspect - Error in service method: TaskServiceImpl.updateTask [error: Task is already in the requested status, correlationId: 51f9d66c-e1e3-4ee1-b3b6-523f12506144]
+2025-06-17 10:46:27,856 [SpringApplicationShutdownHook] [trace=] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-17 10:46:27,859 [tomcat-shutdown] [trace=] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-17 10:46:27,864 [SpringApplicationShutdownHook] [trace=] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-17 10:46:27,865 [SpringApplicationShutdownHook] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-17 10:46:27,871 [SpringApplicationShutdownHook] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-17 10:50:37,158 [main] [trace=] INFO  com.example.demo.DemoApplication - Starting DemoApplication using Java 21.0.7 with PID 143217 (/home/abdulmateen/Desktop/Projects/Learning-Java/Project-Day_10-15/target/classes started by abdulmateen in /home/abdulmateen/Desktop/Projects/Learning-Java/Project-Day_10-15)
+2025-06-17 10:50:37,164 [main] [trace=] DEBUG com.example.demo.DemoApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-06-17 10:50:37,168 [main] [trace=] INFO  com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-17 10:50:37,355 [main] [trace=] INFO  o.s.b.d.c.l.DockerComposeLifecycleManager - Using Docker Compose file /home/abdulmateen/Desktop/Projects/Learning-Java/Project-Day_10-15/docker-compose.yaml
+2025-06-17 10:50:37,854 [main] [trace=] INFO  o.s.b.d.c.l.DockerComposeLifecycleManager - There are already Docker Compose services running, skipping startup
+2025-06-17 10:50:38,972 [main] [trace=] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-17 10:50:39,038 [main] [trace=] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 56 ms. Found 2 JPA repository interfaces.
+2025-06-17 10:50:39,797 [main] [trace=] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-17 10:50:39,810 [main] [trace=] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-06-17 10:50:39,812 [main] [trace=] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-17 10:50:39,812 [main] [trace=] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-06-17 10:50:39,857 [main] [trace=] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-17 10:50:39,858 [main] [trace=] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1793 ms
+2025-06-17 10:50:40,341 [main] [trace=] INFO  liquibase.database - Set default schema name to public
+2025-06-17 10:50:40,691 [main] [trace=] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-06-17 10:50:40,744 [main] [trace=] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-06-17 10:50:40,748 [main] [trace=] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-06-17 10:50:40,759 [main] [trace=] INFO  liquibase.util - UPDATE SUMMARY
+2025-06-17 10:50:40,759 [main] [trace=] INFO  liquibase.util - Run:                          0
+2025-06-17 10:50:40,759 [main] [trace=] INFO  liquibase.util - Previously run:               2
+2025-06-17 10:50:40,759 [main] [trace=] INFO  liquibase.util - Filtered out:                 0
+2025-06-17 10:50:40,760 [main] [trace=] INFO  liquibase.util - -------------------------------
+2025-06-17 10:50:40,760 [main] [trace=] INFO  liquibase.util - Total change sets:            2
+2025-06-17 10:50:40,761 [main] [trace=] INFO  liquibase.util - Update summary generated
+2025-06-17 10:50:40,762 [main] [trace=] INFO  liquibase.command - Command execution complete
+2025-06-17 10:50:40,863 [main] [trace=] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-17 10:50:40,922 [main] [trace=] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-06-17 10:50:40,965 [main] [trace=] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-17 10:50:41,199 [main] [trace=] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-17 10:50:41,224 [main] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-17 10:50:41,270 [main] [trace=] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2d5d001f
+2025-06-17 10:50:41,272 [main] [trace=] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-17 10:50:41,339 [main] [trace=] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.13
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-17 10:50:42,228 [main] [trace=] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-17 10:50:42,231 [main] [trace=] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-17 10:50:42,628 [main] [trace=] DEBUG c.e.d.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-06-17 10:50:42,713 [main] [trace=] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-06-17 10:50:42,714 [main] [trace=] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-17 10:50:43,030 [main] [trace=] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-17 10:50:43,557 [main] [trace=] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-06-17 10:50:43,924 [main] [trace=] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-06-17 10:50:43,937 [main] [trace=] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-06-17 10:50:43,948 [main] [trace=] INFO  com.example.demo.DemoApplication - Started DemoApplication in 7.561 seconds (process running for 8.08)
+2025-06-17 10:50:44,076 [main] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:50:44,109 [main] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:51:01,367 [http-nio-8080-exec-1] [trace=] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-17 10:51:01,368 [http-nio-8080-exec-1] [trace=] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-17 10:51:01,370 [http-nio-8080-exec-1] [trace=] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-06-17 10:51:01,394 [http-nio-8080-exec-1] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.extractUsername [correlationId: null]
+2025-06-17 10:51:01,424 [http-nio-8080-exec-1] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.extractUsername [duration: 29ms, correlationId: null]
+2025-06-17 10:51:01,427 [http-nio-8080-exec-1] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.manager_id,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-06-17 10:51:01,438 [http-nio-8080-exec-1] [trace=] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.email,
+        m1_0.manager_id,
+        m1_0.password,
+        m1_0.is_restricted,
+        m1_0.role,
+        m1_0.updated_at,
+        m1_0.uuid,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    left join
+        users m1_0 
+            on m1_0.id=u1_0.manager_id 
+    where
+        u1_0.id=?
+2025-06-17 10:51:01,446 [http-nio-8080-exec-1] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: JwtService.isTokenValid [correlationId: null]
+2025-06-17 10:51:01,451 [http-nio-8080-exec-1] [trace=] INFO  c.e.demo.aspect.ServiceLoggingAspect - Completed service method: JwtService.isTokenValid [duration: 4ms, correlationId: null]
+2025-06-17 10:51:01,464 [http-nio-8080-exec-1] [trace=787345e3-df29-44f5-b9ce-77af26608560] INFO  c.e.d.i.RequestLoggingInterceptor - Request started: PUT /api/tasks/fc56cc83-711c-4969-a7c8-e071a5f24bf4 [correlationId: 787345e3-df29-44f5-b9ce-77af26608560]
+2025-06-17 10:51:01,523 [http-nio-8080-exec-1] [trace=787345e3-df29-44f5-b9ce-77af26608560] INFO  c.e.demo.aspect.ServiceLoggingAspect - Entering service method: TaskServiceImpl.updateTask [correlationId: 787345e3-df29-44f5-b9ce-77af26608560]
+2025-06-17 10:51:01,529 [http-nio-8080-exec-1] [trace=787345e3-df29-44f5-b9ce-77af26608560] DEBUG org.hibernate.SQL - 
+    select
+        t1_0.id,
+        t1_0.assignee,
+        t1_0.created_at,
+        t1_0.created_by,
+        t1_0.description,
+        t1_0.status,
+        t1_0.title,
+        t1_0.updated_at,
+        t1_0.uuid 
+    from
+        tasks t1_0 
+    where
+        t1_0.uuid=?
+2025-06-17 10:51:01,533 [http-nio-8080-exec-1] [trace=787345e3-df29-44f5-b9ce-77af26608560] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        m1_0.id,
+        m1_0.created_at,
+        m1_0.email,
+        m1_0.manager_id,
+        m1_0.password,
+        m1_0.is_restricted,
+        m1_0.role,
+        m1_0.updated_at,
+        m1_0.uuid,
+        u1_0.password,
+        u1_0.is_restricted,
+        u1_0.role,
+        u1_0.updated_at,
+        u1_0.uuid 
+    from
+        users u1_0 
+    left join
+        users m1_0 
+            on m1_0.id=u1_0.manager_id 
+    where
+        u1_0.id=?
+2025-06-17 10:51:01,539 [http-nio-8080-exec-1] [trace=787345e3-df29-44f5-b9ce-77af26608560] ERROR c.e.demo.aspect.ServiceLoggingAspect - Error in service method: TaskServiceImpl.updateTask [error: Task is already in the requested status, correlationId: 787345e3-df29-44f5-b9ce-77af26608560]
