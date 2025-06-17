@@ -6,7 +6,7 @@ import com.example.demo.dto.ApiResponseUserDTO;
 import com.example.demo.dto.ApiResponseUserPageDTO;
 import com.example.demo.dto.UserDTO;
 import com.example.demo.enums.UserRole;
-import com.example.demo.service.UserService;
+import com.example.demo.service.UserServiceImpl;
 import com.example.demo.utils.ApiResponseUtil;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -35,7 +35,7 @@ import java.util.stream.Stream;
 @RequiredArgsConstructor
 @SecurityRequirement(name = "bearerAuth")
 public class UserController {
-    private final UserService userService;
+    private final UserServiceImpl userServiceImpl;
     private final PaginationConfig paginationConfig;
 
     @Operation(summary = "Create a new user", description = "Creates a new user with the provided details. Only accessible by administrators.")
@@ -47,7 +47,7 @@ public class UserController {
     @PostMapping
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<ApiResponseDTO<UserDTO>> createUser(@RequestBody UserDTO userDTO) {
-        UserDTO createdUser = userService.createUser(userDTO);
+        UserDTO createdUser = userServiceImpl.createUser(userDTO);
         return ApiResponseUtil.created(createdUser, "User created successfully");
     }
 
@@ -62,7 +62,7 @@ public class UserController {
     @PatchMapping("/{uuid}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<ApiResponseDTO<UserDTO>> restrictUser(@PathVariable UUID uuid) {
-        UserDTO userDto = userService.restrictUser(uuid);
+        UserDTO userDto = userServiceImpl.restrictUser(uuid);
         return ApiResponseUtil.success(userDto, "User restricted successfully");
     }
 
@@ -91,7 +91,7 @@ public class UserController {
     @GetMapping("/info")
     @PreAuthorize("hasRole('ROLE_USER')")
     public ResponseEntity<ApiResponseDTO<UserDTO>> getCurrentUser() {
-        return ApiResponseUtil.success(userService.getCurrentUser(), "Current user retrieved successfully");
+        return ApiResponseUtil.success(userServiceImpl.getCurrentUser(), "Current user retrieved successfully");
     }
 
     @Operation(
@@ -115,7 +115,7 @@ public class UserController {
                 Math.min(pageable.getPageSize(), paginationConfig.getMaxPageSize()),
                 pageable.getSort());
 
-        return ApiResponseUtil.success(userService.getAllUsers(pageable), "Assigned users retrieved successfully");
+        return ApiResponseUtil.success(userServiceImpl.getAllUsers(pageable), "Assigned users retrieved successfully");
     }
 
 }

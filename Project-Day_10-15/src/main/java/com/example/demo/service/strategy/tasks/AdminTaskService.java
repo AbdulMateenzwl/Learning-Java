@@ -1,4 +1,4 @@
-package com.example.demo.service.strategy.gettasks;
+package com.example.demo.service.strategy.tasks;
 
 import com.example.demo.dto.TaskDTO;
 import com.example.demo.entity.Task;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class AdminGetTasksServiceStrategy implements GetTasksServiceStrategy {
+public class AdminTaskService implements TaskService {
 
     private final TaskRepository taskRepository;
     private final TaskMapper taskMapper;

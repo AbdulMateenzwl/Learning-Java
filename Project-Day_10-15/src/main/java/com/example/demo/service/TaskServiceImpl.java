@@ -5,9 +5,8 @@ import java.util.UUID;
 
 import com.example.demo.config.UserContext;
 import com.example.demo.enums.UserRole;
-import com.example.demo.service.factory.GetTasksServiceStrategyFactory;
-import com.example.demo.service.strategy.gettasks.GetTasksServiceStrategy;
-import org.springframework.beans.factory.annotation.Qualifier;
+import com.example.demo.service.factory.TaskServiceFactory;
+import com.example.demo.service.strategy.tasks.TaskService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -30,13 +29,13 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class TaskService {
-    private final UserService userService;
+public class TaskServiceImpl {
+    private final UserServiceImpl userServiceImpl;
     private final UserContext userContext;
     private final UserRepository userRepository;
     private final TaskRepository taskRepository;
     private final TaskMapper taskMapper;
-    private final GetTasksServiceStrategyFactory getTasksServiceStrategyFactory;
+    private final TaskServiceFactory taskServiceFactory;
 
     @Transactional
     public TaskDTO createTask(TaskDTO taskDTO) {
@@ -67,7 +66,7 @@ public class TaskService {
             throw new UserNotFoundException("User not found");
         }
 
-        if (!userService.isUserPartOfManager(user.get().getUuid(), managerId)) {
+        if (!userServiceImpl.isUserPartOfManager(user.get().getUuid(), managerId)) {
             throw new UnauthorizedOperationException("User is not part of the manager's team");
         }
 
@@ -127,7 +126,7 @@ public class TaskService {
     }
 
     public Page<TaskDTO> getAllTasks(Pageable pageable) {
-        GetTasksServiceStrategy strategy = getTasksServiceStrategyFactory.createStrategy(userContext.getRole());
+        TaskService strategy = taskServiceFactory.get(userContext.getRole());
         return strategy.getTasks(pageable);
     }
 

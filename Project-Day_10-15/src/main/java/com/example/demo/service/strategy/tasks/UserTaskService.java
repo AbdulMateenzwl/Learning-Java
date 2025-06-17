@@ -1,4 +1,4 @@
-package com.example.demo.service.strategy.gettasks;
+package com.example.demo.service.strategy.tasks;
 
 import com.example.demo.config.UserContext;
 import com.example.demo.dto.TaskDTO;
@@ -10,17 +10,20 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
+import java.util.UUID;
+
 @Component
 @RequiredArgsConstructor
-public class ManagerGetTasksServiceStrategy implements GetTasksServiceStrategy {
+public class UserTaskService implements TaskService {
 
     private final TaskRepository taskRepository;
-    private final TaskMapper taskMapper;
     private final UserContext userContext;
+    private final TaskMapper taskMapper;
 
     @Override
     public Page<TaskDTO> getTasks(Pageable pageable) {
-        Page<Task> tasks = taskRepository.findByCreatedByUuid(userContext.getUserId(), pageable);
+        UUID assignedToUuid = userContext.getUserId();
+        Page<Task> tasks = taskRepository.findByAssignedToUuid(assignedToUuid, pageable);
         return tasks.map(taskMapper::toDTO);
     }
 }

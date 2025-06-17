@@ -28,7 +28,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.config.PaginationConfig;
 import com.example.demo.enums.TaskStatus;
-import com.example.demo.service.TaskService;
+import com.example.demo.service.TaskServiceImpl;
 import com.example.demo.utils.ApiResponseUtil;
 
 import lombok.RequiredArgsConstructor;
@@ -38,7 +38,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @SecurityRequirement(name = "bearerAuth")
 public class TaskController {
-    private final TaskService taskService;
+    private final TaskServiceImpl taskServiceImpl;
     private final PaginationConfig paginationConfig;
 
     @Operation(summary = "Create a new task", description = "Creates a new task with the provided details. Only accessible by manager.")
@@ -50,7 +50,7 @@ public class TaskController {
     @PostMapping
     @PreAuthorize("hasRole('ROLE_MANAGER')")
     public ResponseEntity<ApiResponseDTO<TaskDTO>> createTask(@RequestBody TaskDTO taskDTO) {
-        return ApiResponseUtil.created(taskService.createTask(taskDTO), "Task created successfully");
+        return ApiResponseUtil.created(taskServiceImpl.createTask(taskDTO), "Task created successfully");
     }
 
     @Operation(summary = "Assign task", description = "Assigned a Task to User by Uuid - Manager only")
@@ -63,7 +63,7 @@ public class TaskController {
     @PatchMapping("/{taskUuid}")
     @PreAuthorize("hasRole('ROLE_MANAGER')")
     public ResponseEntity<ApiResponseDTO<TaskDTO>> assignTask(@PathVariable UUID taskUuid, @RequestParam UUID userUuid) {
-        return ApiResponseUtil.success(taskService.assignTask(taskUuid, userUuid), "Task assigned successfully");
+        return ApiResponseUtil.success(taskServiceImpl.assignTask(taskUuid, userUuid), "Task assigned successfully");
     }
 
     @Operation(summary = "Update Task", description = """
@@ -80,7 +80,7 @@ public class TaskController {
     public ResponseEntity<ApiResponseDTO<TaskDTO>> updateUserTask(@RequestBody(required = false) TaskDTO taskDTO,
                                                                   @RequestParam(required = false) TaskStatus status,
                                                                   @PathVariable UUID taskUuid) {
-        return ApiResponseUtil.success(taskService.updateTask(taskUuid, taskDTO, status), "Task updated successfully");
+        return ApiResponseUtil.success(taskServiceImpl.updateTask(taskUuid, taskDTO, status), "Task updated successfully");
     }
 
     @Operation(summary = "Get Tasks", description = """
@@ -101,7 +101,7 @@ public class TaskController {
                 Math.min(pageable.getPageSize(), paginationConfig.getMaxPageSize()),
                 pageable.getSort());
 
-        return ApiResponseUtil.success(taskService.getAllTasks(pageable), "Tasks retrieved successfully");
+        return ApiResponseUtil.success(taskServiceImpl.getAllTasks(pageable), "Tasks retrieved successfully");
     }
 
     @Operation(summary = "Get a User Task", description = "Get a single Task assigned to user")
@@ -113,7 +113,7 @@ public class TaskController {
     @GetMapping("/{taskUuid}")
     @PreAuthorize("hasRole('ROLE_USER')")
     public ResponseEntity<ApiResponseDTO<TaskDTO>> getTaskById(@PathVariable UUID taskUuid) {
-        return ApiResponseUtil.success(taskService.getTaskOfUser(taskUuid), "Task retrieved successfully");
+        return ApiResponseUtil.success(taskServiceImpl.getTaskOfUser(taskUuid), "Task retrieved successfully");
     }
 
 }

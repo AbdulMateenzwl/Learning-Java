@@ -3,6 +3,7 @@ package com.example.demo.service;
 import java.util.Optional;
 import java.util.UUID;
 
+import com.example.demo.service.strategy.user.UserService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -16,18 +17,17 @@ import com.example.demo.exceptions.UnauthorizedOperationException;
 import com.example.demo.exceptions.UserNotFoundException;
 import com.example.demo.mapper.UserMapper;
 import com.example.demo.repository.UserRepository;
-import com.example.demo.service.factory.GetUserServiceStrategyFactory;
-import com.example.demo.service.strategy.getuser.GetUserServiceStrategy;
+import com.example.demo.service.factory.UserServiceFactory;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class UserService {
+public class UserServiceImpl {
     private final UserRepository userRepository;
     private final UserMapper userMapper;
-    private final GetUserServiceStrategyFactory getUserServiceStrategyFactory;
+    private final UserServiceFactory userServiceFactory;
     private final UserContext userContext;
 
     @Transactional
@@ -37,9 +37,9 @@ public class UserService {
         }
         User user = userMapper.toEntity(userDTO);
         if (user.getRole() == UserRole.ROLE_USER) {
-            Optional<User> manager = userRepository.findByUuid(userDTO.getManagerUuid());
-            if (manager.isPresent() && manager.get().getRole().equals(UserRole.ROLE_MANAGER)) {
-                user.setManager(manager.get());
+            User manager = userRepository.findByUuid(userDTO.getManagerUuid()).orElseThrow(()-> new UserNotFoundException("Manager not found"));
+            if (manager.getRole().equals(UserRole.ROLE_MANAGER)) {
+                user.setManager(manager);
             }
         }
         userRepository.save(user);
@@ -89,7 +89,7 @@ public class UserService {
     }
 
     public Page<UserDTO> getAllUsers(Pageable pageable) {
-        GetUserServiceStrategy strategy = getUserServiceStrategyFactory.createStrategy(userContext.getRole());
+        UserService strategy = userServiceFactory.get(userContext.getRole());
         return strategy.getUsers(pageable);
     }
 

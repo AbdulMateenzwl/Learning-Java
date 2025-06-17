@@ -1,4 +1,4 @@
-package com.example.demo.service.strategy.getuser;
+package com.example.demo.service.strategy.user;
 
 import java.util.UUID;
 
@@ -16,7 +16,7 @@ import lombok.RequiredArgsConstructor;
 
 @Component
 @RequiredArgsConstructor
-public class ManagerGetUserServiceStrategy implements GetUserServiceStrategy {
+public class ManagerService implements UserService {
 
     private final UserRepository userRepository;
     private final UserMapper userMapper;

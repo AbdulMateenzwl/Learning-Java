@@ -7842,7 +7842,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 1 of constructor in com.example.demo.service.UserService required a bean of type 'com.example.demo.mapper.UserMapper' that could not be found.
+Parameter 1 of constructor in com.example.demo.service.UserServiceImpl required a bean of type 'com.example.demo.mapper.UserMapper' that could not be found.
 
 
 Action:
@@ -8295,7 +8295,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 1 of constructor in com.example.demo.service.UserService required a bean of type 'com.example.demo.mapper.UserMapper' that could not be found.
+Parameter 1 of constructor in com.example.demo.service.UserServiceImpl required a bean of type 'com.example.demo.mapper.UserMapper' that could not be found.
 
 
 Action:
@@ -8361,7 +8361,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 1 of constructor in com.example.demo.service.UserService required a bean of type 'com.example.demo.mapper.UserMapper' that could not be found.
+Parameter 1 of constructor in com.example.demo.service.UserServiceImpl required a bean of type 'com.example.demo.mapper.UserMapper' that could not be found.
 
 
 Action:
@@ -8678,7 +8678,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 1 of constructor in com.example.demo.service.UserService required a bean of type 'com.example.demo.mapper.UserMapper' that could not be found.
+Parameter 1 of constructor in com.example.demo.service.UserServiceImpl required a bean of type 'com.example.demo.mapper.UserMapper' that could not be found.
 
 
 Action:
@@ -9010,7 +9010,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 1 of constructor in com.example.demo.service.UserService required a bean of type 'com.example.demo.mapper.UserMapper' that could not be found.
+Parameter 1 of constructor in com.example.demo.service.UserServiceImpl required a bean of type 'com.example.demo.mapper.UserMapper' that could not be found.
 
 
 Action:
@@ -9203,7 +9203,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 1 of constructor in com.example.demo.service.UserService required a bean of type 'com.example.demo.mapper.UserMapper' that could not be found.
+Parameter 1 of constructor in com.example.demo.service.UserServiceImpl required a bean of type 'com.example.demo.mapper.UserMapper' that could not be found.
 
 
 Action:
