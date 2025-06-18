@@ -11,15 +11,15 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class TaskServiceFactory {
-    private final UserTaskService userGetTasksServiceStrategy;
-    private final ManagerTaskService managerGetTasksServiceStrategy;
-    private final AdminTaskService adminGetTasksServiceStrategy;
+    private final UserTaskService userTaskService;
+    private final ManagerTaskService managerTaskService;
+    private final AdminTaskService adminTaskService;
 
     public TaskService get(UserRole role) {
         return switch (role) {
-            case ROLE_ADMIN -> adminGetTasksServiceStrategy;
-            case ROLE_MANAGER -> managerGetTasksServiceStrategy;
-            case ROLE_USER -> userGetTasksServiceStrategy;
+            case ROLE_ADMIN -> adminTaskService;
+            case ROLE_MANAGER -> managerTaskService;
+            case ROLE_USER -> userTaskService;
         };
     }
 }

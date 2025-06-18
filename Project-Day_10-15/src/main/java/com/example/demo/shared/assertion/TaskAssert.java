@@ -15,8 +15,6 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class TaskAssert {
 
-//    TaskRepository taskRepository;
-
     public void assertTaskNotAssigned(Task task) {
         if (Objects.nonNull(task.getAssignedTo())) {
             throw new TaskAlreadyAssignedException("Task is already assigned");

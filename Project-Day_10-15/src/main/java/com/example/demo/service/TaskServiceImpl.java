@@ -117,6 +117,7 @@ public class TaskServiceImpl {
         pageable = PageRequest.of(pageable.getPageNumber(),
                 Math.min(pageable.getPageSize(), paginationConfig.getMaxPageSize()),
                 pageable.getSort());
+
         TaskService strategy = taskServiceFactory.get(userContext.getRole());
         return strategy.getTasks(pageable);
     }

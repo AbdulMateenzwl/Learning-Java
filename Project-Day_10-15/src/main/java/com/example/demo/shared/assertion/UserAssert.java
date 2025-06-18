@@ -57,5 +57,4 @@ public class UserAssert {
             throw new UnauthorizedOperationException(message);
         }
     }
-
 }

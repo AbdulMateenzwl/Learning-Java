@@ -16,6 +16,4 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
     Page<Task> findByCreatedByUuid(UUID createdByUuid, Pageable pageable);
 
     Page<Task> findByAssignedToUuid(UUID assignedToUuid, Pageable pageable);
-
-//    Page<Task> findAll(Pageable pageable);
 }

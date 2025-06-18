@@ -15,15 +15,9 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     Optional<User> findByUuid(UUID uuid);
 
-    Optional<User> findByEmail(String email);    Optional<User> findByEmailAndPassword(String email, String password);
-
-    boolean existsByEmail(String email);
+    Optional<User> findByEmail(String email);
 
     Page<User> findByRoleIn(List<UserRole> roles, Pageable pageable);
 
-    List<User> findByRoleIn(List<UserRole> roles);
-
     Page<User> findByManagerUuid(UUID managerUuid, Pageable pageable);
-
-    Optional<User> getReferenceByUuid(UUID uuid);
 }
